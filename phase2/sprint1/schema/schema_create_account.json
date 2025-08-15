@@ -1,0 +1,23 @@
+{
+    "type": "function",
+    "name": "create_account",
+    "description": "Create account or organization in CRM.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+        "company_name": {
+            "type": "string",
+            "description": "The name of the company or organization. For example: 'ABC Corporation'."
+        },
+        "industry": {
+            "type": "string",
+            "description": "The industry of the company. For example: 'Technology', 'Finance', 'Healthcare'."
+        },
+        "website": {
+            "type": "string",
+            "description": "The website of the company. For example: 'https://abc.com'."
+        }
+        },
+        "required": ["company_name"]
+    }
+}
