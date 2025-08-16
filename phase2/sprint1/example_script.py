@@ -5,67 +5,14 @@ from phase2.sprint1.llm_client.gemini_client import GeminiClient
 from phase2.sprint1.llm_client.apikey_manager import APIKeys
 
 from phase2.sprint1.schema.schema import CreateLeadSchema
+from phase2.sprint1.utils.file_helper import load_prompt, load_schema
 
 provider = "openai"
 model = "gpt-4o-mini"
 
-schema_function = {
-    "name": "create_lead",
-    "description": "Any new lead that is created in the CRM",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "name": {
-                "type": "string",
-                "description": "The name of the lead"
-            },
-            "email": {
-                "type": "string",
-                "format": "email",
-                "description": "The email address of the lead"  
-            },
-            "phone": {
-                "type": ["string"],
-                "description": "The phone number of the lead"
-            },
-            "company": {
-                "type": ["string", "null"],
-                "description": "The company of the lead"
-            },
-            "notes": {
-                "type": ["string", "null"],
-                "description": "Any additional notes about the lead"
-            }
-        },
-        "required": ["name", "email", "phone", "company", "notes"], 
-        "additionalProperties": False
-    },
-    "strict": True
-}
+schema_function = load_schema("phase2/sprint1/schema/schema_create_lead.json")
 
-prompt = """
-You are an AI CRM assistant.  
-Your task is to collect and validate lead information step by step.  
-
-### Rules:
-1. Always return a valid JSON object strictly following the schema.
-2. Required fields: name, email, phone.
-3. Optional fields: company, notes.
-4. If a required field is missing → ask user for it.
-5. If required fields are complete but optional fields are missing → politely ask if the user wants to add them.
-6. If user says "yes", update the JSON with their input in the correct field.
-7. If user says "no", finalize the JSON.
-8. Do not include any text outside the JSON object. Return only the JSON object.
-  
-### Schema:
-{
-  "name": string | null,
-  "email": string | null,
-  "phone": string | null,
-  "company": string | null,
-  "notes": string | null
-}
-"""
+prompt = load_prompt("phase2/sprint1/prompt/prompt_create_lead.md")
 
 user_input = input("User: ")
 
