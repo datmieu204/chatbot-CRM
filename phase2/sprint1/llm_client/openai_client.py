@@ -25,7 +25,10 @@ class OpenAIClient(BaseLLMClient):
                         "role": "system",
                         "content": "You are a helpful assistant that generates JSON responses according to the provided schema.",
                     },
-                    {"role": "user", "content": prompt},
+                    {
+                        "role": "user",
+                        "content": prompt
+                    },
                 ],
                 tools=[{"type": "function", "function": schema}],
                 tool_choice="auto",

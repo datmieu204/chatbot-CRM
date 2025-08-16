@@ -1,5 +1,6 @@
 # phase2/sprint1/llm_client/base_client.py
 
+import re
 import json
 import logging
 
@@ -22,14 +23,24 @@ class BaseLLMClient:
         self.total_count = 0
 
     def generate(self, prompt: str, schema: dict):
+        """
+        Provider-specific implementation for generating responses.
+        """
         raise NotImplementedError("Subclasses should implement this method.")
-    
+        
     def parse_and_validate(self, text: str):
         try:
             data = json.loads(text)
+        except json.JSONDecodeError:
+            match = re.search(r"\{.*\}", text, re.DOTALL)
+            if not match:
+                raise ValueError("Invalid response: No JSON object found")
+            data = json.loads(match.group(0))
+
+        try:
             validated_data = self.schema(**data)
             return validated_data
-        except (json.JSONDecodeError, ValidationError) as e:
+        except ValidationError as e:
             logger.error(f"Validation error: {e}")
             raise ValueError(f"Invalid response format: {e}")
     

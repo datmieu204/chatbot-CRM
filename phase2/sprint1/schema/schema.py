@@ -4,16 +4,20 @@ from pydantic import BaseModel, Field, EmailStr, HttpUrl
 from typing import Optional, Literal
 
 class CreateLeadSchema(BaseModel):
-    name: Optional[str]
-    email: Optional[EmailStr]
-    phone: Optional[str]
-    company: Optional[str]
-    notes: Optional[str]
+    name: Optional[str] = None
+    email: Optional[EmailStr] = None
+    phone: Optional[str] = None
+    company: Optional[str] = None
+    notes: Optional[str] = None
 
 class CreateAccountSchema(BaseModel):
-    company_name: Optional[str]
-    industry: Optional[str]
-    website: Optional[HttpUrl]
+    name: Optional[str] = None
+    industry: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[EmailStr] = None
+    website: Optional[HttpUrl] = None
+    address: Optional[str] = None
+    notes: Optional[str] = None
 
 class CreateOrderSchema(BaseModel):
     order_id: str

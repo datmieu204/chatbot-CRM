@@ -25,7 +25,7 @@ schema_function = {
                 "description": "The email address of the lead"  
             },
             "phone": {
-                "type": ["string", "null"],
+                "type": ["string"],
                 "description": "The phone number of the lead"
             },
             "company": {
@@ -44,12 +44,30 @@ schema_function = {
 }
 
 prompt = """
-You are an assistant of a CRM system. Your task is to help users create new leads by providing the necessary information and guidance.
-Return a JSON following the lead_schema, do not include any additional information or context.
-If the user provides all the required information, create the lead. If any information is missing, prompt the user to provide the missing information.
+You are an AI CRM assistant.  
+Your task is to collect and validate lead information step by step.  
+
+### Rules:
+1. Always return a valid JSON object strictly following the schema.
+2. Required fields: name, email, phone.
+3. Optional fields: company, notes.
+4. If a required field is missing → ask user for it.
+5. If required fields are complete but optional fields are missing → politely ask if the user wants to add them.
+6. If user says "yes", update the JSON with their input in the correct field.
+7. If user says "no", finalize the JSON.
+8. Do not include any text outside the JSON object. Return only the JSON object.
+  
+### Schema:
+{
+  "name": string | null,
+  "email": string | null,
+  "phone": string | null,
+  "company": string | null,
+  "notes": string | null
+}
 """
 
-user_input = input("Please provide the lead information in JSON format: ")
+user_input = input("User: ")
 
 prompt = prompt + "\n" + user_input
 
@@ -63,5 +81,25 @@ else:
 result = client.run_with_retry(prompt=prompt, schema=schema_function)
 
 if __name__ == "__main__":
-    print(result)
+    # print(result)
     # Mock API Test
+    conversation = prompt
+    lead = None
+
+    while True:
+        user_input = input("User: ")
+
+        if user_input.lower() in ["exit", "quit"]:
+            break
+
+        conversation += "\nUser: " + user_input
+
+        result = client.run_with_retry(prompt=conversation, schema=schema_function)
+
+        print("Assistant:", result)
+
+        lead = result
+
+
+
+
