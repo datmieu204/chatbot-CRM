@@ -4,6 +4,7 @@ import re
 import json
 import logging
 
+from typing import List
 from pydantic import ValidationError
 
 logging.basicConfig(
@@ -14,42 +15,49 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class BaseLLMClient:
-    def __init__(self, model: str, schema, key_manager, max_retries=3):
+    def __init__(self, model: str, key_manager, max_retries=3):
         self.model = model
-        self.schema = schema
         self.key_manager = key_manager
         self.max_retries = max_retries
         self.success_count = 0
         self.total_count = 0
 
-    def generate(self, prompt: str, schema: dict):
+    def generate(self, prompt: str, tools: List[dict]):
         """
         Provider-specific implementation for generating responses.
         """
         raise NotImplementedError("Subclasses should implement this method.")
         
-    def parse_and_validate(self, text: str):
-        try:
-            data = json.loads(text)
-        except json.JSONDecodeError:
-            match = re.search(r"\{.*\}", text, re.DOTALL)
-            if not match:
-                raise ValueError("Invalid response: No JSON object found")
-            data = json.loads(match.group(0))
+    def parse_and_validate(self, text: str, schema):
+        """
+        Parses a JSON string and validates it against the provided Pydantic schema.
+        """
+        if not text or not text.strip().startswith('{'):
+            return text
 
         try:
-            validated_data = self.schema(**data)
+            match = re.search(r"\{.*\}", text, re.DOTALL)
+            if not match:
+                logger.warning(f"No JSON object found in response: {text}")
+                return text # Return original text if no JSON is found
+            
+            data = json.loads(match.group(0))
+            
+            validated_data = schema(**data)
             return validated_data
+        except json.JSONDecodeError as e:
+            logger.error(f"JSON Decode Error: {e} in text: {text}")
+            raise ValueError(f"Invalid JSON response: {e}")
         except ValidationError as e:
             logger.error(f"Validation error: {e}")
             raise ValueError(f"Invalid response format: {e}")
     
-    def run_with_retry(self, prompt: str, schema: dict):
+    def run_with_retry(self, prompt: str, tools: List[dict]):
         self.total_count += 1
 
         for attempt in range(self.max_retries):
             try:
-                response = self.generate(prompt, schema)
+                response = self.generate(prompt=prompt, tools=tools)
                 validated_response = self.parse_and_validate(response)
 
                 if validated_response:

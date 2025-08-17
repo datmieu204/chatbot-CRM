@@ -2,6 +2,8 @@
 
 import logging
 import openai
+
+from typing import List, Tuple, Union
 from openai import OpenAI
 from phase2.sprint1.llm_client.base_client import BaseLLMClient
 
@@ -10,11 +12,11 @@ logger = logging.getLogger(__name__)
 
 
 class OpenAIClient(BaseLLMClient):
-    def __init__(self, model: str, schema, key_manager, max_retries=3):
-        super().__init__(model, schema, key_manager, max_retries)
+    def __init__(self, model: str, key_manager, max_retries=3):
+        super().__init__(model, key_manager, max_retries)
         openai.api_key = self.key_manager.get_next_key()
 
-    def generate(self, prompt: str, schema: dict):
+    def generate(self, prompt: str, tools: List[dict]) -> Tuple[Union[str, None], str]:
         try:
             openai_client = openai.OpenAI(api_key=self.key_manager.get_next_key())
 
@@ -23,14 +25,14 @@ class OpenAIClient(BaseLLMClient):
                 messages=[
                     {
                         "role": "system",
-                        "content": "You are a helpful assistant that generates JSON responses according to the provided schema.",
+                        "content": "You are a helpful assistant that generates JSON responses according to the provided schema. If the user is just chatting, respond in a conversational manner.",
                     },
                     {
                         "role": "user",
                         "content": prompt
                     },
                 ],
-                tools=[{"type": "function", "function": schema}],
+                tools=tools,
                 tool_choice="auto",
                 temperature=0.1,
             )
