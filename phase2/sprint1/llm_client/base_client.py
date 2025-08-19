@@ -24,27 +24,24 @@ class BaseLLMClient:
 
     def generate(self, prompt: str, tools: List[dict]):
         """
-        Provider-specific implementation for generating responses.
+        Provider-specific.
         """
-        raise NotImplementedError("Subclasses should implement this method.")
-        
-    def parse_and_validate(self, text: str, schema):
-        """
-        Parses a JSON string and validates it against the provided Pydantic schema.
-        """
-        if not text or not text.strip().startswith('{'):
-            return text
+        raise NotImplementedError("subclass implementation.")
 
+    def parse_and_validate(self, text, schema):
         try:
-            match = re.search(r"\{.*\}", text, re.DOTALL)
-            if not match:
-                logger.warning(f"No JSON object found in response: {text}")
-                return text # Return original text if no JSON is found
-            
-            data = json.loads(match.group(0))
-            
+            if isinstance(text, dict):
+                data = text
+            else:
+                match = re.search(r"\{.*\}", text, re.DOTALL)
+                if not match:
+                    logger.warning(f"No JSON object found in response: {text}")
+                    return text
+                data = json.loads(match.group(0))
+
             validated_data = schema(**data)
             return validated_data
+
         except json.JSONDecodeError as e:
             logger.error(f"JSON Decode Error: {e} in text: {text}")
             raise ValueError(f"Invalid JSON response: {e}")

@@ -3,12 +3,18 @@
 from pydantic import BaseModel, Field, EmailStr, HttpUrl
 from typing import Optional, Literal
 
+
+
 class CreateLeadSchema(BaseModel):
-    name: Optional[str] = None
-    email: Optional[EmailStr] = None
-    phone: Optional[str] = None
-    company: Optional[str] = None
-    notes: Optional[str] = None
+    name: str = Field(..., description="Full name of the lead")
+    email: EmailStr = Field(..., description="Email address of the lead")
+    phone: str = Field(..., description="Phone number of the lead")
+    company: Optional[str] = Field(
+        None, description="Company name (optional)", json_schema_extra={"nullable": True}
+    )
+    notes: Optional[str] = Field(
+        None, description="Additional notes (optional)", json_schema_extra={"nullable": True}
+    )
 
 class CreateAccountSchema(BaseModel):
     name: Optional[str] = None

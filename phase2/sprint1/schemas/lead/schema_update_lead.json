@@ -1,6 +1,6 @@
 {
-  "name": "create_lead",
-  "description": "Any new lead that is created in the CRM",
+  "name": "update_lead",
+  "description": "Any lead that is updated in the CRM",
   "parameters": {
     "type": "object",
     "properties": {

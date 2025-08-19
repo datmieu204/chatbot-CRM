@@ -1,5 +1,6 @@
 # phase2/sprint1/llm_client/openai_client.py
 
+import json
 import logging
 import openai
 
@@ -10,7 +11,6 @@ from phase2.sprint1.llm_client.base_client import BaseLLMClient
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
 class OpenAIClient(BaseLLMClient):
     def __init__(self, model: str, key_manager, max_retries=3):
         super().__init__(model, key_manager, max_retries)
@@ -18,7 +18,9 @@ class OpenAIClient(BaseLLMClient):
 
     def generate(self, prompt: str, tools: List[dict]) -> Tuple[Union[str, None], str]:
         try:
-            openai_client = openai.OpenAI(api_key=self.key_manager.get_next_key())
+            api_key = self.key_manager.get_next_key()
+
+            openai_client = openai.OpenAI(api_key=api_key)
 
             response = openai_client.chat.completions.create(
                 model=self.model,
@@ -39,7 +41,13 @@ class OpenAIClient(BaseLLMClient):
 
             if response.choices[0].message.tool_calls:
                 function_call = response.choices[0].message.tool_calls[0]
-                return function_call.function.arguments
+                args_str = function_call.function.arguments
+                try:
+                    args = json.loads(args_str)
+                    return args
+                except Exception as e:
+                    logger.error(f"Failed to parse function arguments: {args_str}, error: {e}")
+                    return args_str
             else:
                 return response.choices[0].message.content
 
