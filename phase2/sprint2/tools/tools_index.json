@@ -1,0 +1,85 @@
+{
+  "generated_at": "20250824_200005",
+  "source_file": "phase2/sprint2/docs/contacts_openapi.json",
+  "total_tools": 13,
+  "tools": [
+    {
+      "index": 1,
+      "filename": "post-_crm_v3_objects_contacts_batch_read_read.json",
+      "function_name": "post-/crm/v3/objects/contacts/batch/read_read",
+      "description": "Retrieve a batch of contacts"
+    },
+    {
+      "index": 2,
+      "filename": "get-_crm_v3_objects_contacts_{contactId}_getById.json",
+      "function_name": "get-/crm/v3/objects/contacts/{contactId}_getById",
+      "description": "Retrieve a contact"
+    },
+    {
+      "index": 3,
+      "filename": "delete-_crm_v3_objects_contacts_{contactId}_archiv.json",
+      "function_name": "delete-/crm/v3/objects/contacts/{contactId}_archive",
+      "description": "Archive a contact"
+    },
+    {
+      "index": 4,
+      "filename": "patch-_crm_v3_objects_contacts_{contactId}_update.json",
+      "function_name": "patch-/crm/v3/objects/contacts/{contactId}_update",
+      "description": "Update a contact"
+    },
+    {
+      "index": 5,
+      "filename": "post-_crm_v3_objects_contacts_merge_merge.json",
+      "function_name": "post-/crm/v3/objects/contacts/merge_merge",
+      "description": "Merge two contacts"
+    },
+    {
+      "index": 6,
+      "filename": "post-_crm_v3_objects_contacts_batch_archive_archiv.json",
+      "function_name": "post-/crm/v3/objects/contacts/batch/archive_archive",
+      "description": "Archive a batch of contacts"
+    },
+    {
+      "index": 7,
+      "filename": "post-_crm_v3_objects_contacts_batch_create_create.json",
+      "function_name": "post-/crm/v3/objects/contacts/batch/create_create",
+      "description": "Create a batch of contacts"
+    },
+    {
+      "index": 8,
+      "filename": "post-_crm_v3_objects_contacts_batch_update_update.json",
+      "function_name": "post-/crm/v3/objects/contacts/batch/update_update",
+      "description": "Update a batch of contacts"
+    },
+    {
+      "index": 9,
+      "filename": "post-_crm_v3_objects_contacts_gdpr-delete_purge.json",
+      "function_name": "post-/crm/v3/objects/contacts/gdpr-delete_purge",
+      "description": "Permanently delete a contact (GDPR-compliant)"
+    },
+    {
+      "index": 10,
+      "filename": "get-_crm_v3_objects_contacts_getPage.json",
+      "function_name": "get-/crm/v3/objects/contacts_getPage",
+      "description": "Retrieve contacts"
+    },
+    {
+      "index": 11,
+      "filename": "post-_crm_v3_objects_contacts_create.json",
+      "function_name": "post-/crm/v3/objects/contacts_create",
+      "description": "Create a contact"
+    },
+    {
+      "index": 12,
+      "filename": "post-_crm_v3_objects_contacts_batch_upsert_upsert.json",
+      "function_name": "post-/crm/v3/objects/contacts/batch/upsert_upsert",
+      "description": "Create or update a batch of contacts"
+    },
+    {
+      "index": 13,
+      "filename": "post-_crm_v3_objects_contacts_search_doSearch.json",
+      "function_name": "post-/crm/v3/objects/contacts/search_doSearch",
+      "description": "Search for contacts"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "updatePet": {
+    "name": "updatePet",
+    "description": "Update an existing pet.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "addPet": {
+    "name": "addPet",
+    "description": "Add a new pet to the store.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "findPetsByStatus": {
+    "name": "findPetsByStatus",
+    "description": "Finds Pets by status.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Status values that need to be considered for filter"
+        }
+      }
+    }
+  },
+  "findPetsByTags": {
+    "name": "findPetsByTags",
+    "description": "Finds Pets by tags.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "type": "array",
+          "description": "Tags to filter by"
+        }
+      }
+    }
+  },
+  "getPetById": {
+    "name": "getPetById",
+    "description": "Find pet by ID.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "petId": {
+          "type": "integer",
+          "description": "ID of pet to return"
+        }
+      }
+    }
+  },
+  "updatePetWithForm": {
+    "name": "updatePetWithForm",
+    "description": "Updates a pet in the store with form data.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "petId": {
+          "type": "integer",
+          "description": "ID of pet that needs to be updated"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of pet that needs to be updated"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of pet that needs to be updated"
+        }
+      }
+    }
+  },
+  "deletePet": {
+    "name": "deletePet",
+    "description": "Deletes a pet.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "api_key": {
+          "type": "string",
+          "description": ""
+        },
+        "petId": {
+          "type": "integer",
+          "description": "Pet id to delete"
+        }
+      }
+    }
+  },
+  "uploadFile": {
+    "name": "uploadFile",
+    "description": "Uploads an image.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "petId": {
+          "type": "integer",
+          "description": "ID of pet to update"
+        },
+        "additionalMetadata": {
+          "type": "string",
+          "description": "Additional Metadata"
+        }
+      }
+    }
+  },
+  "getInventory": {
+    "name": "getInventory",
+    "description": "Returns pet inventories by status.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "placeOrder": {
+    "name": "placeOrder",
+    "description": "Place an order for a pet.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "getOrderById": {
+    "name": "getOrderById",
+    "description": "Find purchase order by ID.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "integer",
+          "description": "ID of order that needs to be fetched"
+        }
+      }
+    }
+  },
+  "deleteOrder": {
+    "name": "deleteOrder",
+    "description": "Delete purchase order by identifier.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "integer",
+          "description": "ID of the order that needs to be deleted"
+        }
+      }
+    }
+  },
+  "createUser": {
+    "name": "createUser",
+    "description": "Create user.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "createUsersWithListInput": {
+    "name": "createUsersWithListInput",
+    "description": "Creates list of users with given input array.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "loginUser": {
+    "name": "loginUser",
+    "description": "Logs user into the system.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "The user name for login"
+        },
+        "password": {
+          "type": "string",
+          "description": "The password for login in clear text"
+        }
+      }
+    }
+  },
+  "logoutUser": {
+    "name": "logoutUser",
+    "description": "Logs out current logged in user session.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "getUserByName": {
+    "name": "getUserByName",
+    "description": "Get user by user name.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "The name that needs to be fetched. Use user1 for testing"
+        }
+      }
+    }
+  },
+  "updateUser": {
+    "name": "updateUser",
+    "description": "Update user resource.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "name that need to be deleted"
+        }
+      }
+    }
+  },
+  "deleteUser": {
+    "name": "deleteUser",
+    "description": "Delete user resource.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "The name that needs to be deleted"
+        }
+      }
+    }
+  }
+}

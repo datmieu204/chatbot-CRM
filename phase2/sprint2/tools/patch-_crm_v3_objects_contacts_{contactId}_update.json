@@ -1,0 +1,35 @@
+{
+  "generated_at": "20250824_200005",
+  "tool_index": 4,
+  "source_file": "phase2/sprint2/docs/contacts_openapi.json",
+  "tool_schema": {
+    "type": "function",
+    "function": {
+      "name": "patch-/crm/v3/objects/contacts/{contactId}_update",
+      "description": "Update a contact",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "example": {
+              "property_date": "1572480000000",
+              "property_radio": "option_1",
+              "property_number": "17",
+              "property_string": "value",
+              "property_checkbox": "false",
+              "property_dropdown": "choice_b",
+              "property_multiple_checkboxes": "chocolate;strawberry"
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "20250824_200005",
+  "tool_index": 8,
+  "source_file": "phase2/sprint2/docs/contacts_openapi.json",
+  "tool_schema": {
+    "type": "function",
+    "function": {
+      "name": "post-/crm/v3/objects/contacts/batch/update_update",
+      "description": "Update a batch of contacts",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "inputs": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "properties"
+              ],
+              "type": "object",
+              "properties": {
+                "idProperty": {
+                  "type": "string",
+                  "description": "The name of a unique property, when identifying records by property. ",
+                  "example": "my_unique_property_name"
+                },
+                "objectWriteTraceId": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "The ID of the contact to update. This can be the object ID, or the unique property value of the `idProperty` property."
+                },
+                "properties": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "example": {
+                    "email": "mark.s@lumon.industries",
+                    "lastname": "S.",
+                    "firstname": "Mark",
+                    "createdate": "2025-02-11T15:45:00.400Z",
+                    "hs_object_id": "98630638716",
+                    "lastmodifieddate": "2025-02-11T15:52:10.273Z"
+                  }
+                }
+              },
+              "example": {
+                "id": "1",
+                "properties": {
+                  "email": "bcooper@biglytics.net",
+                  "phone": "(877) 929-0687",
+                  "company": "Biglytics",
+                  "website": "biglytics.net",
+                  "lastname": "Cooper",
+                  "firstname": "Bryan"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "inputs"
+        ]
+      }
+    }
+  }
+}

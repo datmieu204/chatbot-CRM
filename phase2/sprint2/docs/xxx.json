@@ -1,0 +1,547 @@
+{
+  "type": "function",
+  "function": {
+    "name": "Convert Lead",
+    "description": "no description",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "lead_id": {
+          "type": "integer",
+          "description": ""
+        },
+        "request_body": {
+          "type": "object",
+          "description": "The JSON body of the request.",
+          "properties": {
+            "overwrite": {
+              "type": "boolean"
+            },
+            "notify_lead_owner": {
+              "type": "boolean"
+            },
+            "notify_new_entity_owner": {
+              "type": "boolean"
+            },
+            "move_attachments_to": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "api_name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id"
+              ]
+            },
+            "Accounts": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "Created_By": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "id"
+                  ]
+                },
+                "Created_Time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "Modified_By": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "id"
+                  ]
+                },
+                "Modified_Time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "Tag": {
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "maxLength": 25
+                      },
+                      "color_code": {
+                        "type": "string",
+                        "enum": [
+                          "#57B1FD",
+                          "#879BFC",
+                          "#658BA8",
+                          "#FD87BD",
+                          "#969696",
+                          "#F48435",
+                          "#1DB9B4",
+                          "#E7A826",
+                          "#63C57E",
+                          "#F17574",
+                          "#D297EE",
+                          "#A8C026",
+                          "#B88562"
+                        ],
+                        "nullable": true
+                      },
+                      "created_time": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "modified_time": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "modified_by": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "email": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "id"
+                        ]
+                      },
+                      "created_by": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "email": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "id"
+                        ]
+                      },
+                      "id": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "color_code",
+                      "created_time",
+                      "modified_time",
+                      "modified_by",
+                      "created_by",
+                      "id"
+                    ]
+                  },
+                  "type": "array"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            },
+            "Contacts": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "Created_By": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "id"
+                  ]
+                },
+                "Created_Time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "Modified_By": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "id"
+                  ]
+                },
+                "Modified_Time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "Tag": {
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "maxLength": 25
+                      },
+                      "color_code": {
+                        "type": "string",
+                        "enum": [
+                          "#57B1FD",
+                          "#879BFC",
+                          "#658BA8",
+                          "#FD87BD",
+                          "#969696",
+                          "#F48435",
+                          "#1DB9B4",
+                          "#E7A826",
+                          "#63C57E",
+                          "#F17574",
+                          "#D297EE",
+                          "#A8C026",
+                          "#B88562"
+                        ],
+                        "nullable": true
+                      },
+                      "created_time": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "modified_time": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "modified_by": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "email": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "id"
+                        ]
+                      },
+                      "created_by": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "email": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "id"
+                        ]
+                      },
+                      "id": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "color_code",
+                      "created_time",
+                      "modified_time",
+                      "modified_by",
+                      "created_by",
+                      "id"
+                    ]
+                  },
+                  "type": "array"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            },
+            "assign_to": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "email": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "id"
+              ]
+            },
+            "Deals": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "Created_By": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "id"
+                  ]
+                },
+                "Created_Time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "Modified_By": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "id"
+                  ]
+                },
+                "Modified_Time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "Tag": {
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "maxLength": 25
+                      },
+                      "color_code": {
+                        "type": "string",
+                        "enum": [
+                          "#57B1FD",
+                          "#879BFC",
+                          "#658BA8",
+                          "#FD87BD",
+                          "#969696",
+                          "#F48435",
+                          "#1DB9B4",
+                          "#E7A826",
+                          "#63C57E",
+                          "#F17574",
+                          "#D297EE",
+                          "#A8C026",
+                          "#B88562"
+                        ],
+                        "nullable": true
+                      },
+                      "created_time": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "modified_time": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "modified_by": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "email": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "id"
+                        ]
+                      },
+                      "created_by": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "email": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "id"
+                        ]
+                      },
+                      "id": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "color_code",
+                      "created_time",
+                      "modified_time",
+                      "modified_by",
+                      "created_by",
+                      "id"
+                    ]
+                  },
+                  "type": "array"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            },
+            "add_to_existing_record": {
+              "type": "boolean",
+              "enum": [
+                true
+              ]
+            },
+            "carry_over_tags": {
+              "type": "object",
+              "properties": {
+                "Contacts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "Accounts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "Deals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "Accounts",
+            "Contacts",
+            "assign_to",
+            "add_to_existing_record"
+          ]
+        }
+      },
+      "required": [
+        "lead_id",
+        "request_body"
+      ]
+    }
+  }
+}

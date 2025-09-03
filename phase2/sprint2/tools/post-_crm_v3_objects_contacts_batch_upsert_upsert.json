@@ -1,0 +1,52 @@
+{
+  "generated_at": "20250824_200005",
+  "tool_index": 12,
+  "source_file": "phase2/sprint2/docs/contacts_openapi.json",
+  "tool_schema": {
+    "type": "function",
+    "function": {
+      "name": "post-/crm/v3/objects/contacts/batch/upsert_upsert",
+      "description": "Create or update a batch of contacts",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "inputs": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "properties"
+              ],
+              "type": "object",
+              "properties": {
+                "idProperty": {
+                  "type": "string",
+                  "description": "The name of a property whose values are unique for this object"
+                },
+                "objectWriteTraceId": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "properties": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "example": {
+                    "lastname": "S.",
+                    "firstname": "Mark"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "inputs"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "generated_at": "20250824_200005",
+  "tool_index": 1,
+  "source_file": "phase2/sprint2/docs/contacts_openapi.json",
+  "tool_schema": {
+    "type": "function",
+    "function": {
+      "name": "post-/crm/v3/objects/contacts/batch/read_read",
+      "description": "Retrieve a batch of contacts",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "propertiesWithHistory": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "idProperty": {
+            "type": "string",
+            "description": "The name of a property whose values are unique for this object"
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "inputs",
+          "properties",
+          "propertiesWithHistory"
+        ]
+      }
+    }
+  }
+}

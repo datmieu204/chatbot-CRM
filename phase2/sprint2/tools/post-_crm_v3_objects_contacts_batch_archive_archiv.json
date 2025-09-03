@@ -1,0 +1,34 @@
+{
+  "generated_at": "20250824_200005",
+  "tool_index": 6,
+  "source_file": "phase2/sprint2/docs/contacts_openapi.json",
+  "tool_schema": {
+    "type": "function",
+    "function": {
+      "name": "post-/crm/v3/objects/contacts/batch/archive_archive",
+      "description": "Archive a batch of contacts",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "inputs": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "inputs"
+        ]
+      }
+    }
+  }
+}

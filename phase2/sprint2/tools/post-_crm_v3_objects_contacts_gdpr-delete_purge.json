@@ -1,0 +1,28 @@
+{
+  "generated_at": "20250824_200005",
+  "tool_index": 9,
+  "source_file": "phase2/sprint2/docs/contacts_openapi.json",
+  "tool_schema": {
+    "type": "function",
+    "function": {
+      "name": "post-/crm/v3/objects/contacts/gdpr-delete_purge",
+      "description": "Permanently delete a contact (GDPR-compliant)",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "idProperty": {
+            "type": "string",
+            "description": "The name of a property whose values are unique for this object. An alternative to identifying a contact by ID."
+          },
+          "objectId": {
+            "type": "string",
+            "description": "The ID of the contact to permanently delete."
+          }
+        },
+        "required": [
+          "objectId"
+        ]
+      }
+    }
+  }
+}

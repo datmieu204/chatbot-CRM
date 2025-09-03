@@ -1,0 +1,78 @@
+{
+  "generated_at": "20250824_200005",
+  "tool_index": 11,
+  "source_file": "phase2/sprint2/docs/contacts_openapi.json",
+  "tool_schema": {
+    "type": "function",
+    "function": {
+      "name": "post-/crm/v3/objects/contacts_create",
+      "description": "Create a contact",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "associations": {
+            "type": "array",
+            "items": {
+              "required": [
+                "to",
+                "types"
+              ],
+              "type": "object",
+              "properties": {
+                "types": {
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "associationCategory",
+                      "associationTypeId"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "associationCategory": {
+                        "type": "string",
+                        "enum": [
+                          "HUBSPOT_DEFINED",
+                          "USER_DEFINED",
+                          "INTEGRATOR_DEFINED"
+                        ]
+                      },
+                      "associationTypeId": {
+                        "type": "integer",
+                        "format": "int32"
+                      }
+                    }
+                  }
+                },
+                "to": {
+                  "required": [
+                    "id"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "example": {
+              "email": "mark.s@lumon.industries",
+              "lastname": "S.",
+              "firstname": "Mark"
+            }
+          }
+        },
+        "required": [
+          "properties"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "generated_at": "20250824_200005",
+  "tool_index": 10,
+  "source_file": "phase2/sprint2/docs/contacts_openapi.json",
+  "tool_schema": {
+    "type": "function",
+    "function": {
+      "name": "get-/crm/v3/objects/contacts_getPage",
+      "description": "Retrieve contacts",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}
