@@ -31,17 +31,7 @@ export const ChatInterface = () => {
         { id: '1', text: 'Xin chào! Tôi là AI assistant. Tôi có thể giúp gì cho bạn hôm nay?', isUser: false, timestamp: new Date() }
       ]
     },
-    {
-      id: '2',
-      title: 'Nguyễn Văn A',
-      avatarUrl: '',
-      latestMessage: 'Cảm ơn bạn đã giúp đỡ!',
-      messages: [
-        { id: '1', text: 'Xin chào, tôi cần hỗ trợ về tài khoản.', isUser: true, timestamp: new Date() },
-        { id: '2', text: 'Tôi có thể giúp gì cho bạn?', isUser: false, timestamp: new Date() },
-        { id: '3', text: 'Cảm ơn bạn đã giúp đỡ!', isUser: true, timestamp: new Date() }
-      ]
-    }
+
   ]);
 
   const [selectedConvId, setSelectedConvId] = useState(conversations[0].id);
@@ -50,6 +40,56 @@ export const ChatInterface = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { user, logout } = useAuth();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [creatingConv, setCreatingConv] = useState(false);
+  const [editingConvId, setEditingConvId] = useState<string | null>(null);
+  const [editingName, setEditingName] = useState<string>('');
+
+  // Restore messages for the selected conversation from localStorage
+  useEffect(() => {
+    const key = `messages_${selectedConvId}`;
+    try {
+      const raw = localStorage.getItem(key);
+      if (raw) {
+        const parsed: Array<{ id: string; text: string; isUser: boolean; timestamp: string }> = JSON.parse(raw);
+        const restored = parsed.map(m => ({ ...m, timestamp: new Date(m.timestamp) }));
+        setConversations(prev => prev.map(c => c.id === selectedConvId ? { ...c, messages: restored } : c));
+      }
+    } catch {}
+  }, [selectedConvId]);
+
+  // Load conversations from API and replace mocked data
+  useEffect(() => {
+    const loadConversations = async () => {
+      try {
+        const res = await fetch('http://localhost:8000/conversations', {
+          method: 'GET',
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+        const mapped: Conversation[] = Array.isArray(data)
+        ? data.map((c: any) => ({
+            id: String(c.id ?? c._id),
+            title: String(c.conversation_name ?? c.title ?? c.name ?? 'Conversation'),
+            avatarUrl: c.avatarUrl ?? c.avatar_url ?? '',
+            latestMessage:
+              typeof c.latestMessage === 'string'
+                ? c.latestMessage
+                : (c.latestMessage?.content ?? ''),
+            messages: []
+          }))
+        : [];
+      
+        if (mapped.length) {
+          setConversations(mapped);
+          setSelectedConvId(mapped[0].id);
+        }
+      } catch (e) {
+        console.error('Failed to load conversations:', e);
+      }
+    };
+    loadConversations();
+  }, []);
 
   const selectedConv = conversations.find(c => c.id === selectedConvId)!;
   const messages = selectedConv.messages;
@@ -72,6 +112,33 @@ export const ChatInterface = () => {
         ? { ...conv, messages: [...conv.messages, userMessage], latestMessage: userMessage.text }
         : conv
     ));
+    try {
+      const key = `messages_${selectedConvId}`;
+      const existing = localStorage.getItem(key);
+      const arr: Array<{ id: string; text: string; isUser: boolean; timestamp: string }> = existing ? JSON.parse(existing) : [];
+      arr.push({ ...userMessage, timestamp: userMessage.timestamp.toISOString() });
+      localStorage.setItem(key, JSON.stringify(arr));
+    } catch {}
+
+    try {
+      if (user?.id) {
+        await fetch('http://localhost:8000/messages', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            conversation_id: selectedConvId,
+            sender_id: user.id,
+            content: userMessage.text
+          })
+        });
+      }
+    } catch (e) {
+      console.error('Failed to save message to backend:', e);
+    }
+
     setInputValue('');
     setIsTyping(true);
 
@@ -94,8 +161,74 @@ export const ChatInterface = () => {
           ? { ...conv, messages: [...conv.messages, aiMessage], latestMessage: aiMessage.text }
           : conv
       ));
+      try {
+        const key = `messages_${selectedConvId}`;
+        const existing = localStorage.getItem(key);
+        const arr: Array<{ id: string; text: string; isUser: boolean; timestamp: string }> = existing ? JSON.parse(existing) : [];
+        arr.push({ ...aiMessage, timestamp: aiMessage.timestamp.toISOString() });
+        localStorage.setItem(key, JSON.stringify(arr));
+      } catch {}
       setIsTyping(false);
     }, 1200);
+  };
+
+  const handleCreateNewConversation = async () => {
+    if (creatingConv) return;
+    setCreatingConv(true);
+    try {
+      const res = await fetch('http://localhost:8000/conversations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ conversation_name: 'Cuộc trò chuyện mới' })
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      const c = Array.isArray(data) ? data[0] : data;
+      if (!c) return;
+      const newConv: Conversation = {
+        id: String(c.id ?? c._id ?? Date.now().toString()),
+        title: String(c.conversation_name ?? c.title ?? c.name ?? 'Conversation'),
+        avatarUrl: c.avatarUrl ?? c.avatar_url ?? '',
+        latestMessage: typeof c.latestMessage === 'string' ? c.latestMessage : (c.latestMessage?.content ?? ''),
+        messages: []
+      };
+      setConversations(prev => [newConv, ...prev]);
+      setSelectedConvId(newConv.id);
+      // Enable inline rename in history panel
+      setEditingConvId(newConv.id);
+      setEditingName(newConv.title);
+    } catch (e) {
+      console.error('Failed to create conversation:', e);
+    } finally {
+      setCreatingConv(false);
+    }
+  };
+
+  const handleSubmitRename = async (conversationId: string) => {
+    const trimmed = editingName.trim();
+    if (!trimmed) {
+      // If cleared, keep editing without submitting
+      return;
+    }
+    try {
+      const res = await fetch(`http://localhost:8000/conversations/${encodeURIComponent(conversationId)}/rename`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ conversation_name: trimmed })
+      });
+      if (res.ok) {
+        setConversations(prev => prev.map(conv => conv.id === conversationId ? { ...conv, title: trimmed } : conv));
+        setEditingConvId(null);
+      }
+    } catch (err) {
+      console.error('Failed to rename conversation:', err);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -137,6 +270,12 @@ export const ChatInterface = () => {
           selectedId={selectedConvId}
           onSelect={setSelectedConvId}
           isOpen
+          onCreateNew={handleCreateNewConversation}
+          creating={creatingConv}
+          editingId={editingConvId ?? undefined}
+          editingName={editingName}
+          onEditingNameChange={setEditingName}
+          onRenameSubmit={handleSubmitRename}
         />
       </aside>
 
@@ -151,6 +290,12 @@ export const ChatInterface = () => {
               onSelect={(id) => { setSelectedConvId(id); setDrawerOpen(false); }}
               isOpen
               onClose={() => setDrawerOpen(false)}
+              onCreateNew={async () => { await handleCreateNewConversation(); setDrawerOpen(false); }}
+              creating={creatingConv}
+              editingId={editingConvId ?? undefined}
+              editingName={editingName}
+              onEditingNameChange={setEditingName}
+              onRenameSubmit={async (id) => { await handleSubmitRename(id); setDrawerOpen(false); }}
             />
           </div>
         </div>

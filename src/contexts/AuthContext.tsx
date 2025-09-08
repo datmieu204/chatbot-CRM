@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface User {
   id: string;
@@ -28,46 +28,94 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Load persisted user on first mount
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem('auth_user');
+      if (raw) {
+        const parsed = JSON.parse(raw) as User;
+        if (parsed && parsed.id && parsed.email) {
+          setUser(parsed);
+        }
+      }
+    } catch {
+      // ignore corrupted storage
+    }
+  }, []);
+
   const login = async (email: string, password: string): Promise<boolean> => {
     setIsLoading(true);
-    // Mock login - replace with real API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    if (email && password) {
-      const mockUser = {
-        id: '1',
-        email,
-        name: email.split('@')[0]
+    try {
+      const response = await fetch('http://localhost:8000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (!response.ok) {
+        return false;
+      }
+
+      const data = await response.json().catch(() => ({} as any));
+
+      const loggedInUser: User = {
+        id: (data && (data.user?.id || data.id)) || '1',
+        email: (data && (data.user?.email || data.email)) || email,
+        name: (data && (data.user?.name || data.name)) || (email.includes('@') ? email.split('@')[0] : email)
       };
-      setUser(mockUser);
-      setIsLoading(false);
+
+      setUser(loggedInUser);
+      try { localStorage.setItem('auth_user', JSON.stringify(loggedInUser)); } catch {}
       return true;
+    } catch (error) {
+      console.error('Login error:', error);
+      return false;
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
-    return false;
   };
 
   const register = async (name: string, email: string, password: string): Promise<boolean> => {
     setIsLoading(true);
-    // Mock registration - replace with real API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    if (name && email && password) {
-      const mockUser = {
-        id: '1',
-        email,
-        name
+    try {
+      const response = await fetch('http://localhost:8000/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ name, email, password })
+      });
+
+      if (!response.ok) {
+        return false;
+      }
+
+      const data = await response.json().catch(() => ({} as any));
+
+      const newUser: User = {
+        id: (data && (data.user?.id || data.id)) || '1',
+        email: (data && (data.user?.email || data.email)) || email,
+        name: (data && (data.user?.name || data.name)) || name
       };
-      setUser(mockUser);
-      setIsLoading(false);
+
+      setUser(newUser);
+      try { localStorage.setItem('auth_user', JSON.stringify(newUser)); } catch {}
       return true;
+    } catch (error) {
+      console.error('Registration error:', error);
+      return false;
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
-    return false;
   };
 
   const logout = () => {
     setUser(null);
+    try { localStorage.removeItem('auth_user'); } catch {}
   };
 
   return (
