@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Beautiful blue theme like the reference */
+    --background: 0 0% 100%;
+    --foreground: 210 40% 15%;
+    
+    /* AI theme colors */
+    --primary: 214 84% 56%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 214 84% 66%;
+    
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 40% 15%;
+    
+    --accent: 200 95% 45%;
+    --accent-foreground: 0 0% 98%;
+    
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Glass effect variables */
+    --glass-bg: 214 100% 98% / 0.9;
+    --glass-border: 214 50% 90% / 0.6;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(200 95% 45%));
+    --gradient-background: linear-gradient(135deg, hsl(220 100% 99%), hsl(214 100% 97%));
+    --gradient-glass: linear-gradient(135deg, hsl(var(--glass-bg)), hsl(214 80% 96% / 0.7));
+    
+    /* Shadows and glows */
+    --shadow-glow: 0 0 40px hsl(214 84% 56% / 0.2);
+    --shadow-glass: 0 8px 32px hsl(214 50% 70% / 0.12);
+    
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --card: 214 50% 99%;
+    --card-foreground: 210 40% 15%;
+
+    --popover: 214 50% 99%;
+    --popover-foreground: 210 40% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 94%;
+    --ring: 214 84% 56%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 215 16% 47%;
+    --sidebar-primary: 214 84% 56%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 210 40% 15%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 214 84% 56%;
+  }
+}
+
+/* Custom utility classes */
+@layer components {
+  .glass-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .gradient-bg {
+    background: var(--gradient-background);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

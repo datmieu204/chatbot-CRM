@@ -1,0 +1,262 @@
+import { useState, useRef, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Send, Bot, User, LogOut, Menu } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
+import { ChatHistoryPanel } from './ChatHistoryPanel';
+
+interface Message {
+  id: string;
+  conversation_id: string;
+  sender_id: string;
+  content: string;
+  created_at: Date;
+  updated_at?: string;
+}
+
+interface Conversation {
+  id: string;
+  conversation_name: string;
+  messages: Message[];
+  latestMessage?: string;
+  avatarUrl?: string;
+  created_at: string;
+  updated_at?: string;
+}
+
+export const ChatInterface = () => {
+  const { user, logout } = useAuth();
+  const [conversations, setConversations] = useState<Conversation[]>([
+    {
+      id: '1',
+      conversation_name: 'AI Assistant',
+      avatarUrl: '',
+      latestMessage: 'Xin chào! Tôi là AI assistant. Tôi có thể giúp gì cho bạn hôm nay?',
+      messages: [
+        {
+          id: '1',
+          conversation_id: '1',
+          sender_id: 'bot',
+          content: 'Xin chào! Tôi là AI assistant. Tôi có thể giúp gì cho bạn hôm nay?',
+          created_at: new Date()
+        }
+      ],
+      created_at: new Date().toISOString()
+    },
+    {
+      id: '2',
+      conversation_name: 'Nguyễn Văn A',
+      avatarUrl: '',
+      latestMessage: 'Cảm ơn bạn đã giúp đỡ!',
+      messages: [
+        {
+          id: '1',
+          conversation_id: '2',
+          sender_id: 'user1',
+          content: 'Xin chào, tôi cần hỗ trợ về tài khoản.',
+          created_at: new Date()
+        },
+        {
+          id: '2',
+          conversation_id: '2',
+          sender_id: 'bot',
+          content: 'Tôi có thể giúp gì cho bạn?',
+          created_at: new Date()
+        },
+        {
+          id: '3',
+          conversation_id: '2',
+          sender_id: 'user1',
+          content: 'Cảm ơn bạn đã giúp đỡ!',
+          created_at: new Date()
+        }
+      ],
+      created_at: new Date().toISOString()
+    }
+  ]);
+
+  const [selectedConvId, setSelectedConvId] = useState(conversations[0].id);
+  const [inputValue, setInputValue] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const selectedConv = conversations.find(c => c.id === selectedConvId)!;
+  const messages = selectedConv.messages;
+
+  const scrollToBottom = () => messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  useEffect(() => { scrollToBottom(); }, [messages, selectedConvId]);
+
+  const handleSend = async () => {
+    if (!inputValue.trim()) return;
+
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      conversation_id: selectedConvId,
+      sender_id: user?.id ?? 'user',
+      content: inputValue,
+      created_at: new Date()
+    };
+
+    setConversations(prev => prev.map(conv =>
+      conv.id === selectedConvId
+        ? {
+            ...conv,
+            messages: [...conv.messages, userMessage],
+            latestMessage: userMessage.content
+          }
+        : conv
+    ));
+    setInputValue('');
+    setIsTyping(true);
+
+    setTimeout(() => {
+      const aiResponses = [
+        'Đó là một câu hỏi thú vị! Tôi đang suy nghĩ về điều này...',
+        'Tôi hiểu rồi. Dựa trên thông tin bạn cung cấp...',
+        'Cảm ơn bạn đã chia sẻ! Tôi có thể giúp bạn với việc này.',
+        'Đây là một chủ đề hay. Hãy để tôi giải thích chi tiết...',
+        'Tôi có thể đưa ra một số gợi ý cho vấn đề này.'
+      ];
+      const aiMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        conversation_id: selectedConvId,
+        sender_id: 'bot',
+        content: aiResponses[Math.floor(Math.random() * aiResponses.length)],
+        created_at: new Date()
+      };
+      setConversations(prev => prev.map(conv =>
+        conv.id === selectedConvId
+          ? {
+              ...conv,
+              messages: [...conv.messages, aiMessage],
+              latestMessage: aiMessage.content
+            }
+          : conv
+      ));
+      setIsTyping(false);
+    }, 1200);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  };
+
+  return (
+    <div className="h-screen w-full bg-gradient-to-b from-background to-muted/30">
+      {/* Header */}
+      <header className="h-16 border-b bg-background/80 backdrop-blur sticky top-0 z-40">
+        <div className="max-w-[100rem] mx-auto h-full px-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Bot className="h-7 w-7 text-primary" />
+            <div>
+              <h1 className="text-lg font-semibold">AI Assistant</h1>
+              <p className="text-xs text-muted-foreground">Xin chào, {user?.name ?? 'bạn'}!</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setDrawerOpen(true)}>
+              <Menu className="h-6 w-6" />
+            </Button>
+            <Button variant="outline" size="sm" onClick={logout}>
+              <LogOut className="h-4 w-4 mr-2" /> Đăng xuất
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      {/* Sidebar */}
+      <aside className="hidden md:block fixed top-16 left-0 h-[calc(100vh-4rem)] w-72 border-r bg-background z-30">
+        <ChatHistoryPanel
+          conversations={conversations}
+          selectedId={selectedConvId}
+          onSelect={setSelectedConvId}
+          isOpen
+        />
+      </aside>
+
+      {/* Sidebar mobile */}
+      {drawerOpen && (
+        <div className="md:hidden fixed inset-0 z-50">
+          <div className="absolute inset-0 bg-black/30" onClick={() => setDrawerOpen(false)} />
+          <div className="absolute left-0 top-16 h-[calc(100vh-4rem)] w-[88%] max-w-80 bg-background border-r">
+            <ChatHistoryPanel
+              conversations={conversations}
+              selectedId={selectedConvId}
+              onSelect={(id) => { setSelectedConvId(id); setDrawerOpen(false); }}
+              isOpen
+              onClose={() => setDrawerOpen(false)}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Main chat area */}
+      <main className="pt-4 md:pl-72 h-[calc(100vh-4rem)]">
+        <div className="h-full mx-auto max-w-3xl px-4 flex flex-col">
+          <ScrollArea className="flex-1">
+            <div className="py-2 space-y-4">
+              {messages.map(m => (
+                <div key={m.id} className={`flex ${m.sender_id === user?.id ? 'justify-end' : 'justify-start'}`}>
+                  <div
+                    className={`rounded-2xl px-4 py-3 shadow-sm max-w-[85%] ${
+                      m.sender_id === user?.id ? 'bg-primary text-primary-foreground' : 'bg-card text-card-foreground border'
+                    }`}
+                  >
+                    <div className="flex items-start gap-2">
+                      {m.sender_id === user?.id ? <User className="h-4 w-4 mt-0.5 opacity-80" /> : <Bot className="h-4 w-4 mt-0.5 text-primary" />}
+                      <div>
+                        <p className="text-sm leading-relaxed whitespace-pre-wrap">{m.content}</p>
+                        <p className={`text-[10px] mt-1 ${m.sender_id === user?.id ? 'opacity-80' : 'text-muted-foreground'}`}>
+                          {m.created_at.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="bg-card border rounded-2xl px-4 py-3 shadow-sm">
+                    <div className="flex items-center gap-2">
+                      <Bot className="h-4 w-4 text-primary" />
+                      <div className="flex gap-1">
+                        <span className="w-2 h-2 rounded-full bg-primary animate-bounce" />
+                        <span className="w-2 h-2 rounded-full bg-primary animate-bounce [animation-delay:120ms]" />
+                        <span className="w-2 h-2 rounded-full bg-primary animate-bounce [animation-delay:240ms]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div ref={messagesEndRef} />
+            </div>
+          </ScrollArea>
+
+          <div className="sticky bottom-0 bg-gradient-to-t from-background via-background to-transparent pt-3">
+            <div className="border rounded-xl bg-background p-2 shadow-sm">
+              <div className="flex items-center gap-2">
+                <Input
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Nhập tin nhắn của bạn…"
+                  className="flex-1"
+                  disabled={isTyping}
+                />
+                <Button onClick={handleSend} disabled={!inputValue.trim() || isTyping}>
+                  <Send className="h-4 w-4" />
+                </Button>
+              </div>
+              <p className="text-[11px] text-muted-foreground px-1 pt-1">Nhấn Enter để gửi • Shift+Enter để xuống dòng</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+};
