@@ -22,14 +22,16 @@ class Conversation(BaseModel):
     class Config:
         populate_by_name = True
 
-
-class Message(BaseModel):
-    id: Optional[str] = Field(None, alias="_id")
+# Request model (FE chỉ cần gửi mấy trường này)
+class MessageCreate(BaseModel):
     conversation_id: str
-    sender_id: str  
+    sender_id: str
     content: str
-    created_at: datetime = datetime.now(timezone.utc)
-    updated_at: Optional[datetime] = None
+
+class Message(MessageCreate):
+    id: str = Field(..., alias="id")
+    created_at: datetime
+    updated_at: datetime
 
     class Config:
-        populate_by_name = True
+        from_attributes = True  # thay cho orm_mode

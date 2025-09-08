@@ -34,7 +34,15 @@ async def register(user: User):
     new_user = await db["users"].insert_one(user_data)
     created_user = await db["users"].find_one({"_id": new_user.inserted_id})
 
-    return {"id": str(created_user["_id"]), "email": created_user["email"]}
+    payload = {
+        "user_id": str(new_user["_id"]),
+        "email": new_user["email"],
+        "exp": datetime.utcnow() + timedelta(hours=2)  # token hết hạn sau 2h
+    }
+
+    token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
+
+    return {"id": str(created_user["_id"]), "email": created_user["email"], "access_token": token}
 
 
 # ---------- Đăng nhập ----------
@@ -57,4 +65,4 @@ async def login(request: LoginRequest):
     }
     token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
 
-    return {"access_token": token, "token_type": "bearer"}
+    return {"access_token": token, "payload":payload, "token_type": "bearer"}
