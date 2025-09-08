@@ -1,12 +1,21 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000/auth";
+const API_URL = "http://127.0.0.1:8000";
 
 interface User {
   id: string;
   email: string;
   name: string;
+}
+
+export interface Message {
+  id: string;
+  conversation_id: string;
+  sender_id: string;
+  content: string;
+  created_at: string;
+  updated_at?: string;
 }
 
 export interface Conversation {
@@ -22,6 +31,8 @@ interface AuthContextType {
   register: (name: string, email: string, password: string) => Promise<boolean>;
   logout: () => void;
   fetchConversations: () => Promise<Conversation[]>;
+  fetchMessages: (conversationId: string) => Promise<Message[]>;
+  sendMessage: (conversationId: string, content: string) => Promise<Message | null>;
   isLoading: boolean;
 }
 
@@ -42,7 +53,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const login = async (email: string, password: string): Promise<boolean> => {
     setIsLoading(true);
     try {
-      const res = await fetch(`${API_URL}/login`, {
+      const res = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -50,7 +61,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (!res.ok) return false;
       const data = await res.json();
       localStorage.setItem("token", data.access_token); // lưu JWT
-      setUser({ id: data.user_id, email, name: email.split("@")[0] }); // bạn có thể fetch user info thêm
+      setUser({ id: data.payload.user_id, email:data.payload.email, name : data.payload.name }); // có thể fetch user info thêm
       return true;
     } finally {
       setIsLoading(false);
@@ -60,7 +71,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const register = async (name: string, email: string, password: string): Promise<boolean> => {
     setIsLoading(true);
     try {
-      const res = await fetch(`${API_URL}/register`, {
+      const res = await fetch(`${API_URL}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
@@ -75,18 +86,18 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const logout = () => {
     setUser(null);
+    localStorage.removeItem("token");
   };
 
   const fetchConversations = async (): Promise<Conversation[]> => {
     try {
-      const res = await axios.get(API_URL + "/");
+      const res = await axios.get(API_URL + "/conversations"); // endpoint lấy conversations
+      // map dữ liệu theo interface Conversation (loại bỏ latestMessage & avatarUrl)
       return res.data.map((conv: any) => ({
         id: conv.id,
         conversation_name: conv.conversation_name,
         created_at: conv.created_at,
         updated_at: conv.updated_at,
-        latestMessage: conv.latestMessage || "",
-        avatarUrl: conv.avatarUrl || ""
       }));
     } catch (error) {
       console.error("Error fetching conversations:", error);
@@ -94,8 +105,36 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const MESSAGE_API_URL = "http://127.0.0.1:8000/messages";
+
+  const fetchMessages = async (conversationId: string): Promise<Message[]> => {
+    try {
+      const res = await axios.get<Message[]>(`${MESSAGE_API_URL}/conversation/${conversationId}`);
+      return res.data;
+    } catch (error) {
+      console.error("Error fetching messages:", error);
+      return [];
+    }
+  };
+
+  const sendMessage = async (conversationId: string, content: string): Promise<Message | null> => {
+    if (!user) return null;
+
+    try {
+      const res = await axios.post<Message>(`${MESSAGE_API_URL}/`, {
+        conversation_id: conversationId,
+        sender_id: user.id,
+        content,
+      });
+      return res.data;
+    } catch (error) {
+      console.error("Error sending message:", error);
+      return null;
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, isLoading, fetchConversations }}>
+    <AuthContext.Provider value={{ user, login, register, logout, isLoading, fetchConversations, sendMessage, fetchMessages }}>
       {children}
     </AuthContext.Provider>
   );

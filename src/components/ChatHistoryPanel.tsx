@@ -1,10 +1,6 @@
-import { User } from 'lucide-react';
-
 interface Conversation {
   id: string;
   conversation_name: string;
-  latestMessage?: string; // optional, backend gửi nếu có
-  avatarUrl?: string;     // optional
   created_at: string;
   updated_at?: string;
 }
@@ -37,18 +33,10 @@ export const ChatHistoryPanel = ({
               <button
                 onClick={() => onSelect(c.id)}
                 className={`w-full flex items-center gap-3 rounded-lg px-3 py-2 text-left transition
-                ${c.id === selectedId ? 'bg-muted' : 'hover:bg-muted/70'}`}
+                  ${c.id === selectedId ? 'bg-muted' : 'hover:bg-muted/70'}`}
               >
-                {c.avatarUrl ? (
-                  <img src={c.avatarUrl} alt={c.conversation_name} className="w-8 h-8 rounded-full border" />
-                ) : (
-                  <div className="w-8 h-8 rounded-full border grid place-items-center">
-                    <User className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                )}
                 <div className="min-w-0">
                   <p className="text-sm font-medium truncate">{c.conversation_name}</p>
-                  <p className="text-xs text-muted-foreground truncate">{c.latestMessage || ''}</p>
                 </div>
               </button>
             </li>

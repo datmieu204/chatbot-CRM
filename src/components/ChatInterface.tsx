@@ -5,136 +5,62 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Send, Bot, User, LogOut, Menu } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { ChatHistoryPanel } from './ChatHistoryPanel';
-
-interface Message {
-  id: string;
-  conversation_id: string;
-  sender_id: string;
-  content: string;
-  created_at: Date;
-  updated_at?: string;
-}
-
-interface Conversation {
-  id: string;
-  conversation_name: string;
-  messages: Message[];
-  latestMessage?: string;
-  avatarUrl?: string;
-  created_at: string;
-  updated_at?: string;
-}
+import type { Conversation, Message } from '@/contexts/AuthContext';
 
 export const ChatInterface = () => {
-  const { user, logout } = useAuth();
-  const [conversations, setConversations] = useState<Conversation[]>([
-    {
-      id: '1',
-      conversation_name: 'AI Assistant',
-      avatarUrl: '',
-      latestMessage: 'Xin chào! Tôi là AI assistant. Tôi có thể giúp gì cho bạn hôm nay?',
-      messages: [
-        {
-          id: '1',
-          conversation_id: '1',
-          sender_id: 'bot',
-          content: 'Xin chào! Tôi là AI assistant. Tôi có thể giúp gì cho bạn hôm nay?',
-          created_at: new Date()
-        }
-      ],
-      created_at: new Date().toISOString()
-    },
-    {
-      id: '2',
-      conversation_name: 'Nguyễn Văn A',
-      avatarUrl: '',
-      latestMessage: 'Cảm ơn bạn đã giúp đỡ!',
-      messages: [
-        {
-          id: '1',
-          conversation_id: '2',
-          sender_id: 'user1',
-          content: 'Xin chào, tôi cần hỗ trợ về tài khoản.',
-          created_at: new Date()
-        },
-        {
-          id: '2',
-          conversation_id: '2',
-          sender_id: 'bot',
-          content: 'Tôi có thể giúp gì cho bạn?',
-          created_at: new Date()
-        },
-        {
-          id: '3',
-          conversation_id: '2',
-          sender_id: 'user1',
-          content: 'Cảm ơn bạn đã giúp đỡ!',
-          created_at: new Date()
-        }
-      ],
-      created_at: new Date().toISOString()
-    }
-  ]);
-
-  const [selectedConvId, setSelectedConvId] = useState(conversations[0].id);
+  const { user, logout, fetchConversations, fetchMessages, sendMessage } = useAuth();
+  const [conversations, setConversations] = useState<Conversation[]>([]);
+  const [selectedConvId, setSelectedConvId] = useState<string>('');
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const selectedConv = conversations.find(c => c.id === selectedConvId)!;
-  const messages = selectedConv.messages;
+  // Load conversations khi mount
+  useEffect(() => {
+    const loadConversations = async () => {
+      const convs = await fetchConversations();
+      setConversations(convs);
+      if (convs.length > 0) setSelectedConvId(convs[0].id);
+    };
+    loadConversations();
+  }, [fetchConversations]);
 
+  // Load messages khi conversation thay đổi
+  useEffect(() => {
+    if (!selectedConvId) return;
+    const loadMessages = async () => {
+      const msgs = await fetchMessages(selectedConvId);
+      setMessages(msgs);
+    };
+    loadMessages();
+  }, [selectedConvId, fetchMessages]);
+  console.log(user);
+  
   const scrollToBottom = () => messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   useEffect(() => { scrollToBottom(); }, [messages, selectedConvId]);
 
   const handleSend = async () => {
-    if (!inputValue.trim()) return;
+    if (!inputValue.trim() || !user || !selectedConvId) return;
 
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      conversation_id: selectedConvId,
-      sender_id: user?.id ?? 'user',
-      content: inputValue,
-      created_at: new Date()
-    };
+    const userMessage: Message = await sendMessage(selectedConvId, inputValue) as Message;
+    if (!userMessage) return;
 
-    setConversations(prev => prev.map(conv =>
-      conv.id === selectedConvId
-        ? {
-            ...conv,
-            messages: [...conv.messages, userMessage],
-            latestMessage: userMessage.content
-          }
-        : conv
-    ));
+    setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsTyping(true);
 
+    // Giả lập trả lời bot nếu muốn (hoặc lấy từ backend nếu có)
     setTimeout(() => {
-      const aiResponses = [
-        'Đó là một câu hỏi thú vị! Tôi đang suy nghĩ về điều này...',
-        'Tôi hiểu rồi. Dựa trên thông tin bạn cung cấp...',
-        'Cảm ơn bạn đã chia sẻ! Tôi có thể giúp bạn với việc này.',
-        'Đây là một chủ đề hay. Hãy để tôi giải thích chi tiết...',
-        'Tôi có thể đưa ra một số gợi ý cho vấn đề này.'
-      ];
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
+      const botMessage: Message = {
+        id: Date.now().toString(),
         conversation_id: selectedConvId,
         sender_id: 'bot',
-        content: aiResponses[Math.floor(Math.random() * aiResponses.length)],
-        created_at: new Date()
+        content: 'Bot đang trả lời bạn...',
+        created_at: new Date().toISOString()
       };
-      setConversations(prev => prev.map(conv =>
-        conv.id === selectedConvId
-          ? {
-              ...conv,
-              messages: [...conv.messages, aiMessage],
-              latestMessage: aiMessage.content
-            }
-          : conv
-      ));
+      setMessages(prev => [...prev, botMessage]);
       setIsTyping(false);
     }, 1200);
   };
@@ -145,6 +71,8 @@ export const ChatInterface = () => {
       handleSend();
     }
   };
+
+  const selectedConv = conversations.find(c => c.id === selectedConvId);
 
   return (
     <div className="h-screen w-full bg-gradient-to-b from-background to-muted/30">
@@ -202,17 +130,15 @@ export const ChatInterface = () => {
             <div className="py-2 space-y-4">
               {messages.map(m => (
                 <div key={m.id} className={`flex ${m.sender_id === user?.id ? 'justify-end' : 'justify-start'}`}>
-                  <div
-                    className={`rounded-2xl px-4 py-3 shadow-sm max-w-[85%] ${
-                      m.sender_id === user?.id ? 'bg-primary text-primary-foreground' : 'bg-card text-card-foreground border'
-                    }`}
-                  >
+                  <div className={`rounded-2xl px-4 py-3 shadow-sm max-w-[85%] ${
+                    m.sender_id === user?.id ? 'bg-primary text-primary-foreground' : 'bg-card text-card-foreground border'
+                  }`}>
                     <div className="flex items-start gap-2">
                       {m.sender_id === user?.id ? <User className="h-4 w-4 mt-0.5 opacity-80" /> : <Bot className="h-4 w-4 mt-0.5 text-primary" />}
                       <div>
                         <p className="text-sm leading-relaxed whitespace-pre-wrap">{m.content}</p>
                         <p className={`text-[10px] mt-1 ${m.sender_id === user?.id ? 'opacity-80' : 'text-muted-foreground'}`}>
-                          {m.created_at.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
+                          {new Date(m.created_at).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
                         </p>
                       </div>
                     </div>
