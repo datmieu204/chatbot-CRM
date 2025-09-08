@@ -1,7 +1,7 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 
-MONGO_URL = "mongodb+srv://triduc2k3:12345@cluster0.ce37x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-MONGO_DB = "mydb"
+MONGO_URL = "mongodb+srv://dungmount75:taidungmongodb@cluster0.trr2wud.mongodb.net/chatboxcrm?retryWrites=true&w=majority"
+MONGO_DB = "chatboxcrm"
 
 client = AsyncIOMotorClient(MONGO_URL)
 db = client[MONGO_DB]

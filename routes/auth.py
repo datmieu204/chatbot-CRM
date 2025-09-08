@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, status
 from database import db
 from model import User
 from pydantic import BaseModel, EmailStr
@@ -18,11 +18,10 @@ class LoginRequest(BaseModel):
 
 
 # ---------- Đăng ký ----------
-@router.post("/register")
+@router.post("/register", status_code=status.HTTP_201_CREATED)
 async def register(user: User):
     # Check email tồn tại chưa
-    existing_user = await db["users"].find_one({"email": user.email})
-    if existing_user:
+    if await db["users"].find_one({"email": user.email}):
         raise HTTPException(status_code=400, detail="Email already registered")
 
     # Hash password
@@ -31,18 +30,22 @@ async def register(user: User):
     user_data["password"] = hashed_password
 
     # Insert user
-    new_user = await db["users"].insert_one(user_data)
-    created_user = await db["users"].find_one({"_id": new_user.inserted_id})
+    try:
+        result = await db["users"].insert_one(user_data)
+    except DuplicateKeyError:
+        # tránh race condition
+        raise HTTPException(status_code=400, detail="Email already registered")
+
+    created = await db["users"].find_one({"_id": result.inserted_id}, {"password": 0})
 
     payload = {
-        "user_id": str(new_user["_id"]),
-        "email": new_user["email"],
-        "exp": datetime.utcnow() + timedelta(hours=2)  # token hết hạn sau 2h
+        "user_id": str(result.inserted_id),           
+        "email": created["email"],                    
+        "exp": datetime.utcnow() + timedelta(hours=2)
     }
-
     token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
 
-    return {"id": str(created_user["_id"]), "email": created_user["email"], "access_token": token}
+    return {"id": str(created["_id"]), "email": created["email"], "access_token": token}
 
 
 # ---------- Đăng nhập ----------
