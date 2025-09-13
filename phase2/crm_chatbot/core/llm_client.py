@@ -1,11 +1,12 @@
 # crm_chatbot/core/llm_client.py
 
 import itertools
-from typing import List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage
+from langchain_core.tools import tool
 
 from crm_chatbot.utils.config import PROVIDER_CONFIG
 
@@ -26,10 +27,11 @@ class MultiLLMs:
 
    def get_llm_instance(self):
       api_key = next(self.key_cycle)
+
       if self.provider == "google":
          return ChatGoogleGenerativeAI(
             model=self.model, 
-            api_key=api_key, 
+            api_key=api_key,
             **self.kwargs
          )
       elif self.provider == "openai":
@@ -43,6 +45,7 @@ class MultiLLMs:
       
    def get_embedding_instance(self):
       api_key = next(self.key_cycle)
+
       if self.provider == "google":
          return GoogleGenerativeAIEmbeddings(
             model=self.embed_model or "models/gemini-embedding-001",
@@ -56,26 +59,40 @@ class MultiLLMs:
       else:
          raise ValueError(f"Unsupported provider: {self.provider}")
 
-   def invoke(self, messages: List[BaseMessage], **kwargs):
+   def invoke(self, messages: List[BaseMessage], tools: Optional[List[Any]] = None, **kwargs) -> AIMessage:
       llm = self.get_llm_instance()
+      if tools:
+         llm = llm.bind_tools(tools)
       return llm.invoke(messages, **kwargs)
 
-   async def ainvoke(self, messages: List[BaseMessage], **kwargs):
+   async def ainvoke(self, messages: List[BaseMessage], tools: Optional[List[Any]] = None, **kwargs) -> AIMessage:
       llm = self.get_llm_instance()
+      if tools:
+         llm = llm.bind_tools(tools)
       return await llm.ainvoke(messages, **kwargs)
 
 
 class LLMClient:
-   def __init__(self, provider: str = "google", temperature: float = 0.0, top_p: float = 0.9, **kwargs):
+   def __init__(
+      self, 
+      provider: str = "google", 
+      temperature: float = 0.0, 
+      top_p: float = 0.9, 
+      tool: Optional[Any] = None, 
+      **kwargs
+   ):
       self.multi_llms = MultiLLMs(provider, temperature=temperature, top_p=top_p, **kwargs)
+      self.tool = tool
+      self.tools_list = [tool] if tool else None
 
    def invoke(
       self,
       user_message: str,
       system_message: str,
       chat_history: Optional[List[Tuple[str, str]]] = None,
-   ) -> str:
-      messages = []
+   ) -> AIMessage:
+      
+      messages: List[BaseMessage] = []
 
       if system_message:
          messages.append(SystemMessage(content=system_message))
@@ -89,20 +106,21 @@ class LLMClient:
 
       messages.append(HumanMessage(content=user_message))
 
-      response = self.multi_llms.invoke(messages=messages)
+      response = self.multi_llms.invoke(messages=messages, tools=self.tools_list)
 
-      return response.content
+      return response
    
    def generate_response(
       self,
       user_message: str,
       system_prompt: str,
       chat_history: Optional[List[Tuple[str, str]]] = None,
-   ) -> str:
+   ) -> AIMessage:
+      
       return self.invoke(
          user_message=user_message,
          system_message=system_prompt,
-         chat_history=chat_history
+         chat_history=chat_history,
       )
 
    def embed_query(self, text: str) -> List[float]:
@@ -112,20 +130,6 @@ class LLMClient:
    def embed_documents(self, texts: List[str]) -> List[List[float]]:
       embedder = self.multi_llms.get_embedding_instance()
       return embedder.embed_documents(texts)
-   
-
-if __name__ == "__main__":
-   # test chat
-   llm_client = LLMClient(provider="openai", temperature=0.7)
-   response = llm_client.generate_response(
-      user_message="Hello, how are you?",
-      system_prompt="You are a helpful assistant."
-   )
-   print(response)
-
-   # test embedding
-   emb = llm_client.embed_query("Tạo account mới cho VinGroup")
-   print(f"Embedding vector length: {len(emb)}")
 
 
 # Global instance
