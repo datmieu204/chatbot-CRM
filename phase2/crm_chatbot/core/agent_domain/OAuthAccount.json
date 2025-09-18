@@ -1,0 +1,199 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "OAuthAccount_get",
+      "description": "Get list of OAuthAccount",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "OAuthAccount_post",
+      "description": "Create a new OAuthAccount",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên hiển thị tài khoản OAuth"
+          },
+          "provider": {
+            "type": "object",
+            "description": "Nhà cung cấp OAuth"
+          },
+          "user": {
+            "type": "object",
+            "description": "Người dùng sở hữu tài khoản OAuth"
+          },
+          "hasAccessToken": {
+            "type": "boolean",
+            "description": "Xác định liệu access token có tồn tại hay không"
+          },
+          "providerIsActive": {
+            "type": "object",
+            "description": "Trạng thái hoạt động của nhà cung cấp OAuth"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung liên quan đến tài khoản OAuth"
+          },
+          "accessToken": {
+            "type": "string",
+            "description": "Access token của tài khoản"
+          },
+          "refreshToken": {
+            "type": "string",
+            "description": "Refresh token của tài khoản"
+          },
+          "description": {
+            "type": "string",
+            "description": "Mô tả tài khoản OAuth"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ token hết hạn"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo tài khoản OAuth"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa tài khoản OAuth"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo tài khoản OAuth"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa tài khoản OAuth"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "OAuthAccount_get_by_id",
+      "description": "Get OAuthAccount by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "OAuthAccount_patch",
+      "description": "Update OAuthAccount by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên hiển thị tài khoản OAuth"
+          },
+          "provider": {
+            "type": "object",
+            "description": "Nhà cung cấp OAuth"
+          },
+          "user": {
+            "type": "object",
+            "description": "Người dùng sở hữu tài khoản OAuth"
+          },
+          "hasAccessToken": {
+            "type": "boolean",
+            "description": "Xác định liệu access token có tồn tại hay không"
+          },
+          "providerIsActive": {
+            "type": "object",
+            "description": "Trạng thái hoạt động của nhà cung cấp OAuth"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung liên quan đến tài khoản OAuth"
+          },
+          "accessToken": {
+            "type": "string",
+            "description": "Access token của tài khoản"
+          },
+          "refreshToken": {
+            "type": "string",
+            "description": "Refresh token của tài khoản"
+          },
+          "description": {
+            "type": "string",
+            "description": "Mô tả tài khoản OAuth"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ token hết hạn"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo tài khoản OAuth"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa tài khoản OAuth"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo tài khoản OAuth"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa tài khoản OAuth"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "OAuthAccount_delete",
+      "description": "Delete OAuthAccount by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

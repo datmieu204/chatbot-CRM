@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "ActionHistoryRecord_get",
+      "description": "Get list of ActionHistoryRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ActionHistoryRecord_post",
+      "description": "Create a new ActionHistoryRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ActionHistoryRecord_get_by_id",
+      "description": "Get ActionHistoryRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ActionHistoryRecord_patch",
+      "description": "Update ActionHistoryRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ActionHistoryRecord_delete",
+      "description": "Delete ActionHistoryRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

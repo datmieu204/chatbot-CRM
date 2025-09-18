@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Task_get",
+      "description": "Get list of Task",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Task_post",
+      "description": "Create a new Task",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Task_get_by_id",
+      "description": "Get Task by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Task_patch",
+      "description": "Update Task by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Task_delete",
+      "description": "Delete Task by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

@@ -1,0 +1,411 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCapture_get",
+      "description": "Get list of LeadCapture",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCapture_post",
+      "description": "Create a new LeadCapture",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên hiển thị của Lead Capture"
+          },
+          "campaign": {
+            "type": "object",
+            "description": "Chiến dịch liên kết với Lead Capture"
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "Xác định liệu Lead Capture có đang hoạt động hay không"
+          },
+          "subscribeToTargetList": {
+            "type": "boolean",
+            "description": "Tự động thêm người đăng ký vào target list"
+          },
+          "subscribeContactToTargetList": {
+            "type": "boolean",
+            "description": "Tự động thêm liên hệ đã tồn tại vào target list"
+          },
+          "targetList": {
+            "type": "object",
+            "description": "Target list mà Lead Capture sẽ thêm người đăng ký vào"
+          },
+          "fieldList": {
+            "type": "string",
+            "description": "Danh sách các field cần capture"
+          },
+          "fieldParams": {
+            "type": "object",
+            "description": "Thông số chi tiết cho các field"
+          },
+          "duplicateCheck": {
+            "type": "boolean",
+            "description": "Kiểm tra dữ liệu trùng lặp trước khi tạo lead"
+          },
+          "optInConfirmation": {
+            "type": "boolean",
+            "description": "Có yêu cầu người dùng xác nhận đăng ký hay không"
+          },
+          "optInConfirmationEmailTemplate": {
+            "type": "object",
+            "description": "Email template dùng để gửi xác nhận Opt-in"
+          },
+          "optInConfirmationLifetime": {
+            "type": "integer",
+            "description": "Thời gian hiệu lực của yêu cầu Opt-in (tính theo giờ)"
+          },
+          "optInConfirmationSuccessMessage": {
+            "type": "string",
+            "description": "Thông báo hiển thị khi Opt-in thành công"
+          },
+          "createLeadBeforeOptInConfirmation": {
+            "type": "boolean",
+            "description": "Tạo lead ngay cả trước khi người dùng xác nhận Opt-in"
+          },
+          "skipOptInConfirmationIfSubscribed": {
+            "type": "boolean",
+            "description": "Bỏ qua bước xác nhận Opt-in nếu người dùng đã đăng ký"
+          },
+          "leadSource": {
+            "type": "string",
+            "description": "Nguồn lead"
+          },
+          "apiKey": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "API key dùng để gửi dữ liệu từ bên ngoài"
+          },
+          "formId": {
+            "type": "string",
+            "maxLength": 17,
+            "description": "ID duy nhất của form"
+          },
+          "formEnabled": {
+            "type": "boolean",
+            "description": "Xác định form có đang hoạt động hay không"
+          },
+          "formTitle": {
+            "type": "string",
+            "maxLength": 80,
+            "description": "Tiêu đề hiển thị trên form"
+          },
+          "formTheme": {
+            "type": "string",
+            "description": "Theme hoặc giao diện của form"
+          },
+          "formText": {
+            "type": "string",
+            "description": "Nội dung văn bản hiển thị trên form"
+          },
+          "formSuccessText": {
+            "type": "string",
+            "description": "Thông báo khi submit form thành công"
+          },
+          "formSuccessRedirectUrl": {
+            "type": "string",
+            "description": "URL chuyển hướng sau khi submit form thành công"
+          },
+          "formLanguage": {
+            "type": "string",
+            "description": "Ngôn ngữ hiển thị trên form"
+          },
+          "formFrameAncestors": {
+            "type": "string",
+            "description": "Cấu hình security cho iframe (frame-ancestors)"
+          },
+          "formCaptcha": {
+            "type": "boolean",
+            "description": "Bật/tắt Captcha trên form"
+          },
+          "targetTeam": {
+            "type": "object",
+            "description": "Team nhận lead từ form"
+          },
+          "exampleRequestUrl": {
+            "type": "string",
+            "description": "URL ví dụ dùng để gửi request tới form"
+          },
+          "exampleRequestMethod": {
+            "type": "string",
+            "description": "Phương thức HTTP ví dụ (GET/POST)"
+          },
+          "exampleRequestPayload": {
+            "type": "string",
+            "description": "Payload ví dụ gửi tới form"
+          },
+          "exampleRequestHeaders": {
+            "type": "string",
+            "description": "Headers ví dụ gửi tới form"
+          },
+          "formUrl": {
+            "type": "string",
+            "description": "URL chính thức của form"
+          },
+          "inboundEmail": {
+            "type": "object",
+            "description": "Tài khoản email inbound liên kết với form"
+          },
+          "smtpAccount": {
+            "type": "string",
+            "description": "Tài khoản SMTP dùng gửi email từ form"
+          },
+          "phoneNumberCountry": {
+            "type": "string",
+            "description": "Quốc gia mặc định cho số điện thoại"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo Lead Capture"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa Lead Capture"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo Lead Capture"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa Lead Capture"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCapture_get_by_id",
+      "description": "Get LeadCapture by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCapture_patch",
+      "description": "Update LeadCapture by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên hiển thị của Lead Capture"
+          },
+          "campaign": {
+            "type": "object",
+            "description": "Chiến dịch liên kết với Lead Capture"
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "Xác định liệu Lead Capture có đang hoạt động hay không"
+          },
+          "subscribeToTargetList": {
+            "type": "boolean",
+            "description": "Tự động thêm người đăng ký vào target list"
+          },
+          "subscribeContactToTargetList": {
+            "type": "boolean",
+            "description": "Tự động thêm liên hệ đã tồn tại vào target list"
+          },
+          "targetList": {
+            "type": "object",
+            "description": "Target list mà Lead Capture sẽ thêm người đăng ký vào"
+          },
+          "fieldList": {
+            "type": "string",
+            "description": "Danh sách các field cần capture"
+          },
+          "fieldParams": {
+            "type": "object",
+            "description": "Thông số chi tiết cho các field"
+          },
+          "duplicateCheck": {
+            "type": "boolean",
+            "description": "Kiểm tra dữ liệu trùng lặp trước khi tạo lead"
+          },
+          "optInConfirmation": {
+            "type": "boolean",
+            "description": "Có yêu cầu người dùng xác nhận đăng ký hay không"
+          },
+          "optInConfirmationEmailTemplate": {
+            "type": "object",
+            "description": "Email template dùng để gửi xác nhận Opt-in"
+          },
+          "optInConfirmationLifetime": {
+            "type": "integer",
+            "description": "Thời gian hiệu lực của yêu cầu Opt-in (tính theo giờ)"
+          },
+          "optInConfirmationSuccessMessage": {
+            "type": "string",
+            "description": "Thông báo hiển thị khi Opt-in thành công"
+          },
+          "createLeadBeforeOptInConfirmation": {
+            "type": "boolean",
+            "description": "Tạo lead ngay cả trước khi người dùng xác nhận Opt-in"
+          },
+          "skipOptInConfirmationIfSubscribed": {
+            "type": "boolean",
+            "description": "Bỏ qua bước xác nhận Opt-in nếu người dùng đã đăng ký"
+          },
+          "leadSource": {
+            "type": "string",
+            "description": "Nguồn lead"
+          },
+          "apiKey": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "API key dùng để gửi dữ liệu từ bên ngoài"
+          },
+          "formId": {
+            "type": "string",
+            "maxLength": 17,
+            "description": "ID duy nhất của form"
+          },
+          "formEnabled": {
+            "type": "boolean",
+            "description": "Xác định form có đang hoạt động hay không"
+          },
+          "formTitle": {
+            "type": "string",
+            "maxLength": 80,
+            "description": "Tiêu đề hiển thị trên form"
+          },
+          "formTheme": {
+            "type": "string",
+            "description": "Theme hoặc giao diện của form"
+          },
+          "formText": {
+            "type": "string",
+            "description": "Nội dung văn bản hiển thị trên form"
+          },
+          "formSuccessText": {
+            "type": "string",
+            "description": "Thông báo khi submit form thành công"
+          },
+          "formSuccessRedirectUrl": {
+            "type": "string",
+            "description": "URL chuyển hướng sau khi submit form thành công"
+          },
+          "formLanguage": {
+            "type": "string",
+            "description": "Ngôn ngữ hiển thị trên form"
+          },
+          "formFrameAncestors": {
+            "type": "string",
+            "description": "Cấu hình security cho iframe (frame-ancestors)"
+          },
+          "formCaptcha": {
+            "type": "boolean",
+            "description": "Bật/tắt Captcha trên form"
+          },
+          "targetTeam": {
+            "type": "object",
+            "description": "Team nhận lead từ form"
+          },
+          "exampleRequestUrl": {
+            "type": "string",
+            "description": "URL ví dụ dùng để gửi request tới form"
+          },
+          "exampleRequestMethod": {
+            "type": "string",
+            "description": "Phương thức HTTP ví dụ (GET/POST)"
+          },
+          "exampleRequestPayload": {
+            "type": "string",
+            "description": "Payload ví dụ gửi tới form"
+          },
+          "exampleRequestHeaders": {
+            "type": "string",
+            "description": "Headers ví dụ gửi tới form"
+          },
+          "formUrl": {
+            "type": "string",
+            "description": "URL chính thức của form"
+          },
+          "inboundEmail": {
+            "type": "object",
+            "description": "Tài khoản email inbound liên kết với form"
+          },
+          "smtpAccount": {
+            "type": "string",
+            "description": "Tài khoản SMTP dùng gửi email từ form"
+          },
+          "phoneNumberCountry": {
+            "type": "string",
+            "description": "Quốc gia mặc định cho số điện thoại"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo Lead Capture"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa Lead Capture"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo Lead Capture"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa Lead Capture"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCapture_delete",
+      "description": "Delete LeadCapture by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

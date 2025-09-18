@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCaptureLogRecord_get",
+      "description": "Get list of LeadCaptureLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCaptureLogRecord_post",
+      "description": "Create a new LeadCaptureLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCaptureLogRecord_get_by_id",
+      "description": "Get LeadCaptureLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCaptureLogRecord_patch",
+      "description": "Update LeadCaptureLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCaptureLogRecord_delete",
+      "description": "Delete LeadCaptureLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

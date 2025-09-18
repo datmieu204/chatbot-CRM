@@ -1,0 +1,151 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "TargetListCategory_get",
+      "description": "Get list of TargetListCategory",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "TargetListCategory_post",
+      "description": "Create a new TargetListCategory",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "targetListsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related targetLists"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "TargetListCategory_get_by_id",
+      "description": "Get TargetListCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "TargetListCategory_patch",
+      "description": "Update TargetListCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "targetListsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related targetLists"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "TargetListCategory_delete",
+      "description": "Delete TargetListCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

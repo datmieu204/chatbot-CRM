@@ -1,0 +1,113 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "KanbanOrder_get",
+      "description": "Get list of KanbanOrder",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KanbanOrder_post",
+      "description": "Create a new KanbanOrder",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "integer",
+            "description": "Vị trí sắp xếp của entity trên Kanban"
+          },
+          "entity": {
+            "type": "object",
+            "description": "Entity liên quan đến thứ tự Kanban"
+          },
+          "group": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Nhóm liên quan tới thứ tự Kanban"
+          },
+          "user": {
+            "type": "object",
+            "description": "Người dùng liên quan tới thứ tự Kanban"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KanbanOrder_get_by_id",
+      "description": "Get KanbanOrder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KanbanOrder_patch",
+      "description": "Update KanbanOrder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "description": "Vị trí sắp xếp của entity trên Kanban"
+          },
+          "entity": {
+            "type": "object",
+            "description": "Entity liên quan đến thứ tự Kanban"
+          },
+          "group": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Nhóm liên quan tới thứ tự Kanban"
+          },
+          "user": {
+            "type": "object",
+            "description": "Người dùng liên quan tới thứ tự Kanban"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KanbanOrder_delete",
+      "description": "Delete KanbanOrder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

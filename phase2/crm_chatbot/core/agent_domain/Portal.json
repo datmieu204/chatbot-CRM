@@ -1,0 +1,327 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Portal_get",
+      "description": "Get list of Portal",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Portal_post",
+      "description": "Create a new Portal",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên portal"
+          },
+          "logo": {
+            "type": "string",
+            "description": "Logo portal"
+          },
+          "url": {
+            "type": "string",
+            "description": "URL truy cập portal"
+          },
+          "customId": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "ID tùy chỉnh của portal"
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "Xác định portal có đang hoạt động"
+          },
+          "isDefault": {
+            "type": "boolean",
+            "description": "Xác định portal mặc định"
+          },
+          "portalRoles": {
+            "type": "string",
+            "description": "Danh sách vai trò portal"
+          },
+          "tabList": {
+            "type": "string",
+            "description": "Danh sách tab hiển thị trên portal"
+          },
+          "quickCreateList": {
+            "type": "string",
+            "description": "Danh sách entity tạo nhanh"
+          },
+          "applicationName": {
+            "type": "string",
+            "description": "Tên ứng dụng"
+          },
+          "companyLogo": {
+            "type": "string",
+            "description": "Logo công ty"
+          },
+          "theme": {
+            "type": "string",
+            "description": "Theme giao diện portal"
+          },
+          "themeParams": {
+            "type": "object",
+            "description": "Các thông số theme"
+          },
+          "language": {
+            "type": "string",
+            "description": "Ngôn ngữ hiển thị portal"
+          },
+          "timeZone": {
+            "type": "string",
+            "description": "Múi giờ portal"
+          },
+          "dateFormat": {
+            "type": "string",
+            "description": "Định dạng ngày"
+          },
+          "timeFormat": {
+            "type": "string",
+            "description": "Định dạng giờ"
+          },
+          "weekStart": {
+            "type": "string",
+            "description": "Ngày bắt đầu tuần"
+          },
+          "defaultCurrency": {
+            "type": "string",
+            "description": "Tiền tệ mặc định"
+          },
+          "dashboardLayout": {
+            "type": "string",
+            "description": "Layout dashboard"
+          },
+          "dashletsOptions": {
+            "type": "object",
+            "description": "Cấu hình dashlets"
+          },
+          "customUrl": {
+            "type": "string",
+            "description": "URL tùy chỉnh"
+          },
+          "layoutSet": {
+            "type": "object",
+            "description": "Layout set liên kết"
+          },
+          "authenticationProvider": {
+            "type": "object",
+            "description": "Nhà cung cấp xác thực portal"
+          },
+          "authTokenLifetime": {
+            "type": "string",
+            "description": "Thời gian sống của auth token"
+          },
+          "authTokenMaxIdleTime": {
+            "type": "string",
+            "description": "Thời gian tối đa auth token không hoạt động"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa portal"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa portal"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo portal"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo portal"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Portal_get_by_id",
+      "description": "Get Portal by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Portal_patch",
+      "description": "Update Portal by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên portal"
+          },
+          "logo": {
+            "type": "string",
+            "description": "Logo portal"
+          },
+          "url": {
+            "type": "string",
+            "description": "URL truy cập portal"
+          },
+          "customId": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "ID tùy chỉnh của portal"
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "Xác định portal có đang hoạt động"
+          },
+          "isDefault": {
+            "type": "boolean",
+            "description": "Xác định portal mặc định"
+          },
+          "portalRoles": {
+            "type": "string",
+            "description": "Danh sách vai trò portal"
+          },
+          "tabList": {
+            "type": "string",
+            "description": "Danh sách tab hiển thị trên portal"
+          },
+          "quickCreateList": {
+            "type": "string",
+            "description": "Danh sách entity tạo nhanh"
+          },
+          "applicationName": {
+            "type": "string",
+            "description": "Tên ứng dụng"
+          },
+          "companyLogo": {
+            "type": "string",
+            "description": "Logo công ty"
+          },
+          "theme": {
+            "type": "string",
+            "description": "Theme giao diện portal"
+          },
+          "themeParams": {
+            "type": "object",
+            "description": "Các thông số theme"
+          },
+          "language": {
+            "type": "string",
+            "description": "Ngôn ngữ hiển thị portal"
+          },
+          "timeZone": {
+            "type": "string",
+            "description": "Múi giờ portal"
+          },
+          "dateFormat": {
+            "type": "string",
+            "description": "Định dạng ngày"
+          },
+          "timeFormat": {
+            "type": "string",
+            "description": "Định dạng giờ"
+          },
+          "weekStart": {
+            "type": "string",
+            "description": "Ngày bắt đầu tuần"
+          },
+          "defaultCurrency": {
+            "type": "string",
+            "description": "Tiền tệ mặc định"
+          },
+          "dashboardLayout": {
+            "type": "string",
+            "description": "Layout dashboard"
+          },
+          "dashletsOptions": {
+            "type": "object",
+            "description": "Cấu hình dashlets"
+          },
+          "customUrl": {
+            "type": "string",
+            "description": "URL tùy chỉnh"
+          },
+          "layoutSet": {
+            "type": "object",
+            "description": "Layout set liên kết"
+          },
+          "authenticationProvider": {
+            "type": "object",
+            "description": "Nhà cung cấp xác thực portal"
+          },
+          "authTokenLifetime": {
+            "type": "string",
+            "description": "Thời gian sống của auth token"
+          },
+          "authTokenMaxIdleTime": {
+            "type": "string",
+            "description": "Thời gian tối đa auth token không hoạt động"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa portal"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa portal"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo portal"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo portal"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Portal_delete",
+      "description": "Delete Portal by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

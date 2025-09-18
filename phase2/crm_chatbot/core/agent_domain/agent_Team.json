@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Team_get",
+      "description": "Get list of Team",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Team_post",
+      "description": "Create a new Team",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Team_get_by_id",
+      "description": "Get Team by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Team_patch",
+      "description": "Update Team by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Team_delete",
+      "description": "Delete Team by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

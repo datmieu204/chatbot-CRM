@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Account_get",
+      "description": "Get list of Account",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Account_post",
+      "description": "Create a new Account",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Account_get_by_id",
+      "description": "Get Account by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Account_patch",
+      "description": "Update Account by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Account_delete",
+      "description": "Delete Account by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

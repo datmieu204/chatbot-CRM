@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignLogRecord_get",
+      "description": "Get list of CampaignLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignLogRecord_post",
+      "description": "Create a new CampaignLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignLogRecord_get_by_id",
+      "description": "Get CampaignLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignLogRecord_patch",
+      "description": "Update CampaignLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignLogRecord_delete",
+      "description": "Delete CampaignLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

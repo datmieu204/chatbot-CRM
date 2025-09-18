@@ -1,0 +1,219 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Document_get",
+      "description": "Get list of Document",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Document_post",
+      "description": "Create a new Document",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "$noBadCharacters"
+          },
+          "file": {
+            "type": "string",
+            "format": "binary"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Draft",
+              "Active",
+              "Canceled",
+              "Expired"
+            ],
+            "default": "Active"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Contract",
+              "NDA",
+              "EULA",
+              "License Agreement"
+            ]
+          },
+          "publishDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "accountsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related accounts"
+          },
+          "folderId": {
+            "type": "string",
+            "description": "ID of the related folder"
+          }
+        },
+        "required": [
+          "name",
+          "file"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Document_get_by_id",
+      "description": "Get Document by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Document_patch",
+      "description": "Update Document by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "pattern": "$noBadCharacters"
+          },
+          "file": {
+            "type": "string",
+            "format": "binary"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Draft",
+              "Active",
+              "Canceled",
+              "Expired"
+            ],
+            "default": "Active"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Contract",
+              "NDA",
+              "EULA",
+              "License Agreement"
+            ]
+          },
+          "publishDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "accountsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related accounts"
+          },
+          "folderId": {
+            "type": "string",
+            "description": "ID of the related folder"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Document_delete",
+      "description": "Delete Document by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

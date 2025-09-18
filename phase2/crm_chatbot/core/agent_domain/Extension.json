@@ -1,0 +1,381 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Extension_get",
+      "description": "Get list of Extension",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Extension_post",
+      "description": "Create a new Extension",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tên extension"
+          },
+          "version": {
+            "type": "string",
+            "maxLength": 50,
+            "description": "Phiên bản của extension"
+          },
+          "fileList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Danh sách các file thuộc extension"
+          },
+          "licenseStatus": {
+            "type": "string",
+            "enum": [
+              "Valid",
+              "Invalid",
+              "Expired",
+              "Soft-Expired"
+            ],
+            "description": "Trạng thái bản quyền của extension"
+          },
+          "licenseStatusMessage": {
+            "type": "string",
+            "description": "Thông điệp liên quan đến trạng thái bản quyền"
+          },
+          "description": {
+            "type": "string",
+            "description": "Mô tả chi tiết về extension"
+          },
+          "isInstalled": {
+            "type": "boolean",
+            "default": false,
+            "description": "Xác định extension đã được cài đặt hay chưa"
+          },
+          "checkVersionUrl": {
+            "type": "string",
+            "format": "url",
+            "description": "URL để kiểm tra phiên bản mới của extension"
+          },
+          "createdBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Thông tin người dùng",
+                "properties": {
+                  "userName": {
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "regular",
+                      "admin",
+                      "portal",
+                      "system",
+                      "super-admin",
+                      "api"
+                    ]
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirm": {
+                    "type": "string"
+                  },
+                  "authMethod": {
+                    "type": "string",
+                    "enum": [
+                      "ApiKey",
+                      "Hmac"
+                    ]
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "salutationName": {
+                    "type": "string",
+                    "enum": [
+                      "Mr.",
+                      "Ms.",
+                      "Mrs.",
+                      "Dr."
+                    ]
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "emailAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "Male",
+                      "Female",
+                      "Neutral"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "createdBy": {
+                    "type": "object"
+                  },
+                  "deleteId": {
+                    "type": "string",
+                    "maxLength": 17
+                  }
+                }
+              }
+            ],
+            "description": "Người tạo bản ghi extension"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Extension_get_by_id",
+      "description": "Get Extension by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Extension_patch",
+      "description": "Update Extension by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên extension"
+          },
+          "version": {
+            "type": "string",
+            "maxLength": 50,
+            "description": "Phiên bản của extension"
+          },
+          "fileList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Danh sách các file thuộc extension"
+          },
+          "licenseStatus": {
+            "type": "string",
+            "enum": [
+              "Valid",
+              "Invalid",
+              "Expired",
+              "Soft-Expired"
+            ],
+            "description": "Trạng thái bản quyền của extension"
+          },
+          "licenseStatusMessage": {
+            "type": "string",
+            "description": "Thông điệp liên quan đến trạng thái bản quyền"
+          },
+          "description": {
+            "type": "string",
+            "description": "Mô tả chi tiết về extension"
+          },
+          "isInstalled": {
+            "type": "boolean",
+            "default": false,
+            "description": "Xác định extension đã được cài đặt hay chưa"
+          },
+          "checkVersionUrl": {
+            "type": "string",
+            "format": "url",
+            "description": "URL để kiểm tra phiên bản mới của extension"
+          },
+          "createdBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Thông tin người dùng",
+                "properties": {
+                  "userName": {
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "regular",
+                      "admin",
+                      "portal",
+                      "system",
+                      "super-admin",
+                      "api"
+                    ]
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirm": {
+                    "type": "string"
+                  },
+                  "authMethod": {
+                    "type": "string",
+                    "enum": [
+                      "ApiKey",
+                      "Hmac"
+                    ]
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "salutationName": {
+                    "type": "string",
+                    "enum": [
+                      "Mr.",
+                      "Ms.",
+                      "Mrs.",
+                      "Dr."
+                    ]
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "emailAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "Male",
+                      "Female",
+                      "Neutral"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "createdBy": {
+                    "type": "object"
+                  },
+                  "deleteId": {
+                    "type": "string",
+                    "maxLength": 17
+                  }
+                }
+              }
+            ],
+            "description": "Người tạo bản ghi extension"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Extension_delete",
+      "description": "Delete Extension by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

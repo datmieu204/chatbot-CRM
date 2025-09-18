@@ -1,0 +1,286 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Email_get",
+      "description": "Get list of Email",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Email_post",
+      "description": "Create a new Email",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID duy nhất của email"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên email"
+          },
+          "subject": {
+            "type": "string",
+            "description": "Chủ đề email"
+          },
+          "from": {
+            "type": "string",
+            "description": "Email người gửi"
+          },
+          "to": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Danh sách email người nhận"
+          },
+          "cc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Danh sách email CC"
+          },
+          "bcc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Danh sách email BCC"
+          },
+          "replyTo": {
+            "type": "string",
+            "description": "Email reply-to"
+          },
+          "body": {
+            "type": "string",
+            "description": "Nội dung email HTML"
+          },
+          "bodyPlain": {
+            "type": "string",
+            "description": "Nội dung email plain text"
+          },
+          "isHtml": {
+            "type": "boolean",
+            "default": true,
+            "description": "Email có phải HTML không"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Draft",
+              "Sending",
+              "Sent",
+              "Archived",
+              "Failed"
+            ],
+            "default": "Archived",
+            "description": "Trạng thái email"
+          },
+          "dateSent": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời gian gửi"
+          },
+          "sendAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời gian dự kiến gửi"
+          },
+          "assignedUser": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              }
+            ]
+          },
+          "attachmentsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related attachments"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Entity cha của email (Account, Contact, Lead, Opportunity, Case)"
+          },
+          "tasksIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related tasks"
+          }
+        },
+        "required": [
+          "name",
+          "subject",
+          "from",
+          "to"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Email_get_by_id",
+      "description": "Get Email by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Email_patch",
+      "description": "Update Email by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID duy nhất của email"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên email"
+          },
+          "subject": {
+            "type": "string",
+            "description": "Chủ đề email"
+          },
+          "from": {
+            "type": "string",
+            "description": "Email người gửi"
+          },
+          "to": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Danh sách email người nhận"
+          },
+          "cc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Danh sách email CC"
+          },
+          "bcc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Danh sách email BCC"
+          },
+          "replyTo": {
+            "type": "string",
+            "description": "Email reply-to"
+          },
+          "body": {
+            "type": "string",
+            "description": "Nội dung email HTML"
+          },
+          "bodyPlain": {
+            "type": "string",
+            "description": "Nội dung email plain text"
+          },
+          "isHtml": {
+            "type": "boolean",
+            "default": true,
+            "description": "Email có phải HTML không"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Draft",
+              "Sending",
+              "Sent",
+              "Archived",
+              "Failed"
+            ],
+            "default": "Archived",
+            "description": "Trạng thái email"
+          },
+          "dateSent": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời gian gửi"
+          },
+          "sendAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời gian dự kiến gửi"
+          },
+          "assignedUser": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              }
+            ]
+          },
+          "attachmentsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related attachments"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Entity cha của email (Account, Contact, Lead, Opportunity, Case)"
+          },
+          "tasksIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related tasks"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Email_delete",
+      "description": "Delete Email by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

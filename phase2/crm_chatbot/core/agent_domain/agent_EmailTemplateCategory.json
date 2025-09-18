@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailTemplateCategory_get",
+      "description": "Get list of EmailTemplateCategory",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailTemplateCategory_post",
+      "description": "Create a new EmailTemplateCategory",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailTemplateCategory_get_by_id",
+      "description": "Get EmailTemplateCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailTemplateCategory_patch",
+      "description": "Update EmailTemplateCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailTemplateCategory_delete",
+      "description": "Delete EmailTemplateCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

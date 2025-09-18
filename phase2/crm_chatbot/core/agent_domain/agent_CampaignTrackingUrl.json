@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignTrackingUrl_get",
+      "description": "Get list of CampaignTrackingUrl",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignTrackingUrl_post",
+      "description": "Create a new CampaignTrackingUrl",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignTrackingUrl_get_by_id",
+      "description": "Get CampaignTrackingUrl by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignTrackingUrl_patch",
+      "description": "Update CampaignTrackingUrl by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignTrackingUrl_delete",
+      "description": "Delete CampaignTrackingUrl by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

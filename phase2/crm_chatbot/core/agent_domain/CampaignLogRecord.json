@@ -1,0 +1,185 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignLogRecord_get",
+      "description": "Get list of CampaignLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignLogRecord_post",
+      "description": "Create a new CampaignLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "Sent",
+              "Opened",
+              "Opted Out",
+              "Bounced",
+              "Clicked",
+              "Opted In",
+              "Lead Created"
+            ]
+          },
+          "actionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data": {
+            "type": "object"
+          },
+          "stringData": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "stringAdditionalData": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "application": {
+            "type": "string",
+            "maxLength": 36,
+            "default": "Espo"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "campaignId": {
+            "type": "string",
+            "description": "ID of the related campaign"
+          },
+          "parent": {
+            "type": "object"
+          },
+          "object": {
+            "type": "object"
+          },
+          "queueItem": {
+            "type": "object"
+          },
+          "isTest": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignLogRecord_get_by_id",
+      "description": "Get CampaignLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignLogRecord_patch",
+      "description": "Update CampaignLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Sent",
+              "Opened",
+              "Opted Out",
+              "Bounced",
+              "Clicked",
+              "Opted In",
+              "Lead Created"
+            ]
+          },
+          "actionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data": {
+            "type": "object"
+          },
+          "stringData": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "stringAdditionalData": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "application": {
+            "type": "string",
+            "maxLength": 36,
+            "default": "Espo"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "campaignId": {
+            "type": "string",
+            "description": "ID of the related campaign"
+          },
+          "parent": {
+            "type": "object"
+          },
+          "object": {
+            "type": "object"
+          },
+          "queueItem": {
+            "type": "object"
+          },
+          "isTest": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignLogRecord_delete",
+      "description": "Delete CampaignLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

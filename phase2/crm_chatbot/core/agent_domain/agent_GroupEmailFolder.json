@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "GroupEmailFolder_get",
+      "description": "Get list of GroupEmailFolder",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "GroupEmailFolder_post",
+      "description": "Create a new GroupEmailFolder",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "GroupEmailFolder_get_by_id",
+      "description": "Get GroupEmailFolder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "GroupEmailFolder_patch",
+      "description": "Update GroupEmailFolder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "GroupEmailFolder_delete",
+      "description": "Delete GroupEmailFolder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

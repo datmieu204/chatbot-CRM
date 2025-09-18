@@ -1,0 +1,161 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "PortalRole_get",
+      "description": "Get list of PortalRole",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "PortalRole_post",
+      "description": "Create a new PortalRole",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 150,
+            "description": "Tên vai trò"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung của vai trò"
+          },
+          "fieldData": {
+            "type": "object",
+            "description": "Dữ liệu các field liên quan tới vai trò"
+          },
+          "exportPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền export dữ liệu"
+          },
+          "massUpdatePermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền mass update"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo vai trò"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa vai trò"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "PortalRole_get_by_id",
+      "description": "Get PortalRole by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "PortalRole_patch",
+      "description": "Update PortalRole by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 150,
+            "description": "Tên vai trò"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung của vai trò"
+          },
+          "fieldData": {
+            "type": "object",
+            "description": "Dữ liệu các field liên quan tới vai trò"
+          },
+          "exportPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền export dữ liệu"
+          },
+          "massUpdatePermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền mass update"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo vai trò"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa vai trò"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "PortalRole_delete",
+      "description": "Delete PortalRole by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

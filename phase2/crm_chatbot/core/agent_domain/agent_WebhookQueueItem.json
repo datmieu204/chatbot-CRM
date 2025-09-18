@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookQueueItem_get",
+      "description": "Get list of WebhookQueueItem",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookQueueItem_post",
+      "description": "Create a new WebhookQueueItem",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookQueueItem_get_by_id",
+      "description": "Get WebhookQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookQueueItem_patch",
+      "description": "Update WebhookQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookQueueItem_delete",
+      "description": "Delete WebhookQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

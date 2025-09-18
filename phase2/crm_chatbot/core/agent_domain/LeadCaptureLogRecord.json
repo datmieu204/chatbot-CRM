@@ -1,0 +1,139 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCaptureLogRecord_get",
+      "description": "Get list of LeadCaptureLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCaptureLogRecord_post",
+      "description": "Create a new LeadCaptureLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Số thứ tự của bản ghi log"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu đã capture"
+          },
+          "isCreated": {
+            "type": "boolean",
+            "description": "Xác định liệu lead đã được tạo thành công hay chưa"
+          },
+          "description": {
+            "type": "string",
+            "description": "Mô tả chi tiết bản ghi log"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo bản ghi log"
+          },
+          "leadCapture": {
+            "type": "object",
+            "description": "Lead Capture liên quan"
+          },
+          "target": {
+            "type": "object",
+            "description": "Entity target liên quan đến log"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCaptureLogRecord_get_by_id",
+      "description": "Get LeadCaptureLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCaptureLogRecord_patch",
+      "description": "Update LeadCaptureLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Số thứ tự của bản ghi log"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu đã capture"
+          },
+          "isCreated": {
+            "type": "boolean",
+            "description": "Xác định liệu lead đã được tạo thành công hay chưa"
+          },
+          "description": {
+            "type": "string",
+            "description": "Mô tả chi tiết bản ghi log"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo bản ghi log"
+          },
+          "leadCapture": {
+            "type": "object",
+            "description": "Lead Capture liên quan"
+          },
+          "target": {
+            "type": "object",
+            "description": "Entity target liên quan đến log"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "LeadCaptureLogRecord_delete",
+      "description": "Delete LeadCaptureLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

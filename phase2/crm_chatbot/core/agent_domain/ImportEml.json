@@ -1,0 +1,87 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportEml_get",
+      "description": "Get list of ImportEml",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportEml_post",
+      "description": "Create a new ImportEml",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "string",
+            "description": "Đường dẫn hoặc tên tệp EML"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportEml_get_by_id",
+      "description": "Get ImportEml by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportEml_patch",
+      "description": "Update ImportEml by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string",
+            "description": "Đường dẫn hoặc tên tệp EML"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportEml_delete",
+      "description": "Delete ImportEml by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

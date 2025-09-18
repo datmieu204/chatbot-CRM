@@ -1,0 +1,139 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "ScheduledJobLogRecord_get",
+      "description": "Get list of ScheduledJobLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ScheduledJobLogRecord_post",
+      "description": "Create a new ScheduledJobLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tên bản ghi log"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Success",
+              "Failed"
+            ],
+            "description": "Trạng thái thực thi job"
+          },
+          "executionTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ thực thi"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày tạo log"
+          },
+          "scheduledJob": {
+            "type": "object",
+            "description": "Job được lập lịch liên quan đến bản ghi log"
+          },
+          "target": {
+            "type": "object",
+            "description": "Entity hoặc đối tượng được tác động bởi job"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ScheduledJobLogRecord_get_by_id",
+      "description": "Get ScheduledJobLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ScheduledJobLogRecord_patch",
+      "description": "Update ScheduledJobLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên bản ghi log"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Success",
+              "Failed"
+            ],
+            "description": "Trạng thái thực thi job"
+          },
+          "executionTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ thực thi"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày tạo log"
+          },
+          "scheduledJob": {
+            "type": "object",
+            "description": "Job được lập lịch liên quan đến bản ghi log"
+          },
+          "target": {
+            "type": "object",
+            "description": "Entity hoặc đối tượng được tác động bởi job"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ScheduledJobLogRecord_delete",
+      "description": "Delete ScheduledJobLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

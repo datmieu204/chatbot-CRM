@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthenticationProvider_get",
+      "description": "Get list of AuthenticationProvider",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthenticationProvider_post",
+      "description": "Create a new AuthenticationProvider",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthenticationProvider_get_by_id",
+      "description": "Get AuthenticationProvider by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthenticationProvider_patch",
+      "description": "Update AuthenticationProvider by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthenticationProvider_delete",
+      "description": "Delete AuthenticationProvider by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

@@ -1,0 +1,133 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Team_get",
+      "description": "Get list of Team",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Team_post",
+      "description": "Create a new Team",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "roles": {
+            "type": "string"
+          },
+          "positionList": {
+            "type": "string"
+          },
+          "userRole": {
+            "type": "string"
+          },
+          "layoutSet": {
+            "type": "object"
+          },
+          "workingTimeCalendar": {
+            "type": "object"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Team_get_by_id",
+      "description": "Get Team by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Team_patch",
+      "description": "Update Team by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "roles": {
+            "type": "string"
+          },
+          "positionList": {
+            "type": "string"
+          },
+          "userRole": {
+            "type": "string"
+          },
+          "layoutSet": {
+            "type": "object"
+          },
+          "workingTimeCalendar": {
+            "type": "object"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Team_delete",
+      "description": "Delete Team by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

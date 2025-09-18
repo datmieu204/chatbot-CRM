@@ -1,0 +1,211 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Meeting_get",
+      "description": "Get list of Meeting",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Meeting_post",
+      "description": "Create a new Meeting",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Planned",
+              "Held",
+              "Not Held"
+            ],
+            "default": "Planned"
+          },
+          "dateStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateEnd": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isAllDay": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "parent": {
+            "type": "object"
+          },
+          "accountId": {
+            "type": "string",
+            "description": "ID of the related account"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "leads": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Meeting_get_by_id",
+      "description": "Get Meeting by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Meeting_patch",
+      "description": "Update Meeting by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Planned",
+              "Held",
+              "Not Held"
+            ],
+            "default": "Planned"
+          },
+          "dateStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateEnd": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isAllDay": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "parent": {
+            "type": "object"
+          },
+          "accountId": {
+            "type": "string",
+            "description": "ID of the related account"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "leads": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Meeting_delete",
+      "description": "Delete Meeting by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

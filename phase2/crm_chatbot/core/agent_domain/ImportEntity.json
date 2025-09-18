@@ -1,0 +1,124 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportEntity_get",
+      "description": "Get list of ImportEntity",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportEntity_post",
+      "description": "Create a new ImportEntity",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID bản ghi nhập"
+          },
+          "entity": {
+            "type": "object",
+            "description": "Thông tin chi tiết bản ghi entity"
+          },
+          "import": {
+            "type": "object",
+            "description": "Thông tin quá trình import liên quan"
+          },
+          "isImported": {
+            "type": "boolean",
+            "description": "Xác định bản ghi đã được nhập thành công"
+          },
+          "isUpdated": {
+            "type": "boolean",
+            "description": "Xác định bản ghi đã được cập nhật"
+          },
+          "isDuplicate": {
+            "type": "boolean",
+            "description": "Xác định bản ghi là bản sao/trùng lặp"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportEntity_get_by_id",
+      "description": "Get ImportEntity by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportEntity_patch",
+      "description": "Update ImportEntity by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID bản ghi nhập"
+          },
+          "entity": {
+            "type": "object",
+            "description": "Thông tin chi tiết bản ghi entity"
+          },
+          "import": {
+            "type": "object",
+            "description": "Thông tin quá trình import liên quan"
+          },
+          "isImported": {
+            "type": "boolean",
+            "description": "Xác định bản ghi đã được nhập thành công"
+          },
+          "isUpdated": {
+            "type": "boolean",
+            "description": "Xác định bản ghi đã được cập nhật"
+          },
+          "isDuplicate": {
+            "type": "boolean",
+            "description": "Xác định bản ghi là bản sao/trùng lặp"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportEntity_delete",
+      "description": "Delete ImportEntity by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

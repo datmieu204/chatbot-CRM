@@ -1,0 +1,451 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Preferences_get",
+      "description": "Get list of Preferences",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Preferences_post",
+      "description": "Create a new Preferences",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "timeZone": {
+            "type": "string",
+            "description": "Múi giờ của người dùng"
+          },
+          "dateFormat": {
+            "type": "string",
+            "description": "Định dạng ngày"
+          },
+          "timeFormat": {
+            "type": "string",
+            "description": "Định dạng giờ"
+          },
+          "weekStart": {
+            "type": "string",
+            "description": "Ngày bắt đầu tuần"
+          },
+          "defaultCurrency": {
+            "type": "string",
+            "description": "Tiền tệ mặc định"
+          },
+          "thousandSeparator": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân tách hàng nghìn"
+          },
+          "decimalMark": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân cách thập phân"
+          },
+          "dashboardLayout": {
+            "type": "string",
+            "description": "Layout dashboard cá nhân"
+          },
+          "dashletsOptions": {
+            "type": "object",
+            "description": "Cấu hình dashlets của dashboard"
+          },
+          "dashboardLocked": {
+            "type": "boolean",
+            "description": "Xác định liệu dashboard có bị khóa hay không"
+          },
+          "importParams": {
+            "type": "object",
+            "description": "Tham số mặc định cho import dữ liệu"
+          },
+          "sharedCalendarUserList": {
+            "type": "string",
+            "description": "Danh sách người dùng được chia sẻ lịch"
+          },
+          "calendarViewDataList": {
+            "type": "string",
+            "description": "Dữ liệu cấu hình chế độ xem lịch"
+          },
+          "presetFilters": {
+            "type": "object",
+            "description": "Bộ lọc preset của người dùng"
+          },
+          "language": {
+            "type": "string",
+            "description": "Ngôn ngữ hiển thị"
+          },
+          "exportDelimiter": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân cách dữ liệu khi export"
+          },
+          "receiveAssignmentEmailNotifications": {
+            "type": "boolean",
+            "description": "Nhận email thông báo khi được giao nhiệm vụ"
+          },
+          "receiveMentionEmailNotifications": {
+            "type": "boolean",
+            "description": "Nhận email khi được nhắc đến"
+          },
+          "receiveStreamEmailNotifications": {
+            "type": "boolean",
+            "description": "Nhận email thông báo từ stream"
+          },
+          "assignmentNotificationsIgnoreEntityTypeList": {
+            "type": "string",
+            "description": "Danh sách loại entity không nhận thông báo giao nhiệm vụ"
+          },
+          "assignmentEmailNotificationsIgnoreEntityTypeList": {
+            "type": "string",
+            "description": "Danh sách loại entity không nhận email thông báo giao nhiệm vụ"
+          },
+          "reactionNotifications": {
+            "type": "boolean",
+            "description": "Nhận thông báo khi có reaction"
+          },
+          "autoFollowEntityTypeList": {
+            "type": "string",
+            "description": "Danh sách loại entity tự động follow"
+          },
+          "signature": {
+            "type": "string",
+            "description": "Chữ ký email mặc định"
+          },
+          "defaultReminders": {
+            "type": "string",
+            "description": "Nhắc nhở mặc định cho các entity"
+          },
+          "defaultRemindersTask": {
+            "type": "string",
+            "description": "Nhắc nhở mặc định cho task"
+          },
+          "theme": {
+            "type": "string",
+            "description": "Theme giao diện người dùng"
+          },
+          "themeParams": {
+            "type": "object",
+            "description": "Các thông số theme"
+          },
+          "pageContentWidth": {
+            "type": "string",
+            "enum": [
+              "Wide"
+            ],
+            "description": "Chiều rộng hiển thị nội dung trang"
+          },
+          "useCustomTabList": {
+            "type": "boolean",
+            "description": "Có sử dụng danh sách tab tùy chỉnh hay không"
+          },
+          "addCustomTabs": {
+            "type": "boolean",
+            "description": "Cho phép thêm tab tùy chỉnh"
+          },
+          "tabList": {
+            "type": "string",
+            "description": "Danh sách tab tùy chỉnh"
+          },
+          "emailReplyToAllByDefault": {
+            "type": "boolean",
+            "description": "Mặc định trả lời tất cả khi trả lời email"
+          },
+          "emailReplyForceHtml": {
+            "type": "boolean",
+            "description": "Ép định dạng HTML khi trả lời email"
+          },
+          "isPortalUser": {
+            "type": "boolean",
+            "description": "Xác định người dùng là portal user hay không"
+          },
+          "doNotFillAssignedUserIfNotRequired": {
+            "type": "boolean",
+            "description": "Không tự động điền assigned user nếu không bắt buộc"
+          },
+          "followEntityOnStreamPost": {
+            "type": "boolean",
+            "description": "Tự động follow entity khi post lên stream"
+          },
+          "followCreatedEntities": {
+            "type": "boolean",
+            "description": "Tự động follow các entity đã tạo"
+          },
+          "followCreatedEntityTypeList": {
+            "type": "string",
+            "description": "Danh sách loại entity tự động follow sau khi tạo"
+          },
+          "emailUseExternalClient": {
+            "type": "boolean",
+            "description": "Sử dụng client email bên ngoài"
+          },
+          "scopeColorsDisabled": {
+            "type": "boolean",
+            "description": "Tắt màu theo scope"
+          },
+          "tabColorsDisabled": {
+            "type": "boolean",
+            "description": "Tắt màu tab"
+          },
+          "textSearchStoringDisabled": {
+            "type": "boolean",
+            "description": "Tắt lưu kết quả tìm kiếm"
+          },
+          "calendarSlotDuration": {
+            "type": "string",
+            "description": "Thời lượng mỗi slot trong calendar"
+          },
+          "calendarScrollHour": {
+            "type": "string",
+            "description": "Giờ mặc định khi scroll lịch"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Preferences_get_by_id",
+      "description": "Get Preferences by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Preferences_patch",
+      "description": "Update Preferences by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "timeZone": {
+            "type": "string",
+            "description": "Múi giờ của người dùng"
+          },
+          "dateFormat": {
+            "type": "string",
+            "description": "Định dạng ngày"
+          },
+          "timeFormat": {
+            "type": "string",
+            "description": "Định dạng giờ"
+          },
+          "weekStart": {
+            "type": "string",
+            "description": "Ngày bắt đầu tuần"
+          },
+          "defaultCurrency": {
+            "type": "string",
+            "description": "Tiền tệ mặc định"
+          },
+          "thousandSeparator": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân tách hàng nghìn"
+          },
+          "decimalMark": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân cách thập phân"
+          },
+          "dashboardLayout": {
+            "type": "string",
+            "description": "Layout dashboard cá nhân"
+          },
+          "dashletsOptions": {
+            "type": "object",
+            "description": "Cấu hình dashlets của dashboard"
+          },
+          "dashboardLocked": {
+            "type": "boolean",
+            "description": "Xác định liệu dashboard có bị khóa hay không"
+          },
+          "importParams": {
+            "type": "object",
+            "description": "Tham số mặc định cho import dữ liệu"
+          },
+          "sharedCalendarUserList": {
+            "type": "string",
+            "description": "Danh sách người dùng được chia sẻ lịch"
+          },
+          "calendarViewDataList": {
+            "type": "string",
+            "description": "Dữ liệu cấu hình chế độ xem lịch"
+          },
+          "presetFilters": {
+            "type": "object",
+            "description": "Bộ lọc preset của người dùng"
+          },
+          "language": {
+            "type": "string",
+            "description": "Ngôn ngữ hiển thị"
+          },
+          "exportDelimiter": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân cách dữ liệu khi export"
+          },
+          "receiveAssignmentEmailNotifications": {
+            "type": "boolean",
+            "description": "Nhận email thông báo khi được giao nhiệm vụ"
+          },
+          "receiveMentionEmailNotifications": {
+            "type": "boolean",
+            "description": "Nhận email khi được nhắc đến"
+          },
+          "receiveStreamEmailNotifications": {
+            "type": "boolean",
+            "description": "Nhận email thông báo từ stream"
+          },
+          "assignmentNotificationsIgnoreEntityTypeList": {
+            "type": "string",
+            "description": "Danh sách loại entity không nhận thông báo giao nhiệm vụ"
+          },
+          "assignmentEmailNotificationsIgnoreEntityTypeList": {
+            "type": "string",
+            "description": "Danh sách loại entity không nhận email thông báo giao nhiệm vụ"
+          },
+          "reactionNotifications": {
+            "type": "boolean",
+            "description": "Nhận thông báo khi có reaction"
+          },
+          "autoFollowEntityTypeList": {
+            "type": "string",
+            "description": "Danh sách loại entity tự động follow"
+          },
+          "signature": {
+            "type": "string",
+            "description": "Chữ ký email mặc định"
+          },
+          "defaultReminders": {
+            "type": "string",
+            "description": "Nhắc nhở mặc định cho các entity"
+          },
+          "defaultRemindersTask": {
+            "type": "string",
+            "description": "Nhắc nhở mặc định cho task"
+          },
+          "theme": {
+            "type": "string",
+            "description": "Theme giao diện người dùng"
+          },
+          "themeParams": {
+            "type": "object",
+            "description": "Các thông số theme"
+          },
+          "pageContentWidth": {
+            "type": "string",
+            "enum": [
+              "Wide"
+            ],
+            "description": "Chiều rộng hiển thị nội dung trang"
+          },
+          "useCustomTabList": {
+            "type": "boolean",
+            "description": "Có sử dụng danh sách tab tùy chỉnh hay không"
+          },
+          "addCustomTabs": {
+            "type": "boolean",
+            "description": "Cho phép thêm tab tùy chỉnh"
+          },
+          "tabList": {
+            "type": "string",
+            "description": "Danh sách tab tùy chỉnh"
+          },
+          "emailReplyToAllByDefault": {
+            "type": "boolean",
+            "description": "Mặc định trả lời tất cả khi trả lời email"
+          },
+          "emailReplyForceHtml": {
+            "type": "boolean",
+            "description": "Ép định dạng HTML khi trả lời email"
+          },
+          "isPortalUser": {
+            "type": "boolean",
+            "description": "Xác định người dùng là portal user hay không"
+          },
+          "doNotFillAssignedUserIfNotRequired": {
+            "type": "boolean",
+            "description": "Không tự động điền assigned user nếu không bắt buộc"
+          },
+          "followEntityOnStreamPost": {
+            "type": "boolean",
+            "description": "Tự động follow entity khi post lên stream"
+          },
+          "followCreatedEntities": {
+            "type": "boolean",
+            "description": "Tự động follow các entity đã tạo"
+          },
+          "followCreatedEntityTypeList": {
+            "type": "string",
+            "description": "Danh sách loại entity tự động follow sau khi tạo"
+          },
+          "emailUseExternalClient": {
+            "type": "boolean",
+            "description": "Sử dụng client email bên ngoài"
+          },
+          "scopeColorsDisabled": {
+            "type": "boolean",
+            "description": "Tắt màu theo scope"
+          },
+          "tabColorsDisabled": {
+            "type": "boolean",
+            "description": "Tắt màu tab"
+          },
+          "textSearchStoringDisabled": {
+            "type": "boolean",
+            "description": "Tắt lưu kết quả tìm kiếm"
+          },
+          "calendarSlotDuration": {
+            "type": "string",
+            "description": "Thời lượng mỗi slot trong calendar"
+          },
+          "calendarScrollHour": {
+            "type": "string",
+            "description": "Giờ mặc định khi scroll lịch"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Preferences_delete",
+      "description": "Delete Preferences by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

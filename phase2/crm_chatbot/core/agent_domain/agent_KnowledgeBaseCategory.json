@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseCategory_get",
+      "description": "Get list of KnowledgeBaseCategory",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseCategory_post",
+      "description": "Create a new KnowledgeBaseCategory",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseCategory_get_by_id",
+      "description": "Get KnowledgeBaseCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseCategory_patch",
+      "description": "Update KnowledgeBaseCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseCategory_delete",
+      "description": "Delete KnowledgeBaseCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

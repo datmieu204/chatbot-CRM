@@ -1,0 +1,231 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Opportunity_get",
+      "description": "Get list of Opportunity",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Opportunity_post",
+      "description": "Create a new Opportunity",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number",
+            "minimum": 0
+          },
+          "accountId": {
+            "type": "string",
+            "description": "ID of the related account"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "contact": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "stage": {
+            "type": "string",
+            "enum": [
+              "Prospecting",
+              "Qualification",
+              "Proposal",
+              "Negotiation",
+              "Closed Won",
+              "Closed Lost"
+            ],
+            "default": "Prospecting"
+          },
+          "probability": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "leadSource": {
+            "type": "string"
+          },
+          "closeDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "campaign": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "originalLead": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Opportunity_get_by_id",
+      "description": "Get Opportunity by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Opportunity_patch",
+      "description": "Update Opportunity by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number",
+            "minimum": 0
+          },
+          "accountId": {
+            "type": "string",
+            "description": "ID of the related account"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "contact": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "stage": {
+            "type": "string",
+            "enum": [
+              "Prospecting",
+              "Qualification",
+              "Proposal",
+              "Negotiation",
+              "Closed Won",
+              "Closed Lost"
+            ],
+            "default": "Prospecting"
+          },
+          "probability": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "leadSource": {
+            "type": "string"
+          },
+          "closeDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "campaign": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "originalLead": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Opportunity_delete",
+      "description": "Delete Opportunity by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

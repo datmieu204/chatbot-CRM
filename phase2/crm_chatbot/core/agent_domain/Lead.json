@@ -1,0 +1,293 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Lead_get",
+      "description": "Get list of Lead",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Lead_post",
+      "description": "Create a new Lead",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "salutationName": {
+            "type": "string",
+            "enum": [
+              "Mr.",
+              "Ms.",
+              "Mrs.",
+              "Dr."
+            ]
+          },
+          "firstName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "lastName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "New",
+              "Assigned",
+              "In Process",
+              "Converted",
+              "Recycled",
+              "Dead"
+            ],
+            "default": "New"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "Call",
+              "Email",
+              "Existing Customer",
+              "Partner",
+              "Public Relations",
+              "Web Site",
+              "Campaign",
+              "Other"
+            ]
+          },
+          "industry": {
+            "type": "string"
+          },
+          "opportunityAmount": {
+            "type": "number",
+            "minimum": 0
+          },
+          "website": {
+            "type": "string",
+            "format": "uri"
+          },
+          "addressStreet": {
+            "type": "string"
+          },
+          "addressCity": {
+            "type": "string"
+          },
+          "addressState": {
+            "type": "string"
+          },
+          "addressCountry": {
+            "type": "string"
+          },
+          "addressPostalCode": {
+            "type": "string"
+          },
+          "emailAddress": {
+            "type": "string",
+            "format": "email"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "doNotCall": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Lead_get_by_id",
+      "description": "Get Lead by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Lead_patch",
+      "description": "Update Lead by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "salutationName": {
+            "type": "string",
+            "enum": [
+              "Mr.",
+              "Ms.",
+              "Mrs.",
+              "Dr."
+            ]
+          },
+          "firstName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "lastName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "New",
+              "Assigned",
+              "In Process",
+              "Converted",
+              "Recycled",
+              "Dead"
+            ],
+            "default": "New"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "Call",
+              "Email",
+              "Existing Customer",
+              "Partner",
+              "Public Relations",
+              "Web Site",
+              "Campaign",
+              "Other"
+            ]
+          },
+          "industry": {
+            "type": "string"
+          },
+          "opportunityAmount": {
+            "type": "number",
+            "minimum": 0
+          },
+          "website": {
+            "type": "string",
+            "format": "uri"
+          },
+          "addressStreet": {
+            "type": "string"
+          },
+          "addressCity": {
+            "type": "string"
+          },
+          "addressState": {
+            "type": "string"
+          },
+          "addressCountry": {
+            "type": "string"
+          },
+          "addressPostalCode": {
+            "type": "string"
+          },
+          "emailAddress": {
+            "type": "string",
+            "format": "email"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "doNotCall": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Lead_delete",
+      "description": "Delete Lead by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

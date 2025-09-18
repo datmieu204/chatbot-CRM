@@ -1,0 +1,116 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookEventQueueItem_get",
+      "description": "Get list of WebhookEventQueueItem",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookEventQueueItem_post",
+      "description": "Create a new WebhookEventQueueItem",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "event": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Event name"
+          },
+          "target": {
+            "type": "object",
+            "description": "Reference to parent entity"
+          },
+          "data": {
+            "type": "object",
+            "description": "JSON object with event data"
+          },
+          "isProcessed": {
+            "type": "boolean",
+            "description": "Whether the event has been processed"
+          }
+        },
+        "required": [
+          "event"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookEventQueueItem_get_by_id",
+      "description": "Get WebhookEventQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookEventQueueItem_patch",
+      "description": "Update WebhookEventQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Event name"
+          },
+          "target": {
+            "type": "object",
+            "description": "Reference to parent entity"
+          },
+          "data": {
+            "type": "object",
+            "description": "JSON object with event data"
+          },
+          "isProcessed": {
+            "type": "boolean",
+            "description": "Whether the event has been processed"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookEventQueueItem_delete",
+      "description": "Delete WebhookEventQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

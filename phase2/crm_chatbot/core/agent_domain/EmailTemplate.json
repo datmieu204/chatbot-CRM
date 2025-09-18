@@ -1,0 +1,448 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailTemplate_get",
+      "description": "Get list of EmailTemplate",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailTemplate_post",
+      "description": "Create a new EmailTemplate",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tên template email"
+          },
+          "subject": {
+            "type": "string",
+            "description": "Tiêu đề email"
+          },
+          "body": {
+            "type": "string",
+            "description": "Nội dung email (wysiwyg)"
+          },
+          "isHtml": {
+            "type": "boolean",
+            "default": true,
+            "description": "Email dạng HTML"
+          },
+          "oneOff": {
+            "type": "boolean",
+            "default": false,
+            "description": "Template chỉ dùng một lần"
+          },
+          "attachmentsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related attachments"
+          },
+          "category": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Danh mục (category) chứa các mẫu email, hỗ trợ cây phân cấp",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Tên danh mục email"
+                  },
+                  "order": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Thứ tự hiển thị trong danh sách"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Mô tả chi tiết về danh mục"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "description": "Ngày giờ tạo bản ghi"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "description": "Ngày giờ chỉnh sửa bản ghi cuối cùng"
+                  },
+                  "createdBy": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "Circular reference detected"
+                      },
+                      {
+                        "readOnly": true
+                      }
+                    ],
+                    "description": "Người tạo danh mục"
+                  },
+                  "modifiedBy": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "Circular reference detected"
+                      },
+                      {
+                        "readOnly": true
+                      }
+                    ],
+                    "description": "Người chỉnh sửa danh mục cuối cùng"
+                  },
+                  "teams": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "description": "Thông tin team",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "maxLength": 100
+                        },
+                        "roles": {
+                          "type": "string"
+                        },
+                        "positionList": {
+                          "type": "string"
+                        },
+                        "userRole": {
+                          "type": "string"
+                        },
+                        "layoutSet": {
+                          "type": "object"
+                        },
+                        "workingTimeCalendar": {
+                          "type": "object"
+                        },
+                        "createdAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "modifiedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      }
+                    },
+                    "description": "Các team được gán quyền truy cập vào danh mục này"
+                  },
+                  "parent": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "Circular reference detected"
+                      }
+                    ],
+                    "description": "Danh mục cha trong cây phân cấp"
+                  },
+                  "childList": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "description": "Circular reference detected"
+                    },
+                    "description": "Danh sách các danh mục con"
+                  }
+                },
+                "required": [
+                  "name",
+                  "order"
+                ]
+              }
+            ]
+          },
+          "assignedUser": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              }
+            ]
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "createdBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              },
+              {
+                "readOnly": true
+              }
+            ]
+          },
+          "modifiedBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              },
+              {
+                "readOnly": true
+              }
+            ]
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailTemplate_get_by_id",
+      "description": "Get EmailTemplate by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailTemplate_patch",
+      "description": "Update EmailTemplate by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên template email"
+          },
+          "subject": {
+            "type": "string",
+            "description": "Tiêu đề email"
+          },
+          "body": {
+            "type": "string",
+            "description": "Nội dung email (wysiwyg)"
+          },
+          "isHtml": {
+            "type": "boolean",
+            "default": true,
+            "description": "Email dạng HTML"
+          },
+          "oneOff": {
+            "type": "boolean",
+            "default": false,
+            "description": "Template chỉ dùng một lần"
+          },
+          "attachmentsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related attachments"
+          },
+          "category": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Danh mục (category) chứa các mẫu email, hỗ trợ cây phân cấp",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Tên danh mục email"
+                  },
+                  "order": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Thứ tự hiển thị trong danh sách"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Mô tả chi tiết về danh mục"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "description": "Ngày giờ tạo bản ghi"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "description": "Ngày giờ chỉnh sửa bản ghi cuối cùng"
+                  },
+                  "createdBy": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "Circular reference detected"
+                      },
+                      {
+                        "readOnly": true
+                      }
+                    ],
+                    "description": "Người tạo danh mục"
+                  },
+                  "modifiedBy": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "Circular reference detected"
+                      },
+                      {
+                        "readOnly": true
+                      }
+                    ],
+                    "description": "Người chỉnh sửa danh mục cuối cùng"
+                  },
+                  "teams": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "description": "Thông tin team",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "maxLength": 100
+                        },
+                        "roles": {
+                          "type": "string"
+                        },
+                        "positionList": {
+                          "type": "string"
+                        },
+                        "userRole": {
+                          "type": "string"
+                        },
+                        "layoutSet": {
+                          "type": "object"
+                        },
+                        "workingTimeCalendar": {
+                          "type": "object"
+                        },
+                        "createdAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "modifiedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      }
+                    },
+                    "description": "Các team được gán quyền truy cập vào danh mục này"
+                  },
+                  "parent": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "Circular reference detected"
+                      }
+                    ],
+                    "description": "Danh mục cha trong cây phân cấp"
+                  },
+                  "childList": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "description": "Circular reference detected"
+                    },
+                    "description": "Danh sách các danh mục con"
+                  }
+                },
+                "required": [
+                  "name",
+                  "order"
+                ]
+              }
+            ]
+          },
+          "assignedUser": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              }
+            ]
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "createdBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              },
+              {
+                "readOnly": true
+              }
+            ]
+          },
+          "modifiedBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              },
+              {
+                "readOnly": true
+              }
+            ]
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailTemplate_delete",
+      "description": "Delete EmailTemplate by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

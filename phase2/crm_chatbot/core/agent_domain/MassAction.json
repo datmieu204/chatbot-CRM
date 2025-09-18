@@ -1,0 +1,165 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "MassAction_get",
+      "description": "Get list of MassAction",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "MassAction_post",
+      "description": "Create a new MassAction",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entityType": {
+            "type": "string",
+            "description": "Loại entity mà Mass Action tác động"
+          },
+          "action": {
+            "type": "string",
+            "description": "Tên hành động"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Running",
+              "Success",
+              "Failed"
+            ],
+            "description": "Trạng thái hiện tại của Mass Action"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung cho Mass Action"
+          },
+          "params": {
+            "type": "string",
+            "description": "Tham số của Mass Action"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo Mass Action"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo Mass Action"
+          },
+          "processedCount": {
+            "type": "integer",
+            "description": "Số lượng entity đã xử lý"
+          },
+          "notifyOnFinish": {
+            "type": "boolean",
+            "description": "Thông báo khi Mass Action hoàn tất"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "MassAction_get_by_id",
+      "description": "Get MassAction by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "MassAction_patch",
+      "description": "Update MassAction by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "entityType": {
+            "type": "string",
+            "description": "Loại entity mà Mass Action tác động"
+          },
+          "action": {
+            "type": "string",
+            "description": "Tên hành động"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Running",
+              "Success",
+              "Failed"
+            ],
+            "description": "Trạng thái hiện tại của Mass Action"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung cho Mass Action"
+          },
+          "params": {
+            "type": "string",
+            "description": "Tham số của Mass Action"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo Mass Action"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo Mass Action"
+          },
+          "processedCount": {
+            "type": "integer",
+            "description": "Số lượng entity đã xử lý"
+          },
+          "notifyOnFinish": {
+            "type": "boolean",
+            "description": "Thông báo khi Mass Action hoàn tất"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "MassAction_delete",
+      "description": "Delete MassAction by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,515 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "InboundEmail_get",
+      "description": "Get list of InboundEmail",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "InboundEmail_post",
+      "description": "Create a new InboundEmail",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tên hiển thị của tài khoản email"
+          },
+          "emailAddress": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Địa chỉ email của tài khoản"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Active",
+              "Inactive"
+            ],
+            "description": "Trạng thái hoạt động của tài khoản email"
+          },
+          "host": {
+            "type": "string",
+            "description": "Địa chỉ máy chủ email"
+          },
+          "port": {
+            "type": "integer",
+            "description": "Cổng kết nối máy chủ email"
+          },
+          "security": {
+            "type": "string",
+            "enum": [
+              "SSL",
+              "TLS"
+            ],
+            "description": "Loại bảo mật kết nối"
+          },
+          "username": {
+            "type": "string",
+            "description": "Tên đăng nhập tài khoản email"
+          },
+          "password": {
+            "type": "string",
+            "description": "Mật khẩu tài khoản email"
+          },
+          "monitoredFolders": {
+            "type": "string",
+            "description": "Danh sách thư mục được theo dõi"
+          },
+          "fetchSince": {
+            "type": "string",
+            "description": "Ngày giờ bắt đầu lấy email"
+          },
+          "fetchData": {
+            "type": "object",
+            "description": "Dữ liệu fetch email hiện tại (read-only)"
+          },
+          "assignToUser": {
+            "type": "object",
+            "description": "Người dùng được gán nhận email"
+          },
+          "team": {
+            "type": "object",
+            "description": "Team được gán với tài khoản"
+          },
+          "teams": {
+            "type": "string",
+            "description": "Danh sách các team liên quan"
+          },
+          "addAllTeamUsers": {
+            "type": "boolean",
+            "description": "Có thêm tất cả thành viên team hay không"
+          },
+          "isSystem": {
+            "type": "boolean",
+            "description": "Xác định tài khoản là hệ thống hay không"
+          },
+          "sentFolder": {
+            "type": "string",
+            "description": "Thư mục lưu email đã gửi"
+          },
+          "storeSentEmails": {
+            "type": "boolean",
+            "description": "Có lưu email đã gửi hay không"
+          },
+          "keepFetchedEmailsUnread": {
+            "type": "boolean",
+            "description": "Có giữ email đã fetch ở trạng thái chưa đọc hay không"
+          },
+          "connectedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ lần kết nối gần nhất"
+          },
+          "excludeFromReply": {
+            "type": "boolean",
+            "description": "Loại bỏ khỏi chức năng trả lời tự động hay không"
+          },
+          "useImap": {
+            "type": "boolean",
+            "description": "Có sử dụng IMAP không"
+          },
+          "useSmtp": {
+            "type": "boolean",
+            "description": "Có sử dụng SMTP không"
+          },
+          "smtpIsShared": {
+            "type": "boolean",
+            "description": "SMTP có chia sẻ giữa nhiều user không"
+          },
+          "smtpIsForMassEmail": {
+            "type": "boolean",
+            "description": "SMTP dùng cho gửi email hàng loạt không"
+          },
+          "smtpHost": {
+            "type": "string",
+            "description": "Máy chủ SMTP"
+          },
+          "smtpPort": {
+            "type": "integer",
+            "description": "Cổng SMTP"
+          },
+          "smtpAuth": {
+            "type": "boolean",
+            "description": "SMTP yêu cầu xác thực không"
+          },
+          "smtpSecurity": {
+            "type": "string",
+            "enum": [
+              "SSL",
+              "TLS"
+            ],
+            "description": "Loại bảo mật SMTP"
+          },
+          "smtpUsername": {
+            "type": "string",
+            "description": "Tên đăng nhập SMTP"
+          },
+          "smtpPassword": {
+            "type": "string",
+            "description": "Mật khẩu SMTP"
+          },
+          "smtpAuthMechanism": {
+            "type": "string",
+            "enum": [
+              "login",
+              "crammd5",
+              "plain"
+            ],
+            "description": "Cơ chế xác thực SMTP"
+          },
+          "createCase": {
+            "type": "boolean",
+            "description": "Tự động tạo case khi nhận email"
+          },
+          "caseDistribution": {
+            "type": "string",
+            "enum": [
+              "Direct-Assignment",
+              "Round-Robin",
+              "Least-Busy"
+            ],
+            "description": "Cách phân bổ case tự động"
+          },
+          "targetUserPosition": {
+            "type": "string",
+            "description": "Vị trí người nhận email/case"
+          },
+          "reply": {
+            "type": "boolean",
+            "description": "Cho phép trả lời email tự động không"
+          },
+          "replyEmailTemplate": {
+            "type": "object",
+            "description": "Mẫu email trả lời"
+          },
+          "replyFromAddress": {
+            "type": "string",
+            "description": "Địa chỉ email trả lời"
+          },
+          "replyToAddress": {
+            "type": "string",
+            "description": "Địa chỉ email nhận trả lời"
+          },
+          "replyFromName": {
+            "type": "string",
+            "description": "Tên người gửi trả lời"
+          },
+          "fromName": {
+            "type": "string",
+            "description": "Tên người gửi hiển thị"
+          },
+          "groupEmailFolder": {
+            "type": "object",
+            "description": "Thư mục email nhóm liên kết"
+          },
+          "imapHandler": {
+            "type": "string",
+            "description": "Handler IMAP (read-only)"
+          },
+          "smtpHandler": {
+            "type": "string",
+            "description": "Handler SMTP (read-only)"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo bản ghi"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa bản ghi cuối cùng"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo bản ghi"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa bản ghi cuối cùng"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "InboundEmail_get_by_id",
+      "description": "Get InboundEmail by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "InboundEmail_patch",
+      "description": "Update InboundEmail by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên hiển thị của tài khoản email"
+          },
+          "emailAddress": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Địa chỉ email của tài khoản"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Active",
+              "Inactive"
+            ],
+            "description": "Trạng thái hoạt động của tài khoản email"
+          },
+          "host": {
+            "type": "string",
+            "description": "Địa chỉ máy chủ email"
+          },
+          "port": {
+            "type": "integer",
+            "description": "Cổng kết nối máy chủ email"
+          },
+          "security": {
+            "type": "string",
+            "enum": [
+              "SSL",
+              "TLS"
+            ],
+            "description": "Loại bảo mật kết nối"
+          },
+          "username": {
+            "type": "string",
+            "description": "Tên đăng nhập tài khoản email"
+          },
+          "password": {
+            "type": "string",
+            "description": "Mật khẩu tài khoản email"
+          },
+          "monitoredFolders": {
+            "type": "string",
+            "description": "Danh sách thư mục được theo dõi"
+          },
+          "fetchSince": {
+            "type": "string",
+            "description": "Ngày giờ bắt đầu lấy email"
+          },
+          "fetchData": {
+            "type": "object",
+            "description": "Dữ liệu fetch email hiện tại (read-only)"
+          },
+          "assignToUser": {
+            "type": "object",
+            "description": "Người dùng được gán nhận email"
+          },
+          "team": {
+            "type": "object",
+            "description": "Team được gán với tài khoản"
+          },
+          "teams": {
+            "type": "string",
+            "description": "Danh sách các team liên quan"
+          },
+          "addAllTeamUsers": {
+            "type": "boolean",
+            "description": "Có thêm tất cả thành viên team hay không"
+          },
+          "isSystem": {
+            "type": "boolean",
+            "description": "Xác định tài khoản là hệ thống hay không"
+          },
+          "sentFolder": {
+            "type": "string",
+            "description": "Thư mục lưu email đã gửi"
+          },
+          "storeSentEmails": {
+            "type": "boolean",
+            "description": "Có lưu email đã gửi hay không"
+          },
+          "keepFetchedEmailsUnread": {
+            "type": "boolean",
+            "description": "Có giữ email đã fetch ở trạng thái chưa đọc hay không"
+          },
+          "connectedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ lần kết nối gần nhất"
+          },
+          "excludeFromReply": {
+            "type": "boolean",
+            "description": "Loại bỏ khỏi chức năng trả lời tự động hay không"
+          },
+          "useImap": {
+            "type": "boolean",
+            "description": "Có sử dụng IMAP không"
+          },
+          "useSmtp": {
+            "type": "boolean",
+            "description": "Có sử dụng SMTP không"
+          },
+          "smtpIsShared": {
+            "type": "boolean",
+            "description": "SMTP có chia sẻ giữa nhiều user không"
+          },
+          "smtpIsForMassEmail": {
+            "type": "boolean",
+            "description": "SMTP dùng cho gửi email hàng loạt không"
+          },
+          "smtpHost": {
+            "type": "string",
+            "description": "Máy chủ SMTP"
+          },
+          "smtpPort": {
+            "type": "integer",
+            "description": "Cổng SMTP"
+          },
+          "smtpAuth": {
+            "type": "boolean",
+            "description": "SMTP yêu cầu xác thực không"
+          },
+          "smtpSecurity": {
+            "type": "string",
+            "enum": [
+              "SSL",
+              "TLS"
+            ],
+            "description": "Loại bảo mật SMTP"
+          },
+          "smtpUsername": {
+            "type": "string",
+            "description": "Tên đăng nhập SMTP"
+          },
+          "smtpPassword": {
+            "type": "string",
+            "description": "Mật khẩu SMTP"
+          },
+          "smtpAuthMechanism": {
+            "type": "string",
+            "enum": [
+              "login",
+              "crammd5",
+              "plain"
+            ],
+            "description": "Cơ chế xác thực SMTP"
+          },
+          "createCase": {
+            "type": "boolean",
+            "description": "Tự động tạo case khi nhận email"
+          },
+          "caseDistribution": {
+            "type": "string",
+            "enum": [
+              "Direct-Assignment",
+              "Round-Robin",
+              "Least-Busy"
+            ],
+            "description": "Cách phân bổ case tự động"
+          },
+          "targetUserPosition": {
+            "type": "string",
+            "description": "Vị trí người nhận email/case"
+          },
+          "reply": {
+            "type": "boolean",
+            "description": "Cho phép trả lời email tự động không"
+          },
+          "replyEmailTemplate": {
+            "type": "object",
+            "description": "Mẫu email trả lời"
+          },
+          "replyFromAddress": {
+            "type": "string",
+            "description": "Địa chỉ email trả lời"
+          },
+          "replyToAddress": {
+            "type": "string",
+            "description": "Địa chỉ email nhận trả lời"
+          },
+          "replyFromName": {
+            "type": "string",
+            "description": "Tên người gửi trả lời"
+          },
+          "fromName": {
+            "type": "string",
+            "description": "Tên người gửi hiển thị"
+          },
+          "groupEmailFolder": {
+            "type": "object",
+            "description": "Thư mục email nhóm liên kết"
+          },
+          "imapHandler": {
+            "type": "string",
+            "description": "Handler IMAP (read-only)"
+          },
+          "smtpHandler": {
+            "type": "string",
+            "description": "Handler SMTP (read-only)"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo bản ghi"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa bản ghi cuối cùng"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo bản ghi"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa bản ghi cuối cùng"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "InboundEmail_delete",
+      "description": "Delete InboundEmail by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

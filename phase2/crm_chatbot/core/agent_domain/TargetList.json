@@ -1,0 +1,301 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "TargetList_get",
+      "description": "Get list of TargetList",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "TargetList_post",
+      "description": "Create a new TargetList",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "categoryId": {
+            "type": "string",
+            "description": "ID of the related category"
+          },
+          "description": {
+            "type": "string"
+          },
+          "sourceCampaignId": {
+            "type": "string",
+            "description": "ID of the related sourceCampaign"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "includingActionList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "excludingActionList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "targetStatus": {
+            "type": "string",
+            "enum": [
+              "Listed",
+              "Opted Out"
+            ]
+          },
+          "isOptedOut": {
+            "type": "boolean"
+          },
+          "campaigns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "massEmailsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related massEmails"
+          },
+          "campaignsExcluding": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "massEmailsExcluding": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "accountsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related accounts"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "leads": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "TargetList_get_by_id",
+      "description": "Get TargetList by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "TargetList_patch",
+      "description": "Update TargetList by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "categoryId": {
+            "type": "string",
+            "description": "ID of the related category"
+          },
+          "description": {
+            "type": "string"
+          },
+          "sourceCampaignId": {
+            "type": "string",
+            "description": "ID of the related sourceCampaign"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "includingActionList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "excludingActionList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "targetStatus": {
+            "type": "string",
+            "enum": [
+              "Listed",
+              "Opted Out"
+            ]
+          },
+          "isOptedOut": {
+            "type": "boolean"
+          },
+          "campaigns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "massEmailsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related massEmails"
+          },
+          "campaignsExcluding": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "massEmailsExcluding": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "accountsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related accounts"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "leads": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "TargetList_delete",
+      "description": "Delete TargetList by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,174 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "DocumentFolder_get",
+      "description": "Get list of DocumentFolder",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "DocumentFolder_post",
+      "description": "Create a new DocumentFolder",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "$noBadCharacters"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "childList": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "documentsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related documents"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "DocumentFolder_get_by_id",
+      "description": "Get DocumentFolder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "DocumentFolder_patch",
+      "description": "Update DocumentFolder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "pattern": "$noBadCharacters"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "childList": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "documentsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related documents"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "DocumentFolder_delete",
+      "description": "Delete DocumentFolder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

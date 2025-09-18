@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeCalendar_get",
+      "description": "Get list of WorkingTimeCalendar",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeCalendar_post",
+      "description": "Create a new WorkingTimeCalendar",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeCalendar_get_by_id",
+      "description": "Get WorkingTimeCalendar by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeCalendar_patch",
+      "description": "Update WorkingTimeCalendar by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeCalendar_delete",
+      "description": "Delete WorkingTimeCalendar by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

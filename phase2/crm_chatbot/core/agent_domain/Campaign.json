@@ -1,0 +1,275 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Campaign_get",
+      "description": "Get list of Campaign",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Campaign_post",
+      "description": "Create a new Campaign",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Planning",
+              "Active",
+              "Inactive",
+              "Complete"
+            ],
+            "default": "Planning"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Email",
+              "Newsletter",
+              "Informational Email",
+              "Web",
+              "Television",
+              "Radio",
+              "Mail"
+            ],
+            "default": "Email"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "targetListsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related targetLists"
+          },
+          "excludingTargetLists": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "budget": {
+            "type": "number",
+            "format": "float"
+          },
+          "contactsTemplateId": {
+            "type": "string",
+            "description": "ID of the related contactsTemplate"
+          },
+          "leadsTemplate": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "accountsTemplate": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "usersTemplate": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "mailMergeOnlyWithAddress": {
+            "type": "boolean",
+            "default": true
+          },
+          "budgetCurrency": {
+            "type": "string",
+            "maxLength": 3
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Campaign_get_by_id",
+      "description": "Get Campaign by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Campaign_patch",
+      "description": "Update Campaign by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Planning",
+              "Active",
+              "Inactive",
+              "Complete"
+            ],
+            "default": "Planning"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Email",
+              "Newsletter",
+              "Informational Email",
+              "Web",
+              "Television",
+              "Radio",
+              "Mail"
+            ],
+            "default": "Email"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "targetListsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related targetLists"
+          },
+          "excludingTargetLists": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "budget": {
+            "type": "number",
+            "format": "float"
+          },
+          "contactsTemplateId": {
+            "type": "string",
+            "description": "ID of the related contactsTemplate"
+          },
+          "leadsTemplate": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "accountsTemplate": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "usersTemplate": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "mailMergeOnlyWithAddress": {
+            "type": "boolean",
+            "default": true
+          },
+          "budgetCurrency": {
+            "type": "string",
+            "maxLength": 3
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Campaign_delete",
+      "description": "Delete Campaign by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

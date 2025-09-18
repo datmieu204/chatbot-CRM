@@ -1,0 +1,355 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Account_get",
+      "description": "Get list of Account",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Account_post",
+      "description": "Create a new Account",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 249
+          },
+          "website": {
+            "type": "string",
+            "format": "uri"
+          },
+          "emailAddress": {
+            "type": "string",
+            "format": "email"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Customer",
+              "Investor",
+              "Partner",
+              "Reseller"
+            ]
+          },
+          "industry": {
+            "type": "string",
+            "enum": [
+              "Advertising",
+              "Aerospace",
+              "Agriculture",
+              "Apparel & Accessories",
+              "Architecture",
+              "Automotive",
+              "Banking",
+              "Biotechnology",
+              "Building Materials & Equipment",
+              "Chemical",
+              "Construction",
+              "Consulting",
+              "Computer",
+              "Culture",
+              "Creative",
+              "Defense",
+              "Education",
+              "Electronics",
+              "Electric Power",
+              "Energy",
+              "Entertainment & Leisure",
+              "Finance",
+              "Food & Beverage",
+              "Grocery",
+              "Healthcare",
+              "Hospitality",
+              "Insurance",
+              "Legal",
+              "Manufacturing",
+              "Mass Media",
+              "Marketing",
+              "Mining",
+              "Music",
+              "Publishing",
+              "Petroleum",
+              "Real Estate",
+              "Retail",
+              "Service",
+              "Sports",
+              "Software",
+              "Support",
+              "Shipping",
+              "Travel",
+              "Technology",
+              "Telecommunications",
+              "Television",
+              "Transportation",
+              "Testing, Inspection & Certification",
+              "Venture Capital",
+              "Wholesale",
+              "Water"
+            ]
+          },
+          "sicCode": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "description": {
+            "type": "string"
+          },
+          "campaignId": {
+            "type": "string",
+            "description": "ID of the related campaign"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "opportunitiesIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related opportunities"
+          },
+          "casesIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related cases"
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Account_get_by_id",
+      "description": "Get Account by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Account_patch",
+      "description": "Update Account by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 249
+          },
+          "website": {
+            "type": "string",
+            "format": "uri"
+          },
+          "emailAddress": {
+            "type": "string",
+            "format": "email"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Customer",
+              "Investor",
+              "Partner",
+              "Reseller"
+            ]
+          },
+          "industry": {
+            "type": "string",
+            "enum": [
+              "Advertising",
+              "Aerospace",
+              "Agriculture",
+              "Apparel & Accessories",
+              "Architecture",
+              "Automotive",
+              "Banking",
+              "Biotechnology",
+              "Building Materials & Equipment",
+              "Chemical",
+              "Construction",
+              "Consulting",
+              "Computer",
+              "Culture",
+              "Creative",
+              "Defense",
+              "Education",
+              "Electronics",
+              "Electric Power",
+              "Energy",
+              "Entertainment & Leisure",
+              "Finance",
+              "Food & Beverage",
+              "Grocery",
+              "Healthcare",
+              "Hospitality",
+              "Insurance",
+              "Legal",
+              "Manufacturing",
+              "Mass Media",
+              "Marketing",
+              "Mining",
+              "Music",
+              "Publishing",
+              "Petroleum",
+              "Real Estate",
+              "Retail",
+              "Service",
+              "Sports",
+              "Software",
+              "Support",
+              "Shipping",
+              "Travel",
+              "Technology",
+              "Telecommunications",
+              "Television",
+              "Transportation",
+              "Testing, Inspection & Certification",
+              "Venture Capital",
+              "Wholesale",
+              "Water"
+            ]
+          },
+          "sicCode": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "description": {
+            "type": "string"
+          },
+          "campaignId": {
+            "type": "string",
+            "description": "ID of the related campaign"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "opportunitiesIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related opportunities"
+          },
+          "casesIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related cases"
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Account_delete",
+      "description": "Delete Account by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

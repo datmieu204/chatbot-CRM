@@ -1,0 +1,183 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Import_get",
+      "description": "Get list of Import",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Import_post",
+      "description": "Create a new Import",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entityType": {
+            "type": "string",
+            "description": "Loại thực thể (entity) được nhập"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Standby",
+              "Pending",
+              "In Process",
+              "Complete",
+              "Failed"
+            ],
+            "description": "Trạng thái hiện tại của quá trình nhập dữ liệu"
+          },
+          "file": {
+            "type": "string",
+            "description": "Tên hoặc đường dẫn tệp dữ liệu được nhập"
+          },
+          "importedCount": {
+            "type": "integer",
+            "description": "Số lượng bản ghi đã được nhập thành công"
+          },
+          "duplicateCount": {
+            "type": "integer",
+            "description": "Số lượng bản ghi trùng lặp bị bỏ qua"
+          },
+          "updatedCount": {
+            "type": "integer",
+            "description": "Số lượng bản ghi đã được cập nhật"
+          },
+          "lastIndex": {
+            "type": "integer",
+            "description": "Vị trí dòng cuối cùng được xử lý"
+          },
+          "params": {
+            "type": "object",
+            "description": "Các tham số bổ sung cho quá trình nhập"
+          },
+          "attributeList": {
+            "type": "string",
+            "description": "Danh sách các trường thuộc entity được nhập"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo bản ghi nhập dữ liệu"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người khởi tạo bản ghi nhập dữ liệu"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Import_get_by_id",
+      "description": "Get Import by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Import_patch",
+      "description": "Update Import by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "entityType": {
+            "type": "string",
+            "description": "Loại thực thể (entity) được nhập"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Standby",
+              "Pending",
+              "In Process",
+              "Complete",
+              "Failed"
+            ],
+            "description": "Trạng thái hiện tại của quá trình nhập dữ liệu"
+          },
+          "file": {
+            "type": "string",
+            "description": "Tên hoặc đường dẫn tệp dữ liệu được nhập"
+          },
+          "importedCount": {
+            "type": "integer",
+            "description": "Số lượng bản ghi đã được nhập thành công"
+          },
+          "duplicateCount": {
+            "type": "integer",
+            "description": "Số lượng bản ghi trùng lặp bị bỏ qua"
+          },
+          "updatedCount": {
+            "type": "integer",
+            "description": "Số lượng bản ghi đã được cập nhật"
+          },
+          "lastIndex": {
+            "type": "integer",
+            "description": "Vị trí dòng cuối cùng được xử lý"
+          },
+          "params": {
+            "type": "object",
+            "description": "Các tham số bổ sung cho quá trình nhập"
+          },
+          "attributeList": {
+            "type": "string",
+            "description": "Danh sách các trường thuộc entity được nhập"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo bản ghi nhập dữ liệu"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người khởi tạo bản ghi nhập dữ liệu"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Import_delete",
+      "description": "Delete Import by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

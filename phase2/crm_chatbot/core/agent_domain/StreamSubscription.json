@@ -1,0 +1,94 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "StreamSubscription_get",
+      "description": "Get list of StreamSubscription",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "StreamSubscription_post",
+      "description": "Create a new StreamSubscription",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "entity": {
+            "type": "object"
+          },
+          "user": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "StreamSubscription_get_by_id",
+      "description": "Get StreamSubscription by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "StreamSubscription_patch",
+      "description": "Update StreamSubscription by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "entity": {
+            "type": "object"
+          },
+          "user": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "StreamSubscription_delete",
+      "description": "Delete StreamSubscription by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

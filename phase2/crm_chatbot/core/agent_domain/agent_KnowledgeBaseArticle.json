@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseArticle_get",
+      "description": "Get list of KnowledgeBaseArticle",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseArticle_post",
+      "description": "Create a new KnowledgeBaseArticle",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseArticle_get_by_id",
+      "description": "Get KnowledgeBaseArticle by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseArticle_patch",
+      "description": "Update KnowledgeBaseArticle by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseArticle_delete",
+      "description": "Delete KnowledgeBaseArticle by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

@@ -1,0 +1,244 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseArticle_get",
+      "description": "Get list of KnowledgeBaseArticle",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseArticle_post",
+      "description": "Create a new KnowledgeBaseArticle",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "$noBadCharacters"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Draft",
+              "In Review",
+              "Published",
+              "Archived"
+            ],
+            "default": "Draft"
+          },
+          "language": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Article"
+            ],
+            "default": "Article"
+          },
+          "portalsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related portals"
+          },
+          "publishDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "categoriesIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related categories"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "binary"
+            }
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseArticle_get_by_id",
+      "description": "Get KnowledgeBaseArticle by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseArticle_patch",
+      "description": "Update KnowledgeBaseArticle by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "pattern": "$noBadCharacters"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Draft",
+              "In Review",
+              "Published",
+              "Archived"
+            ],
+            "default": "Draft"
+          },
+          "language": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Article"
+            ],
+            "default": "Article"
+          },
+          "portalsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related portals"
+          },
+          "publishDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "categoriesIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related categories"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "binary"
+            }
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseArticle_delete",
+      "description": "Delete KnowledgeBaseArticle by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

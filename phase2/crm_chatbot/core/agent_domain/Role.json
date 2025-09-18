@@ -1,0 +1,355 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Role_get",
+      "description": "Get list of Role",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Role_post",
+      "description": "Create a new Role",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 150,
+            "description": "Tên vai trò"
+          },
+          "assignmentPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền quản lý phân công nhiệm vụ"
+          },
+          "userPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền quản lý người dùng"
+          },
+          "messagePermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền quản lý message"
+          },
+          "portalPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền truy cập portal"
+          },
+          "groupEmailAccountPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền truy cập nhóm email"
+          },
+          "exportPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền xuất dữ liệu"
+          },
+          "massUpdatePermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền cập nhật hàng loạt"
+          },
+          "dataPrivacyPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền quản lý dữ liệu riêng tư"
+          },
+          "followerManagementPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền quản lý follower"
+          },
+          "auditPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền audit"
+          },
+          "mentionPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền nhắc đến người dùng"
+          },
+          "userCalendarPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền truy cập calendar người dùng"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung"
+          },
+          "fieldData": {
+            "type": "object",
+            "description": "Dữ liệu field của vai trò"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày tạo vai trò"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày chỉnh sửa vai trò"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Role_get_by_id",
+      "description": "Get Role by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Role_patch",
+      "description": "Update Role by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 150,
+            "description": "Tên vai trò"
+          },
+          "assignmentPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền quản lý phân công nhiệm vụ"
+          },
+          "userPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền quản lý người dùng"
+          },
+          "messagePermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền quản lý message"
+          },
+          "portalPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền truy cập portal"
+          },
+          "groupEmailAccountPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền truy cập nhóm email"
+          },
+          "exportPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền xuất dữ liệu"
+          },
+          "massUpdatePermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền cập nhật hàng loạt"
+          },
+          "dataPrivacyPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền quản lý dữ liệu riêng tư"
+          },
+          "followerManagementPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền quản lý follower"
+          },
+          "auditPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "yes",
+              "no"
+            ],
+            "description": "Quyền audit"
+          },
+          "mentionPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền nhắc đến người dùng"
+          },
+          "userCalendarPermission": {
+            "type": "string",
+            "enum": [
+              "not-set",
+              "all",
+              "team",
+              "no"
+            ],
+            "description": "Quyền truy cập calendar người dùng"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung"
+          },
+          "fieldData": {
+            "type": "object",
+            "description": "Dữ liệu field của vai trò"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày tạo vai trò"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày chỉnh sửa vai trò"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Role_delete",
+      "description": "Delete Role by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

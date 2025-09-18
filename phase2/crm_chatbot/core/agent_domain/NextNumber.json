@@ -1,0 +1,107 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "NextNumber_get",
+      "description": "Get list of NextNumber",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "NextNumber_post",
+      "description": "Create a new NextNumber",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entityType": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Loại entity"
+          },
+          "fieldName": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên field lưu số thứ tự"
+          },
+          "value": {
+            "type": "integer",
+            "description": "Giá trị số thứ tự tiếp theo"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "NextNumber_get_by_id",
+      "description": "Get NextNumber by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "NextNumber_patch",
+      "description": "Update NextNumber by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "entityType": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Loại entity"
+          },
+          "fieldName": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên field lưu số thứ tự"
+          },
+          "value": {
+            "type": "integer",
+            "description": "Giá trị số thứ tự tiếp theo"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "NextNumber_delete",
+      "description": "Delete NextNumber by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

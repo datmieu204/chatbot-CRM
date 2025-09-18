@@ -1,0 +1,119 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "UniqueId_get",
+      "description": "Get list of UniqueId",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UniqueId_post",
+      "description": "Create a new UniqueId",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "object"
+          },
+          "terminateAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "target": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UniqueId_get_by_id",
+      "description": "Get UniqueId by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UniqueId_patch",
+      "description": "Update UniqueId by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "object"
+          },
+          "terminateAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "target": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UniqueId_delete",
+      "description": "Delete UniqueId by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

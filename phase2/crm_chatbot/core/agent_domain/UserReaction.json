@@ -1,0 +1,120 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "UserReaction_get",
+      "description": "Get list of UserReaction",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UserReaction_post",
+      "description": "Create a new UserReaction",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Reaction type"
+          },
+          "userId": {
+            "type": "string",
+            "description": "ID of the related user"
+          },
+          "parentId": {
+            "type": "string",
+            "description": "ID of the related parent"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date and time when the reaction was created"
+          }
+        },
+        "required": [
+          "type",
+          "user",
+          "parent"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UserReaction_get_by_id",
+      "description": "Get UserReaction by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UserReaction_patch",
+      "description": "Update UserReaction by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Reaction type"
+          },
+          "userId": {
+            "type": "string",
+            "description": "ID of the related user"
+          },
+          "parentId": {
+            "type": "string",
+            "description": "ID of the related parent"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date and time when the reaction was created"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UserReaction_delete",
+      "description": "Delete UserReaction by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

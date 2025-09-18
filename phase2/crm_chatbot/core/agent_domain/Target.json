@@ -1,0 +1,230 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Target_get",
+      "description": "Get list of Target",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Target_post",
+      "description": "Create a new Target",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "salutationName": {
+            "type": "string",
+            "enum": [
+              "Mr.",
+              "Mrs.",
+              "Ms.",
+              "Dr.",
+              "Drs."
+            ]
+          },
+          "firstName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "lastName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "middleName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "accountName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "website": {
+            "type": "string",
+            "format": "uri"
+          },
+          "addressId": {
+            "type": "string",
+            "description": "ID of the related address"
+          },
+          "emailAddress": {
+            "type": "string",
+            "format": "email"
+          },
+          "phoneNumberId": {
+            "type": "string",
+            "description": "ID of the related phoneNumber"
+          },
+          "doNotCall": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedById": {
+            "type": "string",
+            "description": "ID of the related modifiedBy"
+          },
+          "assignedUserId": {
+            "type": "string",
+            "description": "ID of the related assignedUser"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          }
+        },
+        "required": [
+          "lastName"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Target_get_by_id",
+      "description": "Get Target by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Target_patch",
+      "description": "Update Target by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "salutationName": {
+            "type": "string",
+            "enum": [
+              "Mr.",
+              "Mrs.",
+              "Ms.",
+              "Dr.",
+              "Drs."
+            ]
+          },
+          "firstName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "lastName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "middleName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "accountName": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "website": {
+            "type": "string",
+            "format": "uri"
+          },
+          "addressId": {
+            "type": "string",
+            "description": "ID of the related address"
+          },
+          "emailAddress": {
+            "type": "string",
+            "format": "email"
+          },
+          "phoneNumberId": {
+            "type": "string",
+            "description": "ID of the related phoneNumber"
+          },
+          "doNotCall": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedById": {
+            "type": "string",
+            "description": "ID of the related modifiedBy"
+          },
+          "assignedUserId": {
+            "type": "string",
+            "description": "ID of the related assignedUser"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Target_delete",
+      "description": "Delete Target by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Task_get",
+      "description": "Get list of Task",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Task_post",
+      "description": "Create a new Task",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Not Started",
+              "Started",
+              "Completed",
+              "Canceled",
+              "Deferred"
+            ]
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "Low",
+              "Normal",
+              "High",
+              "Urgent"
+            ]
+          },
+          "dateStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateEnd": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateStartDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "dateEndDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "reminders": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "parent": {
+            "type": "object",
+            "nullable": true
+          },
+          "accountId": {
+            "type": "string",
+            "description": "ID of the related account"
+          },
+          "contact": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "originalEmail": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Task_get_by_id",
+      "description": "Get Task by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Task_patch",
+      "description": "Update Task by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Not Started",
+              "Started",
+              "Completed",
+              "Canceled",
+              "Deferred"
+            ]
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "Low",
+              "Normal",
+              "High",
+              "Urgent"
+            ]
+          },
+          "dateStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateEnd": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateStartDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "dateEndDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "reminders": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "parent": {
+            "type": "object",
+            "nullable": true
+          },
+          "accountId": {
+            "type": "string",
+            "description": "ID of the related account"
+          },
+          "contact": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "originalEmail": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Task_delete",
+      "description": "Delete Task by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

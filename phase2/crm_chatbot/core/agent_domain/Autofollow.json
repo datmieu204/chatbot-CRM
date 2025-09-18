@@ -1,0 +1,307 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Autofollow_get",
+      "description": "Get list of Autofollow",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Autofollow_post",
+      "description": "Create a new Autofollow",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entityType": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Loại entity mà user đang follow tự động"
+          },
+          "user": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Thông tin người dùng",
+                "properties": {
+                  "userName": {
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "regular",
+                      "admin",
+                      "portal",
+                      "system",
+                      "super-admin",
+                      "api"
+                    ]
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirm": {
+                    "type": "string"
+                  },
+                  "authMethod": {
+                    "type": "string",
+                    "enum": [
+                      "ApiKey",
+                      "Hmac"
+                    ]
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "salutationName": {
+                    "type": "string",
+                    "enum": [
+                      "Mr.",
+                      "Ms.",
+                      "Mrs.",
+                      "Dr."
+                    ]
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "emailAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "Male",
+                      "Female",
+                      "Neutral"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "createdBy": {
+                    "type": "object"
+                  },
+                  "deleteId": {
+                    "type": "string",
+                    "maxLength": 17
+                  }
+                }
+              }
+            ],
+            "description": "Người dùng follow entity"
+          }
+        },
+        "required": [
+          "entityType",
+          "user"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Autofollow_get_by_id",
+      "description": "Get Autofollow by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Autofollow_patch",
+      "description": "Update Autofollow by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "entityType": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Loại entity mà user đang follow tự động"
+          },
+          "user": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Thông tin người dùng",
+                "properties": {
+                  "userName": {
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "regular",
+                      "admin",
+                      "portal",
+                      "system",
+                      "super-admin",
+                      "api"
+                    ]
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirm": {
+                    "type": "string"
+                  },
+                  "authMethod": {
+                    "type": "string",
+                    "enum": [
+                      "ApiKey",
+                      "Hmac"
+                    ]
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "salutationName": {
+                    "type": "string",
+                    "enum": [
+                      "Mr.",
+                      "Ms.",
+                      "Mrs.",
+                      "Dr."
+                    ]
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "emailAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "Male",
+                      "Female",
+                      "Neutral"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "createdBy": {
+                    "type": "object"
+                  },
+                  "deleteId": {
+                    "type": "string",
+                    "maxLength": 17
+                  }
+                }
+              }
+            ],
+            "description": "Người dùng follow entity"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Autofollow_delete",
+      "description": "Delete Autofollow by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

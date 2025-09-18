@@ -1,0 +1,171 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Reminder_get",
+      "description": "Get list of Reminder",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Reminder_post",
+      "description": "Create a new Reminder",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "remindAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Popup",
+              "Email"
+            ],
+            "default": "Popup"
+          },
+          "seconds": {
+            "type": "integer",
+            "enum": [
+              0,
+              60,
+              120,
+              300,
+              600,
+              900,
+              1800,
+              3600,
+              7200,
+              18000,
+              86400,
+              604800
+            ],
+            "default": 0
+          },
+          "userId": {
+            "type": "string",
+            "description": "ID of the related user"
+          },
+          "entity": {
+            "type": "object"
+          },
+          "isSubmitted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "remindAt",
+          "startAt"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Reminder_get_by_id",
+      "description": "Get Reminder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Reminder_patch",
+      "description": "Update Reminder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "remindAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Popup",
+              "Email"
+            ],
+            "default": "Popup"
+          },
+          "seconds": {
+            "type": "integer",
+            "enum": [
+              0,
+              60,
+              120,
+              300,
+              600,
+              900,
+              1800,
+              3600,
+              7200,
+              18000,
+              86400,
+              604800
+            ],
+            "default": 0
+          },
+          "userId": {
+            "type": "string",
+            "description": "ID of the related user"
+          },
+          "entity": {
+            "type": "object"
+          },
+          "isSubmitted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Reminder_delete",
+      "description": "Delete Reminder by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

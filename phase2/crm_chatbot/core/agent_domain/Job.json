@@ -1,0 +1,303 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Job_get",
+      "description": "Get list of Job",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Job_post",
+      "description": "Create a new Job",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tên hiển thị của job"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Ready",
+              "Running",
+              "Success",
+              "Failed"
+            ],
+            "description": "Trạng thái hiện tại của job"
+          },
+          "executeTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời gian dự kiến thực thi job"
+          },
+          "number": {
+            "type": "integer",
+            "description": "Số thứ tự hoặc identifier nội bộ của job"
+          },
+          "className": {
+            "type": "string",
+            "maxLength": 255,
+            "description": "Tên class thực thi job"
+          },
+          "serviceName": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên service thực thi job"
+          },
+          "methodName": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên phương thức thực thi job"
+          },
+          "job": {
+            "type": "string",
+            "description": "Tên hoặc mã job"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung liên quan tới job"
+          },
+          "scheduledJob": {
+            "type": "object",
+            "description": "Thông tin job đã được lên lịch"
+          },
+          "scheduledJobJob": {
+            "type": "object",
+            "description": "Job liên kết với scheduled job"
+          },
+          "queue": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "Tên queue mà job đang chờ xử lý"
+          },
+          "group": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "Nhóm người dùng hoặc hệ thống liên quan tới job"
+          },
+          "targetGroup": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "Nhóm đích mà job tác động"
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời gian job bắt đầu"
+          },
+          "executedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời gian job kết thúc thực tế"
+          },
+          "pid": {
+            "type": "integer",
+            "description": "Process ID của job nếu có"
+          },
+          "attempts": {
+            "type": "integer",
+            "description": "Số lần job đã được thử thực thi"
+          },
+          "targetId": {
+            "type": "string",
+            "maxLength": 48,
+            "description": "ID của đối tượng mà job tác động"
+          },
+          "targetType": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "Loại đối tượng mà job tác động"
+          },
+          "failedAttempts": {
+            "type": "integer",
+            "description": "Số lần job thất bại"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo job"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa job cuối cùng"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Job_get_by_id",
+      "description": "Get Job by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Job_patch",
+      "description": "Update Job by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên hiển thị của job"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Ready",
+              "Running",
+              "Success",
+              "Failed"
+            ],
+            "description": "Trạng thái hiện tại của job"
+          },
+          "executeTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời gian dự kiến thực thi job"
+          },
+          "number": {
+            "type": "integer",
+            "description": "Số thứ tự hoặc identifier nội bộ của job"
+          },
+          "className": {
+            "type": "string",
+            "maxLength": 255,
+            "description": "Tên class thực thi job"
+          },
+          "serviceName": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên service thực thi job"
+          },
+          "methodName": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên phương thức thực thi job"
+          },
+          "job": {
+            "type": "string",
+            "description": "Tên hoặc mã job"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung liên quan tới job"
+          },
+          "scheduledJob": {
+            "type": "object",
+            "description": "Thông tin job đã được lên lịch"
+          },
+          "scheduledJobJob": {
+            "type": "object",
+            "description": "Job liên kết với scheduled job"
+          },
+          "queue": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "Tên queue mà job đang chờ xử lý"
+          },
+          "group": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "Nhóm người dùng hoặc hệ thống liên quan tới job"
+          },
+          "targetGroup": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "Nhóm đích mà job tác động"
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời gian job bắt đầu"
+          },
+          "executedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời gian job kết thúc thực tế"
+          },
+          "pid": {
+            "type": "integer",
+            "description": "Process ID của job nếu có"
+          },
+          "attempts": {
+            "type": "integer",
+            "description": "Số lần job đã được thử thực thi"
+          },
+          "targetId": {
+            "type": "string",
+            "maxLength": 48,
+            "description": "ID của đối tượng mà job tác động"
+          },
+          "targetType": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "Loại đối tượng mà job tác động"
+          },
+          "failedAttempts": {
+            "type": "integer",
+            "description": "Số lần job thất bại"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo job"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa job cuối cùng"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Job_delete",
+      "description": "Delete Job by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

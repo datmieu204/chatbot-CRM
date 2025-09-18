@@ -1,0 +1,139 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignTrackingUrl_get",
+      "description": "Get list of CampaignTrackingUrl",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignTrackingUrl_post",
+      "description": "Create a new CampaignTrackingUrl",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "campaignId": {
+            "type": "string",
+            "description": "ID of the related campaign"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Redirect",
+              "Show Message"
+            ],
+            "default": "Redirect"
+          },
+          "message": {
+            "type": "string"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignTrackingUrl_get_by_id",
+      "description": "Get CampaignTrackingUrl by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignTrackingUrl_patch",
+      "description": "Update CampaignTrackingUrl by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "campaignId": {
+            "type": "string",
+            "description": "ID of the related campaign"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "Redirect",
+              "Show Message"
+            ],
+            "default": "Redirect"
+          },
+          "message": {
+            "type": "string"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "CampaignTrackingUrl_delete",
+      "description": "Delete CampaignTrackingUrl by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,227 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Sms_get",
+      "description": "Get list of Sms",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Sms_post",
+      "description": "Create a new Sms",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "description": "Người gửi"
+          },
+          "fromName": {
+            "type": "string",
+            "description": "Tên hiển thị người gửi"
+          },
+          "to": {
+            "type": "string",
+            "description": "Người nhận"
+          },
+          "fromPhoneNumber": {
+            "type": "object",
+            "description": "Số điện thoại gửi"
+          },
+          "toPhoneNumbers": {
+            "type": "string",
+            "description": "Danh sách số điện thoại nhận"
+          },
+          "body": {
+            "type": "string",
+            "description": "Nội dung SMS"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Draft",
+              "Sending",
+              "Sent",
+              "Archived",
+              "Failed"
+            ],
+            "description": "Trạng thái SMS"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Entity cha liên quan"
+          },
+          "dateSent": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày gửi SMS"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày tạo bản ghi SMS"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày sửa bản ghi SMS"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo SMS"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người sửa SMS"
+          },
+          "replied": {
+            "type": "object",
+            "description": "SMS phản hồi"
+          },
+          "replies": {
+            "type": "string",
+            "description": "Danh sách SMS phản hồi"
+          },
+          "teams": {
+            "type": "string",
+            "description": "Các team liên quan"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Sms_get_by_id",
+      "description": "Get Sms by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Sms_patch",
+      "description": "Update Sms by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string",
+            "description": "Người gửi"
+          },
+          "fromName": {
+            "type": "string",
+            "description": "Tên hiển thị người gửi"
+          },
+          "to": {
+            "type": "string",
+            "description": "Người nhận"
+          },
+          "fromPhoneNumber": {
+            "type": "object",
+            "description": "Số điện thoại gửi"
+          },
+          "toPhoneNumbers": {
+            "type": "string",
+            "description": "Danh sách số điện thoại nhận"
+          },
+          "body": {
+            "type": "string",
+            "description": "Nội dung SMS"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Draft",
+              "Sending",
+              "Sent",
+              "Archived",
+              "Failed"
+            ],
+            "description": "Trạng thái SMS"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Entity cha liên quan"
+          },
+          "dateSent": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày gửi SMS"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày tạo bản ghi SMS"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày sửa bản ghi SMS"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo SMS"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người sửa SMS"
+          },
+          "replied": {
+            "type": "object",
+            "description": "SMS phản hồi"
+          },
+          "replies": {
+            "type": "string",
+            "description": "Danh sách SMS phản hồi"
+          },
+          "teams": {
+            "type": "string",
+            "description": "Các team liên quan"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Sms_delete",
+      "description": "Delete Sms by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

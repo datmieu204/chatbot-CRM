@@ -1,0 +1,163 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportError_get",
+      "description": "Get list of ImportError",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportError_post",
+      "description": "Create a new ImportError",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "import": {
+            "type": "object",
+            "description": "Thông tin quá trình import liên quan"
+          },
+          "entityType": {
+            "type": "object",
+            "description": "Loại entity liên quan đến lỗi"
+          },
+          "rowIndex": {
+            "type": "integer",
+            "description": "Vị trí dòng trong dữ liệu import gây lỗi"
+          },
+          "exportRowIndex": {
+            "type": "integer",
+            "description": "Vị trí dòng tương ứng trong dữ liệu xuất (nếu có)"
+          },
+          "lineNumber": {
+            "type": "integer",
+            "description": "Số dòng trong file input gây lỗi"
+          },
+          "exportLineNumber": {
+            "type": "integer",
+            "description": "Số dòng tương ứng trong file xuất (nếu có)"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Validation",
+              "No-Access",
+              "Not-Found",
+              "Integrity-Constraint-Violation"
+            ],
+            "description": "Loại lỗi xảy ra"
+          },
+          "validationFailures": {
+            "type": "string",
+            "description": "Mô tả các lỗi xác thực dữ liệu"
+          },
+          "row": {
+            "type": "string",
+            "description": "Nội dung dòng dữ liệu gây lỗi"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportError_get_by_id",
+      "description": "Get ImportError by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportError_patch",
+      "description": "Update ImportError by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "import": {
+            "type": "object",
+            "description": "Thông tin quá trình import liên quan"
+          },
+          "entityType": {
+            "type": "object",
+            "description": "Loại entity liên quan đến lỗi"
+          },
+          "rowIndex": {
+            "type": "integer",
+            "description": "Vị trí dòng trong dữ liệu import gây lỗi"
+          },
+          "exportRowIndex": {
+            "type": "integer",
+            "description": "Vị trí dòng tương ứng trong dữ liệu xuất (nếu có)"
+          },
+          "lineNumber": {
+            "type": "integer",
+            "description": "Số dòng trong file input gây lỗi"
+          },
+          "exportLineNumber": {
+            "type": "integer",
+            "description": "Số dòng tương ứng trong file xuất (nếu có)"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Validation",
+              "No-Access",
+              "Not-Found",
+              "Integrity-Constraint-Violation"
+            ],
+            "description": "Loại lỗi xảy ra"
+          },
+          "validationFailures": {
+            "type": "string",
+            "description": "Mô tả các lỗi xác thực dữ liệu"
+          },
+          "row": {
+            "type": "string",
+            "description": "Nội dung dòng dữ liệu gây lỗi"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ImportError_delete",
+      "description": "Delete ImportError by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

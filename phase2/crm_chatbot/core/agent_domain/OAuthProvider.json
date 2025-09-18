@@ -1,0 +1,229 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "OAuthProvider_get",
+      "description": "Get list of OAuthProvider",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "OAuthProvider_post",
+      "description": "Create a new OAuthProvider",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên nhà cung cấp"
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "Trạng thái hoạt động của nhà cung cấp"
+          },
+          "clientId": {
+            "type": "string",
+            "maxLength": 150,
+            "description": "Client ID dùng cho OAuth"
+          },
+          "clientSecret": {
+            "type": "string",
+            "description": "Client Secret dùng cho OAuth"
+          },
+          "authorizationEndpoint": {
+            "type": "string",
+            "description": "URL endpoint để lấy authorization code"
+          },
+          "tokenEndpoint": {
+            "type": "string",
+            "description": "URL endpoint để lấy access token"
+          },
+          "authorizationRedirectUri": {
+            "type": "string",
+            "description": "Redirect URI sau khi xác thực OAuth"
+          },
+          "authorizationPrompt": {
+            "type": "string",
+            "enum": [
+              "none",
+              "consent",
+              "login",
+              "select_account"
+            ],
+            "description": "Cách yêu cầu xác thực từ người dùng"
+          },
+          "scopes": {
+            "type": "string",
+            "description": "Danh sách scope yêu cầu"
+          },
+          "authorizationParams": {
+            "type": "object",
+            "description": "Các tham số bổ sung cho quá trình authorization"
+          },
+          "scopeSeparator": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân tách các scope"
+          },
+          "description": {
+            "type": "string",
+            "description": "Mô tả nhà cung cấp OAuth"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo nhà cung cấp OAuth"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa nhà cung cấp OAuth"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo nhà cung cấp OAuth"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa nhà cung cấp OAuth"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "OAuthProvider_get_by_id",
+      "description": "Get OAuthProvider by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "OAuthProvider_patch",
+      "description": "Update OAuthProvider by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Tên nhà cung cấp"
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "Trạng thái hoạt động của nhà cung cấp"
+          },
+          "clientId": {
+            "type": "string",
+            "maxLength": 150,
+            "description": "Client ID dùng cho OAuth"
+          },
+          "clientSecret": {
+            "type": "string",
+            "description": "Client Secret dùng cho OAuth"
+          },
+          "authorizationEndpoint": {
+            "type": "string",
+            "description": "URL endpoint để lấy authorization code"
+          },
+          "tokenEndpoint": {
+            "type": "string",
+            "description": "URL endpoint để lấy access token"
+          },
+          "authorizationRedirectUri": {
+            "type": "string",
+            "description": "Redirect URI sau khi xác thực OAuth"
+          },
+          "authorizationPrompt": {
+            "type": "string",
+            "enum": [
+              "none",
+              "consent",
+              "login",
+              "select_account"
+            ],
+            "description": "Cách yêu cầu xác thực từ người dùng"
+          },
+          "scopes": {
+            "type": "string",
+            "description": "Danh sách scope yêu cầu"
+          },
+          "authorizationParams": {
+            "type": "object",
+            "description": "Các tham số bổ sung cho quá trình authorization"
+          },
+          "scopeSeparator": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân tách các scope"
+          },
+          "description": {
+            "type": "string",
+            "description": "Mô tả nhà cung cấp OAuth"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo nhà cung cấp OAuth"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa nhà cung cấp OAuth"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo nhà cung cấp OAuth"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa nhà cung cấp OAuth"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "OAuthProvider_delete",
+      "description": "Delete OAuthProvider by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

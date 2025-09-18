@@ -1,0 +1,179 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeRange_get",
+      "description": "Get list of WorkingTimeRange",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeRange_post",
+      "description": "Create a new WorkingTimeRange",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "timeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dateStart": {
+            "type": "string",
+            "format": "date"
+          },
+          "dateEnd": {
+            "type": "string",
+            "format": "date"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Non-working",
+              "Working"
+            ],
+            "default": "Non-working"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "calendarsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related calendars"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeRange_get_by_id",
+      "description": "Get WorkingTimeRange by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeRange_patch",
+      "description": "Update WorkingTimeRange by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "timeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dateStart": {
+            "type": "string",
+            "format": "date"
+          },
+          "dateEnd": {
+            "type": "string",
+            "format": "date"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Non-working",
+              "Working"
+            ],
+            "default": "Non-working"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "calendarsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related calendars"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeRange_delete",
+      "description": "Delete WorkingTimeRange by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

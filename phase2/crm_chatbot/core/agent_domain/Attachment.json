@@ -1,0 +1,443 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Attachment_get",
+      "description": "Get list of Attachment",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Attachment_post",
+      "description": "Create a new Attachment",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID duy nhất của file đính kèm"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255,
+            "description": "Tên file đính kèm"
+          },
+          "type": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "MIME type của file (ví dụ:application/pdf, image/png)"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0,
+            "description": "Kích thước file (bytes)"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Entity cha mà file đính kèm"
+          },
+          "related": {
+            "type": "object",
+            "description": "Entity liên quan khác"
+          },
+          "field": {
+            "type": "string",
+            "description": "Tên field trong entity cha gắn với file này"
+          },
+          "isBeingUploaded": {
+            "type": "boolean",
+            "default": false,
+            "description": "Trạng thái upload file"
+          },
+          "createdBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Thông tin người dùng",
+                "properties": {
+                  "userName": {
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "regular",
+                      "admin",
+                      "portal",
+                      "system",
+                      "super-admin",
+                      "api"
+                    ]
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirm": {
+                    "type": "string"
+                  },
+                  "authMethod": {
+                    "type": "string",
+                    "enum": [
+                      "ApiKey",
+                      "Hmac"
+                    ]
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "salutationName": {
+                    "type": "string",
+                    "enum": [
+                      "Mr.",
+                      "Ms.",
+                      "Mrs.",
+                      "Dr."
+                    ]
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "emailAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "Male",
+                      "Female",
+                      "Neutral"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "createdBy": {
+                    "type": "object"
+                  },
+                  "deleteId": {
+                    "type": "string",
+                    "maxLength": 17
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "readOnly": true,
+                "description": "Người tạo file"
+              }
+            ]
+          },
+          "contents": {
+            "type": "string",
+            "description": "Nội dung file (chỉ sử dụng tạm, không lưu DB)"
+          },
+          "role": {
+            "type": "string",
+            "maxLength": 36,
+            "enum": [
+              "Attachment",
+              "Inline Attachment",
+              "Import File",
+              "Export File",
+              "Mail Merge",
+              "Mass Pdf"
+            ],
+            "description": "Loại file đính kèm"
+          },
+          "storage": {
+            "type": "string",
+            "maxLength": 24,
+            "nullable": true,
+            "description": "Hệ thống lưu file (FileSystem, Database, S3…)"
+          },
+          "storageFilePath": {
+            "type": "string",
+            "maxLength": 260,
+            "nullable": true,
+            "description": "Đường dẫn file trên storage"
+          },
+          "global": {
+            "type": "boolean",
+            "default": false,
+            "description": "Đánh dấu file có phạm vi global"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Attachment_get_by_id",
+      "description": "Get Attachment by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Attachment_patch",
+      "description": "Update Attachment by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID duy nhất của file đính kèm"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255,
+            "description": "Tên file đính kèm"
+          },
+          "type": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "MIME type của file (ví dụ:application/pdf, image/png)"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0,
+            "description": "Kích thước file (bytes)"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Entity cha mà file đính kèm"
+          },
+          "related": {
+            "type": "object",
+            "description": "Entity liên quan khác"
+          },
+          "field": {
+            "type": "string",
+            "description": "Tên field trong entity cha gắn với file này"
+          },
+          "isBeingUploaded": {
+            "type": "boolean",
+            "default": false,
+            "description": "Trạng thái upload file"
+          },
+          "createdBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Thông tin người dùng",
+                "properties": {
+                  "userName": {
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "regular",
+                      "admin",
+                      "portal",
+                      "system",
+                      "super-admin",
+                      "api"
+                    ]
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirm": {
+                    "type": "string"
+                  },
+                  "authMethod": {
+                    "type": "string",
+                    "enum": [
+                      "ApiKey",
+                      "Hmac"
+                    ]
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "salutationName": {
+                    "type": "string",
+                    "enum": [
+                      "Mr.",
+                      "Ms.",
+                      "Mrs.",
+                      "Dr."
+                    ]
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "emailAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "Male",
+                      "Female",
+                      "Neutral"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "createdBy": {
+                    "type": "object"
+                  },
+                  "deleteId": {
+                    "type": "string",
+                    "maxLength": 17
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "readOnly": true,
+                "description": "Người tạo file"
+              }
+            ]
+          },
+          "contents": {
+            "type": "string",
+            "description": "Nội dung file (chỉ sử dụng tạm, không lưu DB)"
+          },
+          "role": {
+            "type": "string",
+            "maxLength": 36,
+            "enum": [
+              "Attachment",
+              "Inline Attachment",
+              "Import File",
+              "Export File",
+              "Mail Merge",
+              "Mass Pdf"
+            ],
+            "description": "Loại file đính kèm"
+          },
+          "storage": {
+            "type": "string",
+            "maxLength": 24,
+            "nullable": true,
+            "description": "Hệ thống lưu file (FileSystem, Database, S3…)"
+          },
+          "storageFilePath": {
+            "type": "string",
+            "maxLength": 260,
+            "nullable": true,
+            "description": "Đường dẫn file trên storage"
+          },
+          "global": {
+            "type": "boolean",
+            "default": false,
+            "description": "Đánh dấu file có phạm vi global"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Attachment_delete",
+      "description": "Delete Attachment by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

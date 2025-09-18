@@ -1,0 +1,131 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "PhoneNumber_get",
+      "description": "Get list of PhoneNumber",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "PhoneNumber_post",
+      "description": "Create a new PhoneNumber",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "Tên hoặc nhãn của số điện thoại"
+          },
+          "type": {
+            "type": "string",
+            "description": "Loại số điện thoại (ví dụ: mobile, home, work)"
+          },
+          "numeric": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "Số điện thoại dạng chuỗi số"
+          },
+          "invalid": {
+            "type": "boolean",
+            "description": "Xác định số điện thoại có hợp lệ hay không"
+          },
+          "optOut": {
+            "type": "boolean",
+            "description": "Xác định liệu người dùng đã từ chối nhận cuộc gọi/SMS"
+          },
+          "primary": {
+            "type": "boolean",
+            "description": "Xác định số điện thoại chính hay phụ"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "PhoneNumber_get_by_id",
+      "description": "Get PhoneNumber by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "PhoneNumber_patch",
+      "description": "Update PhoneNumber by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "Tên hoặc nhãn của số điện thoại"
+          },
+          "type": {
+            "type": "string",
+            "description": "Loại số điện thoại (ví dụ: mobile, home, work)"
+          },
+          "numeric": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "Số điện thoại dạng chuỗi số"
+          },
+          "invalid": {
+            "type": "boolean",
+            "description": "Xác định số điện thoại có hợp lệ hay không"
+          },
+          "optOut": {
+            "type": "boolean",
+            "description": "Xác định liệu người dùng đã từ chối nhận cuộc gọi/SMS"
+          },
+          "primary": {
+            "type": "boolean",
+            "description": "Xác định số điện thoại chính hay phụ"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "PhoneNumber_delete",
+      "description": "Delete PhoneNumber by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

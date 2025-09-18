@@ -1,0 +1,173 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "ScheduledJob_get",
+      "description": "Get list of ScheduledJob",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ScheduledJob_post",
+      "description": "Create a new ScheduledJob",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tên công việc"
+          },
+          "job": {
+            "type": "string",
+            "description": "Tên hoặc mã định danh của job"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Active",
+              "Inactive"
+            ],
+            "description": "Trạng thái job"
+          },
+          "scheduling": {
+            "type": "string",
+            "description": "Cấu hình lập lịch"
+          },
+          "lastRun": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chạy lần cuối"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày tạo job"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày chỉnh sửa job"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo job"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa job"
+          },
+          "isInternal": {
+            "type": "boolean",
+            "description": "Xác định job là nội bộ hệ thống hay không"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ScheduledJob_get_by_id",
+      "description": "Get ScheduledJob by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ScheduledJob_patch",
+      "description": "Update ScheduledJob by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên công việc"
+          },
+          "job": {
+            "type": "string",
+            "description": "Tên hoặc mã định danh của job"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Active",
+              "Inactive"
+            ],
+            "description": "Trạng thái job"
+          },
+          "scheduling": {
+            "type": "string",
+            "description": "Cấu hình lập lịch"
+          },
+          "lastRun": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chạy lần cuối"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày tạo job"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày chỉnh sửa job"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo job"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa job"
+          },
+          "isInternal": {
+            "type": "boolean",
+            "description": "Xác định job là nội bộ hệ thống hay không"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ScheduledJob_delete",
+      "description": "Delete ScheduledJob by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

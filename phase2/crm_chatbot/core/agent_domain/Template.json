@@ -1,0 +1,263 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Template_get",
+      "description": "Get list of Template",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Template_post",
+      "description": "Create a new Template",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "header": {
+            "type": "string"
+          },
+          "footer": {
+            "type": "string"
+          },
+          "entityType": {
+            "type": "string"
+          },
+          "leftMargin": {
+            "type": "string"
+          },
+          "rightMargin": {
+            "type": "string"
+          },
+          "topMargin": {
+            "type": "string"
+          },
+          "bottomMargin": {
+            "type": "string"
+          },
+          "printFooter": {
+            "type": "boolean"
+          },
+          "printHeader": {
+            "type": "boolean"
+          },
+          "footerPosition": {
+            "type": "string"
+          },
+          "headerPosition": {
+            "type": "string"
+          },
+          "style": {
+            "type": "string"
+          },
+          "teams": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "object"
+          },
+          "modifiedBy": {
+            "type": "object"
+          },
+          "variables": {
+            "type": "string"
+          },
+          "pageOrientation": {
+            "type": "string",
+            "enum": [
+              "Portrait",
+              "Landscape"
+            ]
+          },
+          "pageFormat": {
+            "type": "string",
+            "enum": [
+              "A3",
+              "A4",
+              "A5",
+              "A6",
+              "A7",
+              "Custom"
+            ]
+          },
+          "pageWidth": {
+            "type": "string"
+          },
+          "pageHeight": {
+            "type": "string"
+          },
+          "fontFace": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Template_get_by_id",
+      "description": "Get Template by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Template_patch",
+      "description": "Update Template by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "header": {
+            "type": "string"
+          },
+          "footer": {
+            "type": "string"
+          },
+          "entityType": {
+            "type": "string"
+          },
+          "leftMargin": {
+            "type": "string"
+          },
+          "rightMargin": {
+            "type": "string"
+          },
+          "topMargin": {
+            "type": "string"
+          },
+          "bottomMargin": {
+            "type": "string"
+          },
+          "printFooter": {
+            "type": "boolean"
+          },
+          "printHeader": {
+            "type": "boolean"
+          },
+          "footerPosition": {
+            "type": "string"
+          },
+          "headerPosition": {
+            "type": "string"
+          },
+          "style": {
+            "type": "string"
+          },
+          "teams": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "object"
+          },
+          "modifiedBy": {
+            "type": "object"
+          },
+          "variables": {
+            "type": "string"
+          },
+          "pageOrientation": {
+            "type": "string",
+            "enum": [
+              "Portrait",
+              "Landscape"
+            ]
+          },
+          "pageFormat": {
+            "type": "string",
+            "enum": [
+              "A3",
+              "A4",
+              "A5",
+              "A6",
+              "A7",
+              "Custom"
+            ]
+          },
+          "pageWidth": {
+            "type": "string"
+          },
+          "pageHeight": {
+            "type": "string"
+          },
+          "fontFace": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Template_delete",
+      "description": "Delete Template by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

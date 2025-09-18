@@ -1,0 +1,778 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthLogRecord_get",
+      "description": "Get list of AuthLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthLogRecord_post",
+      "description": "Create a new AuthLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "portal": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Cấu hình portal của hệ thống",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Tên portal"
+                  },
+                  "logo": {
+                    "type": "string",
+                    "description": "Logo portal"
+                  },
+                  "url": {
+                    "type": "string",
+                    "description": "URL truy cập portal"
+                  },
+                  "customId": {
+                    "type": "string",
+                    "maxLength": 36,
+                    "description": "ID tùy chỉnh của portal"
+                  },
+                  "isActive": {
+                    "type": "boolean",
+                    "description": "Xác định portal có đang hoạt động"
+                  },
+                  "isDefault": {
+                    "type": "boolean",
+                    "description": "Xác định portal mặc định"
+                  },
+                  "portalRoles": {
+                    "type": "string",
+                    "description": "Danh sách vai trò portal"
+                  },
+                  "tabList": {
+                    "type": "string",
+                    "description": "Danh sách tab hiển thị trên portal"
+                  },
+                  "quickCreateList": {
+                    "type": "string",
+                    "description": "Danh sách entity tạo nhanh"
+                  },
+                  "applicationName": {
+                    "type": "string",
+                    "description": "Tên ứng dụng"
+                  },
+                  "companyLogo": {
+                    "type": "string",
+                    "description": "Logo công ty"
+                  },
+                  "theme": {
+                    "type": "string",
+                    "description": "Theme giao diện portal"
+                  },
+                  "themeParams": {
+                    "type": "object",
+                    "description": "Các thông số theme"
+                  },
+                  "language": {
+                    "type": "string",
+                    "description": "Ngôn ngữ hiển thị portal"
+                  },
+                  "timeZone": {
+                    "type": "string",
+                    "description": "Múi giờ portal"
+                  },
+                  "dateFormat": {
+                    "type": "string",
+                    "description": "Định dạng ngày"
+                  },
+                  "timeFormat": {
+                    "type": "string",
+                    "description": "Định dạng giờ"
+                  },
+                  "weekStart": {
+                    "type": "string",
+                    "description": "Ngày bắt đầu tuần"
+                  },
+                  "defaultCurrency": {
+                    "type": "string",
+                    "description": "Tiền tệ mặc định"
+                  },
+                  "dashboardLayout": {
+                    "type": "string",
+                    "description": "Layout dashboard"
+                  },
+                  "dashletsOptions": {
+                    "type": "object",
+                    "description": "Cấu hình dashlets"
+                  },
+                  "customUrl": {
+                    "type": "string",
+                    "description": "URL tùy chỉnh"
+                  },
+                  "layoutSet": {
+                    "type": "object",
+                    "description": "Layout set liên kết"
+                  },
+                  "authenticationProvider": {
+                    "type": "object",
+                    "description": "Nhà cung cấp xác thực portal"
+                  },
+                  "authTokenLifetime": {
+                    "type": "string",
+                    "description": "Thời gian sống của auth token"
+                  },
+                  "authTokenMaxIdleTime": {
+                    "type": "string",
+                    "description": "Thời gian tối đa auth token không hoạt động"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Ngày giờ chỉnh sửa portal"
+                  },
+                  "modifiedBy": {
+                    "type": "object",
+                    "description": "Người chỉnh sửa portal"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Ngày giờ tạo portal"
+                  },
+                  "createdBy": {
+                    "type": "object",
+                    "description": "Người tạo portal"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "readOnly": true
+              }
+            ],
+            "description": "Portal liên quan"
+          },
+          "user": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Thông tin người dùng",
+                "properties": {
+                  "userName": {
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "regular",
+                      "admin",
+                      "portal",
+                      "system",
+                      "super-admin",
+                      "api"
+                    ]
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirm": {
+                    "type": "string"
+                  },
+                  "authMethod": {
+                    "type": "string",
+                    "enum": [
+                      "ApiKey",
+                      "Hmac"
+                    ]
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "salutationName": {
+                    "type": "string",
+                    "enum": [
+                      "Mr.",
+                      "Ms.",
+                      "Mrs.",
+                      "Dr."
+                    ]
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "emailAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "Male",
+                      "Female",
+                      "Neutral"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "createdBy": {
+                    "type": "object"
+                  },
+                  "deleteId": {
+                    "type": "string",
+                    "maxLength": 17
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "readOnly": true
+              }
+            ],
+            "description": "Người dùng liên quan"
+          },
+          "authToken": {
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string",
+                    "maxLength": 36,
+                    "readOnly": true,
+                    "description": "Mã token duy nhất (UUID/chuỗi 36 ký tự)"
+                  },
+                  "hash": {
+                    "type": "string",
+                    "maxLength": 150,
+                    "readOnly": true,
+                    "description": "Hash của token để kiểm tra"
+                  },
+                  "secret": {
+                    "type": "string",
+                    "maxLength": 36,
+                    "readOnly": true,
+                    "description": "Secret kèm theo token"
+                  },
+                  "user": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "Circular reference detected"
+                      },
+                      {
+                        "type": "object",
+                        "readOnly": true
+                      }
+                    ],
+                    "description": "Người dùng sở hữu token"
+                  },
+                  "portal": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "Circular reference detected"
+                      },
+                      {
+                        "type": "object",
+                        "readOnly": true
+                      }
+                    ],
+                    "description": "Portal liên quan (nếu có)"
+                  },
+                  "ipAddress": {
+                    "type": "string",
+                    "maxLength": 45,
+                    "readOnly": true,
+                    "description": "Địa chỉ IP sử dụng token"
+                  },
+                  "isActive": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Token có còn hiệu lực hay không"
+                  },
+                  "lastAccess": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "description": "Lần truy cập cuối"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "description": "Thời gian tạo token"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "description": "Thời gian chỉnh sửa cuối"
+                  }
+                },
+                "required": [
+                  "token",
+                  "hash",
+                  "secret",
+                  "isActive"
+                ]
+              },
+              {
+                "type": "object",
+                "readOnly": true
+              }
+            ],
+            "description": "Token xác thực"
+          },
+          "authenticationMethod": {
+            "type": "string",
+            "description": "Phương thức xác thực (VD:Password, SSO)"
+          }
+        },
+        "required": [
+          "username",
+          "createdAt",
+          "requestMethod"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthLogRecord_get_by_id",
+      "description": "Get AuthLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthLogRecord_patch",
+      "description": "Update AuthLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "portal": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Cấu hình portal của hệ thống",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Tên portal"
+                  },
+                  "logo": {
+                    "type": "string",
+                    "description": "Logo portal"
+                  },
+                  "url": {
+                    "type": "string",
+                    "description": "URL truy cập portal"
+                  },
+                  "customId": {
+                    "type": "string",
+                    "maxLength": 36,
+                    "description": "ID tùy chỉnh của portal"
+                  },
+                  "isActive": {
+                    "type": "boolean",
+                    "description": "Xác định portal có đang hoạt động"
+                  },
+                  "isDefault": {
+                    "type": "boolean",
+                    "description": "Xác định portal mặc định"
+                  },
+                  "portalRoles": {
+                    "type": "string",
+                    "description": "Danh sách vai trò portal"
+                  },
+                  "tabList": {
+                    "type": "string",
+                    "description": "Danh sách tab hiển thị trên portal"
+                  },
+                  "quickCreateList": {
+                    "type": "string",
+                    "description": "Danh sách entity tạo nhanh"
+                  },
+                  "applicationName": {
+                    "type": "string",
+                    "description": "Tên ứng dụng"
+                  },
+                  "companyLogo": {
+                    "type": "string",
+                    "description": "Logo công ty"
+                  },
+                  "theme": {
+                    "type": "string",
+                    "description": "Theme giao diện portal"
+                  },
+                  "themeParams": {
+                    "type": "object",
+                    "description": "Các thông số theme"
+                  },
+                  "language": {
+                    "type": "string",
+                    "description": "Ngôn ngữ hiển thị portal"
+                  },
+                  "timeZone": {
+                    "type": "string",
+                    "description": "Múi giờ portal"
+                  },
+                  "dateFormat": {
+                    "type": "string",
+                    "description": "Định dạng ngày"
+                  },
+                  "timeFormat": {
+                    "type": "string",
+                    "description": "Định dạng giờ"
+                  },
+                  "weekStart": {
+                    "type": "string",
+                    "description": "Ngày bắt đầu tuần"
+                  },
+                  "defaultCurrency": {
+                    "type": "string",
+                    "description": "Tiền tệ mặc định"
+                  },
+                  "dashboardLayout": {
+                    "type": "string",
+                    "description": "Layout dashboard"
+                  },
+                  "dashletsOptions": {
+                    "type": "object",
+                    "description": "Cấu hình dashlets"
+                  },
+                  "customUrl": {
+                    "type": "string",
+                    "description": "URL tùy chỉnh"
+                  },
+                  "layoutSet": {
+                    "type": "object",
+                    "description": "Layout set liên kết"
+                  },
+                  "authenticationProvider": {
+                    "type": "object",
+                    "description": "Nhà cung cấp xác thực portal"
+                  },
+                  "authTokenLifetime": {
+                    "type": "string",
+                    "description": "Thời gian sống của auth token"
+                  },
+                  "authTokenMaxIdleTime": {
+                    "type": "string",
+                    "description": "Thời gian tối đa auth token không hoạt động"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Ngày giờ chỉnh sửa portal"
+                  },
+                  "modifiedBy": {
+                    "type": "object",
+                    "description": "Người chỉnh sửa portal"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Ngày giờ tạo portal"
+                  },
+                  "createdBy": {
+                    "type": "object",
+                    "description": "Người tạo portal"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "readOnly": true
+              }
+            ],
+            "description": "Portal liên quan"
+          },
+          "user": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Thông tin người dùng",
+                "properties": {
+                  "userName": {
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "regular",
+                      "admin",
+                      "portal",
+                      "system",
+                      "super-admin",
+                      "api"
+                    ]
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirm": {
+                    "type": "string"
+                  },
+                  "authMethod": {
+                    "type": "string",
+                    "enum": [
+                      "ApiKey",
+                      "Hmac"
+                    ]
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "salutationName": {
+                    "type": "string",
+                    "enum": [
+                      "Mr.",
+                      "Ms.",
+                      "Mrs.",
+                      "Dr."
+                    ]
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "emailAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "Male",
+                      "Female",
+                      "Neutral"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "createdBy": {
+                    "type": "object"
+                  },
+                  "deleteId": {
+                    "type": "string",
+                    "maxLength": 17
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "readOnly": true
+              }
+            ],
+            "description": "Người dùng liên quan"
+          },
+          "authToken": {
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string",
+                    "maxLength": 36,
+                    "readOnly": true,
+                    "description": "Mã token duy nhất (UUID/chuỗi 36 ký tự)"
+                  },
+                  "hash": {
+                    "type": "string",
+                    "maxLength": 150,
+                    "readOnly": true,
+                    "description": "Hash của token để kiểm tra"
+                  },
+                  "secret": {
+                    "type": "string",
+                    "maxLength": 36,
+                    "readOnly": true,
+                    "description": "Secret kèm theo token"
+                  },
+                  "user": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "Circular reference detected"
+                      },
+                      {
+                        "type": "object",
+                        "readOnly": true
+                      }
+                    ],
+                    "description": "Người dùng sở hữu token"
+                  },
+                  "portal": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "description": "Circular reference detected"
+                      },
+                      {
+                        "type": "object",
+                        "readOnly": true
+                      }
+                    ],
+                    "description": "Portal liên quan (nếu có)"
+                  },
+                  "ipAddress": {
+                    "type": "string",
+                    "maxLength": 45,
+                    "readOnly": true,
+                    "description": "Địa chỉ IP sử dụng token"
+                  },
+                  "isActive": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Token có còn hiệu lực hay không"
+                  },
+                  "lastAccess": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "description": "Lần truy cập cuối"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "description": "Thời gian tạo token"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "readOnly": true,
+                    "description": "Thời gian chỉnh sửa cuối"
+                  }
+                },
+                "required": [
+                  "token",
+                  "hash",
+                  "secret",
+                  "isActive"
+                ]
+              },
+              {
+                "type": "object",
+                "readOnly": true
+              }
+            ],
+            "description": "Token xác thực"
+          },
+          "authenticationMethod": {
+            "type": "string",
+            "description": "Phương thức xác thực (VD:Password, SSO)"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthLogRecord_delete",
+      "description": "Delete AuthLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

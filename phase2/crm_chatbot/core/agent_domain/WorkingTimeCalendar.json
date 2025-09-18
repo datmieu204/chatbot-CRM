@@ -1,0 +1,297 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeCalendar_get",
+      "description": "Get list of WorkingTimeCalendar",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeCalendar_post",
+      "description": "Create a new WorkingTimeCalendar",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "timeZone": {
+            "type": "string"
+          },
+          "timeRanges": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "default": [
+              [
+                "9:00",
+                "17:00"
+              ]
+            ]
+          },
+          "weekday0": {
+            "type": "boolean",
+            "default": false
+          },
+          "weekday1": {
+            "type": "boolean",
+            "default": true
+          },
+          "weekday2": {
+            "type": "boolean",
+            "default": true
+          },
+          "weekday3": {
+            "type": "boolean",
+            "default": true
+          },
+          "weekday4": {
+            "type": "boolean",
+            "default": true
+          },
+          "weekday5": {
+            "type": "boolean",
+            "default": true
+          },
+          "weekday6": {
+            "type": "boolean",
+            "default": false
+          },
+          "weekday0TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday1TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday2TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday3TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday4TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday5TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday6TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "rangesIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related ranges"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeCalendar_get_by_id",
+      "description": "Get WorkingTimeCalendar by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeCalendar_patch",
+      "description": "Update WorkingTimeCalendar by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "timeZone": {
+            "type": "string"
+          },
+          "timeRanges": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "default": [
+              [
+                "9:00",
+                "17:00"
+              ]
+            ]
+          },
+          "weekday0": {
+            "type": "boolean",
+            "default": false
+          },
+          "weekday1": {
+            "type": "boolean",
+            "default": true
+          },
+          "weekday2": {
+            "type": "boolean",
+            "default": true
+          },
+          "weekday3": {
+            "type": "boolean",
+            "default": true
+          },
+          "weekday4": {
+            "type": "boolean",
+            "default": true
+          },
+          "weekday5": {
+            "type": "boolean",
+            "default": true
+          },
+          "weekday6": {
+            "type": "boolean",
+            "default": false
+          },
+          "weekday0TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday1TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday2TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday3TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday4TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday5TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weekday6TimeRanges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "rangesIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related ranges"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WorkingTimeCalendar_delete",
+      "description": "Delete WorkingTimeCalendar by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

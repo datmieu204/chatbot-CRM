@@ -1,0 +1,137 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Webhook_get",
+      "description": "Get list of Webhook",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Webhook_post",
+      "description": "Create a new Webhook",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "event": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Event name"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 512,
+            "description": "Webhook URL"
+          },
+          "isActive": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether the webhook is active"
+          },
+          "userId": {
+            "type": "string",
+            "description": "ID of the related user"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          }
+        },
+        "required": [
+          "event",
+          "url"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Webhook_get_by_id",
+      "description": "Get Webhook by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Webhook_patch",
+      "description": "Update Webhook by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Event name"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 512,
+            "description": "Webhook URL"
+          },
+          "isActive": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether the webhook is active"
+          },
+          "userId": {
+            "type": "string",
+            "description": "ID of the related user"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Webhook_delete",
+      "description": "Delete Webhook by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

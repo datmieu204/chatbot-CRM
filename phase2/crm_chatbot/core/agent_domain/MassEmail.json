@@ -1,0 +1,197 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "MassEmail_get",
+      "description": "Get list of MassEmail",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "MassEmail_post",
+      "description": "Create a new MassEmail",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Draft",
+              "Pending",
+              "Complete",
+              "In Process",
+              "Failed"
+            ],
+            "default": "Pending"
+          },
+          "storeSentEmails": {
+            "type": "boolean"
+          },
+          "optOutEntirely": {
+            "type": "boolean"
+          },
+          "fromAddress": {
+            "type": "string"
+          },
+          "fromName": {
+            "type": "string"
+          },
+          "replyToAddress": {
+            "type": "string"
+          },
+          "replyToName": {
+            "type": "string"
+          },
+          "startAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "emailTemplateId": {
+            "type": "string",
+            "description": "ID of the related emailTemplate"
+          },
+          "campaignId": {
+            "type": "string",
+            "description": "ID of the related campaign"
+          },
+          "targetLists": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "MassEmail_get_by_id",
+      "description": "Get MassEmail by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "MassEmail_patch",
+      "description": "Update MassEmail by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Draft",
+              "Pending",
+              "Complete",
+              "In Process",
+              "Failed"
+            ],
+            "default": "Pending"
+          },
+          "storeSentEmails": {
+            "type": "boolean"
+          },
+          "optOutEntirely": {
+            "type": "boolean"
+          },
+          "fromAddress": {
+            "type": "string"
+          },
+          "fromName": {
+            "type": "string"
+          },
+          "replyToAddress": {
+            "type": "string"
+          },
+          "replyToName": {
+            "type": "string"
+          },
+          "startAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "emailTemplateId": {
+            "type": "string",
+            "description": "ID of the related emailTemplate"
+          },
+          "campaignId": {
+            "type": "string",
+            "description": "ID of the related campaign"
+          },
+          "targetLists": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "MassEmail_delete",
+      "description": "Delete MassEmail by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

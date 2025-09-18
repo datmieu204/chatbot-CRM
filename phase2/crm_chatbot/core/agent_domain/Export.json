@@ -1,0 +1,341 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Export_get",
+      "description": "Get list of Export",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Export_post",
+      "description": "Create a new Export",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Running",
+              "Success",
+              "Failed"
+            ],
+            "default": "Pending",
+            "description": "Trạng thái của quá trình xuất dữ liệu"
+          },
+          "params": {
+            "type": "string",
+            "description": "Các tham số được sử dụng khi xuất dữ liệu"
+          },
+          "createdBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Thông tin người dùng",
+                "properties": {
+                  "userName": {
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "regular",
+                      "admin",
+                      "portal",
+                      "system",
+                      "super-admin",
+                      "api"
+                    ]
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirm": {
+                    "type": "string"
+                  },
+                  "authMethod": {
+                    "type": "string",
+                    "enum": [
+                      "ApiKey",
+                      "Hmac"
+                    ]
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "salutationName": {
+                    "type": "string",
+                    "enum": [
+                      "Mr.",
+                      "Ms.",
+                      "Mrs.",
+                      "Dr."
+                    ]
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "emailAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "Male",
+                      "Female",
+                      "Neutral"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "createdBy": {
+                    "type": "object"
+                  },
+                  "deleteId": {
+                    "type": "string",
+                    "maxLength": 17
+                  }
+                }
+              }
+            ],
+            "description": "Người tạo bản ghi xuất dữ liệu"
+          },
+          "notifyOnFinish": {
+            "type": "boolean",
+            "default": false,
+            "description": "Có gửi thông báo khi quá trình xuất dữ liệu hoàn tất hay không"
+          },
+          "attachmentId": {
+            "type": "string",
+            "description": "ID of the related attachment"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Export_get_by_id",
+      "description": "Get Export by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Export_patch",
+      "description": "Update Export by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Running",
+              "Success",
+              "Failed"
+            ],
+            "default": "Pending",
+            "description": "Trạng thái của quá trình xuất dữ liệu"
+          },
+          "params": {
+            "type": "string",
+            "description": "Các tham số được sử dụng khi xuất dữ liệu"
+          },
+          "createdBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Thông tin người dùng",
+                "properties": {
+                  "userName": {
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "regular",
+                      "admin",
+                      "portal",
+                      "system",
+                      "super-admin",
+                      "api"
+                    ]
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "passwordConfirm": {
+                    "type": "string"
+                  },
+                  "authMethod": {
+                    "type": "string",
+                    "enum": [
+                      "ApiKey",
+                      "Hmac"
+                    ]
+                  },
+                  "apiKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "secretKey": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "salutationName": {
+                    "type": "string",
+                    "enum": [
+                      "Mr.",
+                      "Ms.",
+                      "Mrs.",
+                      "Dr."
+                    ]
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "emailAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "Male",
+                      "Female",
+                      "Neutral"
+                    ]
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "createdBy": {
+                    "type": "object"
+                  },
+                  "deleteId": {
+                    "type": "string",
+                    "maxLength": 17
+                  }
+                }
+              }
+            ],
+            "description": "Người tạo bản ghi xuất dữ liệu"
+          },
+          "notifyOnFinish": {
+            "type": "boolean",
+            "default": false,
+            "description": "Có gửi thông báo khi quá trình xuất dữ liệu hoàn tất hay không"
+          },
+          "attachmentId": {
+            "type": "string",
+            "description": "ID of the related attachment"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Export_delete",
+      "description": "Delete Export by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

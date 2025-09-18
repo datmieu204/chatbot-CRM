@@ -1,0 +1,356 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailAccount_get",
+      "description": "Get list of EmailAccount",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailAccount_post",
+      "description": "Create a new EmailAccount",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên tài khoản email"
+          },
+          "emailAddress": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Địa chỉ email"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Active",
+              "Inactive"
+            ],
+            "default": "Active"
+          },
+          "host": {
+            "type": "string"
+          },
+          "port": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535,
+            "default": 993
+          },
+          "security": {
+            "type": "string",
+            "enum": [
+              "SSL",
+              "TLS"
+            ],
+            "default": "SSL"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          },
+          "monitoredFolders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "INBOX"
+            ]
+          },
+          "sentFolder": {
+            "type": "string"
+          },
+          "storeSentEmails": {
+            "type": "boolean"
+          },
+          "keepFetchedEmailsUnread": {
+            "type": "boolean"
+          },
+          "fetchSince": {
+            "type": "string",
+            "format": "date"
+          },
+          "emailFolderId": {
+            "type": "string",
+            "description": "ID of the related emailFolder"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "useImap": {
+            "type": "boolean",
+            "default": true
+          },
+          "useSmtp": {
+            "type": "boolean"
+          },
+          "smtpHost": {
+            "type": "string"
+          },
+          "smtpPort": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535,
+            "default": 587
+          },
+          "smtpAuth": {
+            "type": "boolean",
+            "default": true
+          },
+          "smtpSecurity": {
+            "type": "string",
+            "enum": [
+              "SSL",
+              "TLS"
+            ],
+            "default": "TLS"
+          },
+          "smtpUsername": {
+            "type": "string"
+          },
+          "smtpPassword": {
+            "type": "string",
+            "format": "password"
+          },
+          "smtpAuthMechanism": {
+            "type": "string",
+            "enum": [
+              "login",
+              "crammd5",
+              "plain"
+            ],
+            "default": "login"
+          },
+          "createdBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              },
+              {
+                "readOnly": true
+              }
+            ]
+          },
+          "modifiedBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              },
+              {
+                "readOnly": true
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailAccount_get_by_id",
+      "description": "Get EmailAccount by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailAccount_patch",
+      "description": "Update EmailAccount by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên tài khoản email"
+          },
+          "emailAddress": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Địa chỉ email"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Active",
+              "Inactive"
+            ],
+            "default": "Active"
+          },
+          "host": {
+            "type": "string"
+          },
+          "port": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535,
+            "default": 993
+          },
+          "security": {
+            "type": "string",
+            "enum": [
+              "SSL",
+              "TLS"
+            ],
+            "default": "SSL"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          },
+          "monitoredFolders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "INBOX"
+            ]
+          },
+          "sentFolder": {
+            "type": "string"
+          },
+          "storeSentEmails": {
+            "type": "boolean"
+          },
+          "keepFetchedEmailsUnread": {
+            "type": "boolean"
+          },
+          "fetchSince": {
+            "type": "string",
+            "format": "date"
+          },
+          "emailFolderId": {
+            "type": "string",
+            "description": "ID of the related emailFolder"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "useImap": {
+            "type": "boolean",
+            "default": true
+          },
+          "useSmtp": {
+            "type": "boolean"
+          },
+          "smtpHost": {
+            "type": "string"
+          },
+          "smtpPort": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535,
+            "default": 587
+          },
+          "smtpAuth": {
+            "type": "boolean",
+            "default": true
+          },
+          "smtpSecurity": {
+            "type": "string",
+            "enum": [
+              "SSL",
+              "TLS"
+            ],
+            "default": "TLS"
+          },
+          "smtpUsername": {
+            "type": "string"
+          },
+          "smtpPassword": {
+            "type": "string",
+            "format": "password"
+          },
+          "smtpAuthMechanism": {
+            "type": "string",
+            "enum": [
+              "login",
+              "crammd5",
+              "plain"
+            ],
+            "default": "login"
+          },
+          "createdBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              },
+              {
+                "readOnly": true
+              }
+            ]
+          },
+          "modifiedBy": {
+            "allOf": [
+              {
+                "type": "object",
+                "description": "Circular reference detected"
+              },
+              {
+                "readOnly": true
+              }
+            ]
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailAccount_delete",
+      "description": "Delete EmailAccount by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Integration_get",
+      "description": "Get list of Integration",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Integration_post",
+      "description": "Create a new Integration",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID duy nhất của bản ghi tích hợp"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu cấu hình hoặc metadata của tích hợp"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Xác định tích hợp có đang hoạt động hay không"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Integration_get_by_id",
+      "description": "Get Integration by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Integration_patch",
+      "description": "Update Integration by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID duy nhất của bản ghi tích hợp"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu cấu hình hoặc metadata của tích hợp"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Xác định tích hợp có đang hoạt động hay không"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Integration_delete",
+      "description": "Delete Integration by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthenticationProvider_get",
+      "description": "Get list of AuthenticationProvider",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthenticationProvider_post",
+      "description": "Create a new AuthenticationProvider",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tên nhà cung cấp xác thực"
+          },
+          "method": {
+            "type": "string",
+            "description": "Phương thức xác thực"
+          },
+          "oidcClientId": {
+            "type": "string",
+            "description": "Client ID OIDC"
+          },
+          "oidcClientSecret": {
+            "type": "string",
+            "format": "password",
+            "description": "Client Secret OIDC"
+          },
+          "oidcAuthorizationEndpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL endpoint authorize OIDC"
+          },
+          "oidcUserInfoEndpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL endpoint lấy thông tin user OIDC"
+          },
+          "oidcTokenEndpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL endpoint lấy token OIDC"
+          },
+          "oidcJwksEndpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL JWKS OIDC"
+          },
+          "oidcJwtSignatureAlgorithmList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "RS256"
+            ],
+            "description": "Danh sách thuật toán signature JWT"
+          },
+          "oidcScopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "profile",
+              "email",
+              "phone"
+            ],
+            "description": "Danh sách scope OIDC"
+          },
+          "oidcCreateUser": {
+            "type": "boolean",
+            "description": "Tự động tạo user khi login OIDC"
+          },
+          "oidcUsernameClaim": {
+            "type": "string",
+            "default": "sub",
+            "description": "Claim dùng làm username"
+          },
+          "oidcSync": {
+            "type": "boolean",
+            "description": "Đồng bộ thông tin user OIDC"
+          },
+          "oidcLogoutUrl": {
+            "type": "string",
+            "description": "URL logout OIDC"
+          },
+          "oidcAuthorizationPrompt": {
+            "type": "string",
+            "enum": [
+              "none",
+              "consent",
+              "login",
+              "select_account"
+            ],
+            "maxLength": 14,
+            "description": "Prompt khi authorize OIDC"
+          }
+        },
+        "required": [
+          "name",
+          "method"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthenticationProvider_get_by_id",
+      "description": "Get AuthenticationProvider by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthenticationProvider_patch",
+      "description": "Update AuthenticationProvider by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "Tên nhà cung cấp xác thực"
+          },
+          "method": {
+            "type": "string",
+            "description": "Phương thức xác thực"
+          },
+          "oidcClientId": {
+            "type": "string",
+            "description": "Client ID OIDC"
+          },
+          "oidcClientSecret": {
+            "type": "string",
+            "format": "password",
+            "description": "Client Secret OIDC"
+          },
+          "oidcAuthorizationEndpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL endpoint authorize OIDC"
+          },
+          "oidcUserInfoEndpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL endpoint lấy thông tin user OIDC"
+          },
+          "oidcTokenEndpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL endpoint lấy token OIDC"
+          },
+          "oidcJwksEndpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL JWKS OIDC"
+          },
+          "oidcJwtSignatureAlgorithmList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "RS256"
+            ],
+            "description": "Danh sách thuật toán signature JWT"
+          },
+          "oidcScopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "profile",
+              "email",
+              "phone"
+            ],
+            "description": "Danh sách scope OIDC"
+          },
+          "oidcCreateUser": {
+            "type": "boolean",
+            "description": "Tự động tạo user khi login OIDC"
+          },
+          "oidcUsernameClaim": {
+            "type": "string",
+            "default": "sub",
+            "description": "Claim dùng làm username"
+          },
+          "oidcSync": {
+            "type": "boolean",
+            "description": "Đồng bộ thông tin user OIDC"
+          },
+          "oidcLogoutUrl": {
+            "type": "string",
+            "description": "URL logout OIDC"
+          },
+          "oidcAuthorizationPrompt": {
+            "type": "string",
+            "enum": [
+              "none",
+              "consent",
+              "login",
+              "select_account"
+            ],
+            "maxLength": 14,
+            "description": "Prompt khi authorize OIDC"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AuthenticationProvider_delete",
+      "description": "Delete AuthenticationProvider by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

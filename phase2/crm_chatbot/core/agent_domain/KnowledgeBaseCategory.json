@@ -1,0 +1,181 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseCategory_get",
+      "description": "Get list of KnowledgeBaseCategory",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseCategory_post",
+      "description": "Create a new KnowledgeBaseCategory",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "$noBadCharacters"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "childList": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "articlesIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related articles"
+          }
+        },
+        "required": [
+          "name",
+          "order"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseCategory_get_by_id",
+      "description": "Get KnowledgeBaseCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseCategory_patch",
+      "description": "Update KnowledgeBaseCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "pattern": "$noBadCharacters"
+          },
+          "description": {
+            "type": "string"
+          },
+          "createdById": {
+            "type": "string",
+            "description": "ID of the related createdBy"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "teamsIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related teams"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "childList": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "articlesIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of IDs for the related articles"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "KnowledgeBaseCategory_delete",
+      "description": "Delete KnowledgeBaseCategory by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

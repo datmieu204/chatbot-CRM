@@ -1,0 +1,113 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "UserData_get",
+      "description": "Get list of UserData",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UserData_post",
+      "description": "Create a new UserData",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "auth2FA": {
+            "type": "boolean",
+            "description": "Bật/tắt xác thực hai yếu tố"
+          },
+          "auth2FAMethod": {
+            "type": "string",
+            "description": "Phương thức 2FA (TOTP, Email)"
+          },
+          "auth2FATotpSecret": {
+            "type": "string",
+            "maxLength": 32,
+            "description": "Secret key dùng cho TOTP"
+          },
+          "auth2FAEmailAddress": {
+            "type": "string",
+            "description": "Email dùng cho 2FA nếu phương thức là Email"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UserData_get_by_id",
+      "description": "Get UserData by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UserData_patch",
+      "description": "Update UserData by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "auth2FA": {
+            "type": "boolean",
+            "description": "Bật/tắt xác thực hai yếu tố"
+          },
+          "auth2FAMethod": {
+            "type": "string",
+            "description": "Phương thức 2FA (TOTP, Email)"
+          },
+          "auth2FATotpSecret": {
+            "type": "string",
+            "maxLength": 32,
+            "description": "Secret key dùng cho TOTP"
+          },
+          "auth2FAEmailAddress": {
+            "type": "string",
+            "description": "Email dùng cho 2FA nếu phương thức là Email"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "UserData_delete",
+      "description": "Delete UserData by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

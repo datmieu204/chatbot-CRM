@@ -1,0 +1,539 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Settings_get",
+      "description": "Get list of Settings",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Settings_post",
+      "description": "Create a new Settings",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "useCache": {
+            "type": "boolean",
+            "description": "Sử dụng cache hay không"
+          },
+          "recordsPerPage": {
+            "type": "integer",
+            "description": "Số bản ghi hiển thị trên trang chuẩn"
+          },
+          "recordsPerPageSmall": {
+            "type": "integer",
+            "description": "Số bản ghi hiển thị trên trang kích thước nhỏ"
+          },
+          "recordsPerPageSelect": {
+            "type": "integer",
+            "description": "Số bản ghi hiển thị trong dropdown select"
+          },
+          "recordsPerPageKanban": {
+            "type": "integer",
+            "description": "Số bản ghi hiển thị trên Kanban"
+          },
+          "timeZone": {
+            "type": "string",
+            "description": "Múi giờ hệ thống",
+            "enum": [
+              "..."
+            ]
+          },
+          "dateFormat": {
+            "type": "string",
+            "description": "Định dạng ngày"
+          },
+          "timeFormat": {
+            "type": "string",
+            "description": "Định dạng giờ"
+          },
+          "weekStart": {
+            "type": "string",
+            "description": "Ngày bắt đầu tuần"
+          },
+          "fiscalYearShift": {
+            "type": "string",
+            "description": "Dịch chuyển ngày bắt đầu năm tài chính"
+          },
+          "thousandSeparator": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân cách hàng nghìn"
+          },
+          "decimalMark": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân cách thập phân"
+          },
+          "currencyList": {
+            "type": "string",
+            "description": "Danh sách các loại tiền tệ hỗ trợ"
+          },
+          "defaultCurrency": {
+            "type": "string",
+            "description": "Tiền tệ mặc định"
+          },
+          "baseCurrency": {
+            "type": "string",
+            "description": "Tiền tệ cơ sở"
+          },
+          "currencyRates": {
+            "type": "string",
+            "description": "Danh sách tỉ giá tiền tệ"
+          },
+          "outboundEmailIsShared": {
+            "type": "boolean",
+            "description": "Chia sẻ email gửi đi"
+          },
+          "outboundEmailFromName": {
+            "type": "string",
+            "description": "Tên hiển thị khi gửi email"
+          },
+          "outboundEmailFromAddress": {
+            "type": "string",
+            "description": "Địa chỉ email gửi đi"
+          },
+          "smtpServer": {
+            "type": "string",
+            "description": "SMTP server"
+          },
+          "smtpPort": {
+            "type": "integer",
+            "description": "Cổng SMTP"
+          },
+          "smtpAuth": {
+            "type": "boolean",
+            "description": "Yêu cầu xác thực SMTP"
+          },
+          "smtpSecurity": {
+            "type": "string",
+            "enum": [
+              "SSL",
+              "TLS"
+            ],
+            "description": "Cơ chế bảo mật SMTP"
+          },
+          "smtpUsername": {
+            "type": "string",
+            "description": "Tên đăng nhập SMTP"
+          },
+          "smtpPassword": {
+            "type": "string",
+            "description": "Mật khẩu SMTP"
+          },
+          "language": {
+            "type": "string",
+            "description": "Ngôn ngữ giao diện hệ thống"
+          },
+          "theme": {
+            "type": "string",
+            "description": "Theme hệ thống"
+          },
+          "themeParams": {
+            "type": "object",
+            "description": "Thông số theme"
+          },
+          "authTokenLifetime": {
+            "type": "string",
+            "description": "Thời gian sống của token xác thực"
+          },
+          "authTokenMaxIdleTime": {
+            "type": "string",
+            "description": "Thời gian tối đa token không hoạt động"
+          },
+          "authTokenPreventConcurrent": {
+            "type": "boolean",
+            "description": "Ngăn người dùng đăng nhập đồng thời nhiều nơi"
+          },
+          "dashboardLayout": {
+            "type": "string",
+            "description": "Cấu hình layout dashboard mặc định"
+          },
+          "dashletsOptions": {
+            "type": "object",
+            "description": "Cấu hình các dashlet"
+          },
+          "siteUrl": {
+            "type": "string",
+            "description": "URL trang chủ hệ thống"
+          },
+          "applicationName": {
+            "type": "string",
+            "description": "Tên ứng dụng"
+          },
+          "attachmentUploadMaxSize": {
+            "type": "string",
+            "description": "Kích thước tối đa tệp tải lên"
+          },
+          "attachmentUploadChunkSize": {
+            "type": "string",
+            "description": "Kích thước chunk upload"
+          },
+          "emailMessageMaxSize": {
+            "type": "string",
+            "description": "Kích thước tối đa email gửi đi"
+          },
+          "inboundEmailMaxPortionSize": {
+            "type": "integer",
+            "description": "Kích thước tối đa phần email nhận vào"
+          },
+          "personalEmailMaxPortionSize": {
+            "type": "integer",
+            "description": "Kích thước tối đa phần email cá nhân"
+          },
+          "maxEmailAccountCount": {
+            "type": "integer",
+            "description": "Số tài khoản email tối đa"
+          },
+          "massEmailMaxPerHourCount": {
+            "type": "integer",
+            "description": "Số email hàng loạt tối đa mỗi giờ"
+          },
+          "massEmailMaxPerBatchCount": {
+            "type": "integer",
+            "description": "Số email hàng loạt tối đa mỗi batch"
+          },
+          "massEmailVerp": {
+            "type": "boolean",
+            "description": "Sử dụng VERP cho email hàng loạt"
+          },
+          "pdfEngine": {
+            "type": "string",
+            "description": "Công cụ tạo PDF"
+          },
+          "authIpAddressCheck": {
+            "type": "boolean",
+            "description": "Kiểm tra IP khi đăng nhập"
+          },
+          "authIpAddressWhitelist": {
+            "type": "string",
+            "description": "Danh sách trắng IP"
+          },
+          "availableReactions": {
+            "type": "string",
+            "description": "Danh sách reaction có sẵn"
+          },
+          "addressPreviewStreet": {
+            "type": "string",
+            "maxLength": 255,
+            "description": "Preview đường phố"
+          },
+          "addressPreviewCity": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Preview thành phố"
+          },
+          "addressPreviewState": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Preview bang/tỉnh"
+          },
+          "addressPreviewCountry": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Preview quốc gia"
+          },
+          "addressPreviewPostalCode": {
+            "type": "string",
+            "maxLength": 40,
+            "description": "Preview mã bưu chính"
+          },
+          "addressPreviewMap": {
+            "type": "string",
+            "description": "Preview bản đồ địa chỉ"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Settings_get_by_id",
+      "description": "Get Settings by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Settings_patch",
+      "description": "Update Settings by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "useCache": {
+            "type": "boolean",
+            "description": "Sử dụng cache hay không"
+          },
+          "recordsPerPage": {
+            "type": "integer",
+            "description": "Số bản ghi hiển thị trên trang chuẩn"
+          },
+          "recordsPerPageSmall": {
+            "type": "integer",
+            "description": "Số bản ghi hiển thị trên trang kích thước nhỏ"
+          },
+          "recordsPerPageSelect": {
+            "type": "integer",
+            "description": "Số bản ghi hiển thị trong dropdown select"
+          },
+          "recordsPerPageKanban": {
+            "type": "integer",
+            "description": "Số bản ghi hiển thị trên Kanban"
+          },
+          "timeZone": {
+            "type": "string",
+            "description": "Múi giờ hệ thống",
+            "enum": [
+              "..."
+            ]
+          },
+          "dateFormat": {
+            "type": "string",
+            "description": "Định dạng ngày"
+          },
+          "timeFormat": {
+            "type": "string",
+            "description": "Định dạng giờ"
+          },
+          "weekStart": {
+            "type": "string",
+            "description": "Ngày bắt đầu tuần"
+          },
+          "fiscalYearShift": {
+            "type": "string",
+            "description": "Dịch chuyển ngày bắt đầu năm tài chính"
+          },
+          "thousandSeparator": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân cách hàng nghìn"
+          },
+          "decimalMark": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "Ký tự phân cách thập phân"
+          },
+          "currencyList": {
+            "type": "string",
+            "description": "Danh sách các loại tiền tệ hỗ trợ"
+          },
+          "defaultCurrency": {
+            "type": "string",
+            "description": "Tiền tệ mặc định"
+          },
+          "baseCurrency": {
+            "type": "string",
+            "description": "Tiền tệ cơ sở"
+          },
+          "currencyRates": {
+            "type": "string",
+            "description": "Danh sách tỉ giá tiền tệ"
+          },
+          "outboundEmailIsShared": {
+            "type": "boolean",
+            "description": "Chia sẻ email gửi đi"
+          },
+          "outboundEmailFromName": {
+            "type": "string",
+            "description": "Tên hiển thị khi gửi email"
+          },
+          "outboundEmailFromAddress": {
+            "type": "string",
+            "description": "Địa chỉ email gửi đi"
+          },
+          "smtpServer": {
+            "type": "string",
+            "description": "SMTP server"
+          },
+          "smtpPort": {
+            "type": "integer",
+            "description": "Cổng SMTP"
+          },
+          "smtpAuth": {
+            "type": "boolean",
+            "description": "Yêu cầu xác thực SMTP"
+          },
+          "smtpSecurity": {
+            "type": "string",
+            "enum": [
+              "SSL",
+              "TLS"
+            ],
+            "description": "Cơ chế bảo mật SMTP"
+          },
+          "smtpUsername": {
+            "type": "string",
+            "description": "Tên đăng nhập SMTP"
+          },
+          "smtpPassword": {
+            "type": "string",
+            "description": "Mật khẩu SMTP"
+          },
+          "language": {
+            "type": "string",
+            "description": "Ngôn ngữ giao diện hệ thống"
+          },
+          "theme": {
+            "type": "string",
+            "description": "Theme hệ thống"
+          },
+          "themeParams": {
+            "type": "object",
+            "description": "Thông số theme"
+          },
+          "authTokenLifetime": {
+            "type": "string",
+            "description": "Thời gian sống của token xác thực"
+          },
+          "authTokenMaxIdleTime": {
+            "type": "string",
+            "description": "Thời gian tối đa token không hoạt động"
+          },
+          "authTokenPreventConcurrent": {
+            "type": "boolean",
+            "description": "Ngăn người dùng đăng nhập đồng thời nhiều nơi"
+          },
+          "dashboardLayout": {
+            "type": "string",
+            "description": "Cấu hình layout dashboard mặc định"
+          },
+          "dashletsOptions": {
+            "type": "object",
+            "description": "Cấu hình các dashlet"
+          },
+          "siteUrl": {
+            "type": "string",
+            "description": "URL trang chủ hệ thống"
+          },
+          "applicationName": {
+            "type": "string",
+            "description": "Tên ứng dụng"
+          },
+          "attachmentUploadMaxSize": {
+            "type": "string",
+            "description": "Kích thước tối đa tệp tải lên"
+          },
+          "attachmentUploadChunkSize": {
+            "type": "string",
+            "description": "Kích thước chunk upload"
+          },
+          "emailMessageMaxSize": {
+            "type": "string",
+            "description": "Kích thước tối đa email gửi đi"
+          },
+          "inboundEmailMaxPortionSize": {
+            "type": "integer",
+            "description": "Kích thước tối đa phần email nhận vào"
+          },
+          "personalEmailMaxPortionSize": {
+            "type": "integer",
+            "description": "Kích thước tối đa phần email cá nhân"
+          },
+          "maxEmailAccountCount": {
+            "type": "integer",
+            "description": "Số tài khoản email tối đa"
+          },
+          "massEmailMaxPerHourCount": {
+            "type": "integer",
+            "description": "Số email hàng loạt tối đa mỗi giờ"
+          },
+          "massEmailMaxPerBatchCount": {
+            "type": "integer",
+            "description": "Số email hàng loạt tối đa mỗi batch"
+          },
+          "massEmailVerp": {
+            "type": "boolean",
+            "description": "Sử dụng VERP cho email hàng loạt"
+          },
+          "pdfEngine": {
+            "type": "string",
+            "description": "Công cụ tạo PDF"
+          },
+          "authIpAddressCheck": {
+            "type": "boolean",
+            "description": "Kiểm tra IP khi đăng nhập"
+          },
+          "authIpAddressWhitelist": {
+            "type": "string",
+            "description": "Danh sách trắng IP"
+          },
+          "availableReactions": {
+            "type": "string",
+            "description": "Danh sách reaction có sẵn"
+          },
+          "addressPreviewStreet": {
+            "type": "string",
+            "maxLength": 255,
+            "description": "Preview đường phố"
+          },
+          "addressPreviewCity": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Preview thành phố"
+          },
+          "addressPreviewState": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Preview bang/tỉnh"
+          },
+          "addressPreviewCountry": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Preview quốc gia"
+          },
+          "addressPreviewPostalCode": {
+            "type": "string",
+            "maxLength": 40,
+            "description": "Preview mã bưu chính"
+          },
+          "addressPreviewMap": {
+            "type": "string",
+            "description": "Preview bản đồ địa chỉ"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Settings_delete",
+      "description": "Delete Settings by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookEventQueueItem_get",
+      "description": "Get list of WebhookEventQueueItem",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookEventQueueItem_post",
+      "description": "Create a new WebhookEventQueueItem",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookEventQueueItem_get_by_id",
+      "description": "Get WebhookEventQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookEventQueueItem_patch",
+      "description": "Update WebhookEventQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookEventQueueItem_delete",
+      "description": "Delete WebhookEventQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+]

@@ -1,0 +1,268 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Case_get",
+      "description": "Get list of Case",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Case_post",
+      "description": "Create a new Case",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "$noBadCharacters"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "New",
+              "Assigned",
+              "Pending",
+              "Closed",
+              "Rejected",
+              "Duplicate"
+            ],
+            "default": "New"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "Low",
+              "Normal",
+              "High",
+              "Urgent"
+            ],
+            "default": "Normal"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Question",
+              "Incident",
+              "Problem"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "accountId": {
+            "type": "string",
+            "description": "ID of the related account"
+          },
+          "lead": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "contact": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "inboundEmailId": {
+            "type": "string",
+            "description": "ID of the related inboundEmail"
+          },
+          "originalEmailId": {
+            "type": "string",
+            "description": "ID of the related originalEmail"
+          },
+          "isInternal": {
+            "type": "boolean"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Case_get_by_id",
+      "description": "Get Case by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Case_patch",
+      "description": "Update Case by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "pattern": "$noBadCharacters"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "New",
+              "Assigned",
+              "Pending",
+              "Closed",
+              "Rejected",
+              "Duplicate"
+            ],
+            "default": "New"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "Low",
+              "Normal",
+              "High",
+              "Urgent"
+            ],
+            "default": "Normal"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Question",
+              "Incident",
+              "Problem"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "accountId": {
+            "type": "string",
+            "description": "ID of the related account"
+          },
+          "lead": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "contact": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "inboundEmailId": {
+            "type": "string",
+            "description": "ID of the related inboundEmail"
+          },
+          "originalEmailId": {
+            "type": "string",
+            "description": "ID of the related originalEmail"
+          },
+          "isInternal": {
+            "type": "boolean"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "assignedUser": {
+            "type": "object",
+            "description": "Circular reference detected"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Circular reference detected"
+            }
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Case_delete",
+      "description": "Delete Case by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

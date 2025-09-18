@@ -1,0 +1,114 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailAddress_get",
+      "description": "Get list of EmailAddress",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailAddress_post",
+      "description": "Create a new EmailAddress",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "lower": {
+            "type": "string",
+            "description": "Email viết thường"
+          },
+          "invalid": {
+            "type": "boolean"
+          },
+          "optOut": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "lower"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailAddress_get_by_id",
+      "description": "Get EmailAddress by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailAddress_patch",
+      "description": "Update EmailAddress by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "lower": {
+            "type": "string",
+            "description": "Email viết thường"
+          },
+          "invalid": {
+            "type": "boolean"
+          },
+          "optOut": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "EmailAddress_delete",
+      "description": "Delete EmailAddress by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

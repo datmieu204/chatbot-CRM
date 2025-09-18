@@ -1,0 +1,179 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Notification_get",
+      "description": "Get list of Notification",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Notification_post",
+      "description": "Create a new Notification",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Số thứ tự của thông báo"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung của thông báo"
+          },
+          "noteData": {
+            "type": "object",
+            "description": "Dữ liệu note liên quan đến thông báo"
+          },
+          "type": {
+            "type": "string",
+            "description": "Loại thông báo"
+          },
+          "read": {
+            "type": "boolean",
+            "description": "Trạng thái đã đọc hay chưa"
+          },
+          "emailIsProcessed": {
+            "type": "boolean",
+            "description": "Xác định email liên quan đã được xử lý chưa"
+          },
+          "user": {
+            "type": "object",
+            "description": "Người nhận thông báo"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo thông báo"
+          },
+          "message": {
+            "type": "string",
+            "description": "Nội dung thông báo"
+          },
+          "related": {
+            "type": "object",
+            "description": "Entity liên quan đến thông báo"
+          },
+          "relatedParent": {
+            "type": "object",
+            "description": "Entity cha liên quan đến thông báo"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo thông báo"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Notification_get_by_id",
+      "description": "Get Notification by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Notification_patch",
+      "description": "Update Notification by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Số thứ tự của thông báo"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung của thông báo"
+          },
+          "noteData": {
+            "type": "object",
+            "description": "Dữ liệu note liên quan đến thông báo"
+          },
+          "type": {
+            "type": "string",
+            "description": "Loại thông báo"
+          },
+          "read": {
+            "type": "boolean",
+            "description": "Trạng thái đã đọc hay chưa"
+          },
+          "emailIsProcessed": {
+            "type": "boolean",
+            "description": "Xác định email liên quan đã được xử lý chưa"
+          },
+          "user": {
+            "type": "object",
+            "description": "Người nhận thông báo"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo thông báo"
+          },
+          "message": {
+            "type": "string",
+            "description": "Nội dung thông báo"
+          },
+          "related": {
+            "type": "object",
+            "description": "Entity liên quan đến thông báo"
+          },
+          "relatedParent": {
+            "type": "object",
+            "description": "Entity cha liên quan đến thông báo"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo thông báo"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Notification_delete",
+      "description": "Delete Notification by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

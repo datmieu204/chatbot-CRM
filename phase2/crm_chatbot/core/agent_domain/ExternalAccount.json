@@ -1,0 +1,110 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "ExternalAccount_get",
+      "description": "Get list of ExternalAccount",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ExternalAccount_post",
+      "description": "Create a new ExternalAccount",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "ID duy nhất của tài khoản bên ngoài"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung của tài khoản bên ngoài dưới dạng JSON"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Xác định tài khoản có đang kích hoạt hay không"
+          },
+          "isLocked": {
+            "type": "boolean",
+            "description": "Xác định tài khoản có bị khóa hay không"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ExternalAccount_get_by_id",
+      "description": "Get ExternalAccount by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ExternalAccount_patch",
+      "description": "Update ExternalAccount by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "ID duy nhất của tài khoản bên ngoài"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu bổ sung của tài khoản bên ngoài dưới dạng JSON"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Xác định tài khoản có đang kích hoạt hay không"
+          },
+          "isLocked": {
+            "type": "boolean",
+            "description": "Xác định tài khoản có bị khóa hay không"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ExternalAccount_delete",
+      "description": "Delete ExternalAccount by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

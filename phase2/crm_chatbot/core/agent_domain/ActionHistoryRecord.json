@@ -1,0 +1,193 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "ActionHistoryRecord_get",
+      "description": "Get list of ActionHistoryRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ActionHistoryRecord_post",
+      "description": "Create a new ActionHistoryRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Số thứ tự tự tăng"
+          },
+          "targetType": {
+            "type": "string",
+            "description": "Loại đối tượng target (scope name)"
+          },
+          "targetId": {
+            "type": "string",
+            "description": "ID of the related target"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Dữ liệu JSON tùy biến"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "read",
+              "update",
+              "create",
+              "delete"
+            ],
+            "description": "Loại hành động"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời điểm tạo"
+          },
+          "userId": {
+            "type": "string",
+            "description": "ID of the related user"
+          },
+          "userType": {
+            "type": "string",
+            "description": "Kiểu user (foreign từ user.type, không lưu DB)"
+          },
+          "ipAddress": {
+            "type": "string",
+            "maxLength": 39,
+            "description": "IPv4 hoặc IPv6"
+          },
+          "authTokenId": {
+            "type": "string",
+            "description": "ID of the related authToken"
+          },
+          "authLogRecordId": {
+            "type": "string",
+            "description": "ID of the related authLogRecord"
+          }
+        },
+        "required": [
+          "number",
+          "action",
+          "createdAt",
+          "user"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ActionHistoryRecord_get_by_id",
+      "description": "Get ActionHistoryRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ActionHistoryRecord_patch",
+      "description": "Update ActionHistoryRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Số thứ tự tự tăng"
+          },
+          "targetType": {
+            "type": "string",
+            "description": "Loại đối tượng target (scope name)"
+          },
+          "targetId": {
+            "type": "string",
+            "description": "ID of the related target"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Dữ liệu JSON tùy biến"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "read",
+              "update",
+              "create",
+              "delete"
+            ],
+            "description": "Loại hành động"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Thời điểm tạo"
+          },
+          "userId": {
+            "type": "string",
+            "description": "ID of the related user"
+          },
+          "userType": {
+            "type": "string",
+            "description": "Kiểu user (foreign từ user.type, không lưu DB)"
+          },
+          "ipAddress": {
+            "type": "string",
+            "maxLength": 39,
+            "description": "IPv4 hoặc IPv6"
+          },
+          "authTokenId": {
+            "type": "string",
+            "description": "ID of the related authToken"
+          },
+          "authLogRecordId": {
+            "type": "string",
+            "description": "ID of the related authLogRecord"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "ActionHistoryRecord_delete",
+      "description": "Delete ActionHistoryRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

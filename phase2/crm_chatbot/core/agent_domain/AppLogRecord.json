@@ -1,0 +1,84 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "AppLogRecord_get",
+      "description": "Get list of AppLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AppLogRecord_post",
+      "description": "Create a new AppLogRecord",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [
+          "number",
+          "createdAt",
+          "message",
+          "level"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AppLogRecord_get_by_id",
+      "description": "Get AppLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AppLogRecord_patch",
+      "description": "Update AppLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "AppLogRecord_delete",
+      "description": "Delete AppLogRecord by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

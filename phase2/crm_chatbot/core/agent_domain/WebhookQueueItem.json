@@ -1,0 +1,159 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookQueueItem_get",
+      "description": "Get list of WebhookQueueItem",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookQueueItem_post",
+      "description": "Create a new WebhookQueueItem",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "integer"
+          },
+          "event": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "webhookId": {
+            "type": "string",
+            "description": "ID of the related webhook"
+          },
+          "target": {
+            "type": "object"
+          },
+          "data": {
+            "type": "object"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Success",
+              "Failed"
+            ]
+          },
+          "processedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "attempts": {
+            "type": "integer"
+          },
+          "processAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookQueueItem_get_by_id",
+      "description": "Get WebhookQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookQueueItem_patch",
+      "description": "Update WebhookQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          },
+          "event": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "webhookId": {
+            "type": "string",
+            "description": "ID of the related webhook"
+          },
+          "target": {
+            "type": "object"
+          },
+          "data": {
+            "type": "object"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Success",
+              "Failed"
+            ]
+          },
+          "processedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "attempts": {
+            "type": "integer"
+          },
+          "processAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "WebhookQueueItem_delete",
+      "description": "Delete WebhookQueueItem by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]

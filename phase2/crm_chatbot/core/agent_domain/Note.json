@@ -1,0 +1,299 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "Note_get",
+      "description": "Get list of Note",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Note_post",
+      "description": "Create a new Note",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "post": {
+            "type": "string",
+            "description": "Nội dung post hoặc note"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu liên quan"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Post",
+              "Create",
+              "CreateRelated",
+              "Update",
+              "Status",
+              "Assign",
+              "Relate",
+              "Unrelate",
+              "EmailReceived",
+              "EmailSent"
+            ],
+            "description": "Loại note/activity"
+          },
+          "targetType": {
+            "type": "string",
+            "enum": [
+              "self",
+              "all",
+              "teams",
+              "users",
+              "portals"
+            ],
+            "description": "Đối tượng nhận thông báo note"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Entity cha của note"
+          },
+          "related": {
+            "type": "object",
+            "description": "Entity liên quan tới note"
+          },
+          "attachments": {
+            "type": "string",
+            "description": "Danh sách attachment liên kết với note"
+          },
+          "number": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Số thứ tự của note"
+          },
+          "teams": {
+            "type": "string",
+            "description": "Danh sách team liên quan"
+          },
+          "portals": {
+            "type": "string",
+            "description": "Danh sách portal liên quan"
+          },
+          "users": {
+            "type": "string",
+            "description": "Danh sách user liên quan"
+          },
+          "isGlobal": {
+            "type": "boolean",
+            "description": "Xác định note có là global hay không"
+          },
+          "createdByGender": {
+            "type": "object",
+            "description": "Giới tính người tạo note"
+          },
+          "notifiedUserIdList": {
+            "type": "string",
+            "description": "Danh sách user được thông báo"
+          },
+          "isInternal": {
+            "type": "boolean",
+            "description": "Xác định note là nội bộ hay công khai"
+          },
+          "isPinned": {
+            "type": "boolean",
+            "description": "Xác định note có được ghim hay không"
+          },
+          "reactionCounts": {
+            "type": "object",
+            "description": "Số lượt reaction của note"
+          },
+          "myReactions": {
+            "type": "string",
+            "description": "Reaction của người hiện tại"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo note"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa note"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo note"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa note"
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Note_get_by_id",
+      "description": "Get Note by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Note_patch",
+      "description": "Update Note by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "post": {
+            "type": "string",
+            "description": "Nội dung post hoặc note"
+          },
+          "data": {
+            "type": "object",
+            "description": "Dữ liệu liên quan"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Post",
+              "Create",
+              "CreateRelated",
+              "Update",
+              "Status",
+              "Assign",
+              "Relate",
+              "Unrelate",
+              "EmailReceived",
+              "EmailSent"
+            ],
+            "description": "Loại note/activity"
+          },
+          "targetType": {
+            "type": "string",
+            "enum": [
+              "self",
+              "all",
+              "teams",
+              "users",
+              "portals"
+            ],
+            "description": "Đối tượng nhận thông báo note"
+          },
+          "parent": {
+            "type": "object",
+            "description": "Entity cha của note"
+          },
+          "related": {
+            "type": "object",
+            "description": "Entity liên quan tới note"
+          },
+          "attachments": {
+            "type": "string",
+            "description": "Danh sách attachment liên kết với note"
+          },
+          "number": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Số thứ tự của note"
+          },
+          "teams": {
+            "type": "string",
+            "description": "Danh sách team liên quan"
+          },
+          "portals": {
+            "type": "string",
+            "description": "Danh sách portal liên quan"
+          },
+          "users": {
+            "type": "string",
+            "description": "Danh sách user liên quan"
+          },
+          "isGlobal": {
+            "type": "boolean",
+            "description": "Xác định note có là global hay không"
+          },
+          "createdByGender": {
+            "type": "object",
+            "description": "Giới tính người tạo note"
+          },
+          "notifiedUserIdList": {
+            "type": "string",
+            "description": "Danh sách user được thông báo"
+          },
+          "isInternal": {
+            "type": "boolean",
+            "description": "Xác định note là nội bộ hay công khai"
+          },
+          "isPinned": {
+            "type": "boolean",
+            "description": "Xác định note có được ghim hay không"
+          },
+          "reactionCounts": {
+            "type": "object",
+            "description": "Số lượt reaction của note"
+          },
+          "myReactions": {
+            "type": "string",
+            "description": "Reaction của người hiện tại"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ tạo note"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Ngày giờ chỉnh sửa note"
+          },
+          "createdBy": {
+            "type": "object",
+            "description": "Người tạo note"
+          },
+          "modifiedBy": {
+            "type": "object",
+            "description": "Người chỉnh sửa note"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "Note_delete",
+      "description": "Delete Note by ID",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  }
+]
