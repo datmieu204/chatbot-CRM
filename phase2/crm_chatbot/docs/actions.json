@@ -1,0 +1,3482 @@
+[
+  {
+    "action_id": "ActionHistoryRecord.get",
+    "entity": "ActionHistoryRecord",
+    "operation": "get",
+    "method": "GET",
+    "path": "/ActionHistoryRecord",
+    "summary": "Get list of ActionHistoryRecord"
+  },
+  {
+    "action_id": "ActionHistoryRecord.post",
+    "entity": "ActionHistoryRecord",
+    "operation": "post",
+    "method": "POST",
+    "path": "/ActionHistoryRecord",
+    "summary": "Create a new ActionHistoryRecord"
+  },
+  {
+    "action_id": "ActionHistoryRecord.get_by_id",
+    "entity": "ActionHistoryRecord",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/ActionHistoryRecord/{id}",
+    "summary": "Get ActionHistoryRecord by ID"
+  },
+  {
+    "action_id": "ActionHistoryRecord.patch",
+    "entity": "ActionHistoryRecord",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/ActionHistoryRecord/{id}",
+    "summary": "Update ActionHistoryRecord by ID"
+  },
+  {
+    "action_id": "ActionHistoryRecord.delete",
+    "entity": "ActionHistoryRecord",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/ActionHistoryRecord/{id}",
+    "summary": "Delete ActionHistoryRecord by ID"
+  },
+  {
+    "action_id": "AddressCountry.get",
+    "entity": "AddressCountry",
+    "operation": "get",
+    "method": "GET",
+    "path": "/AddressCountry",
+    "summary": "Get list of AddressCountry"
+  },
+  {
+    "action_id": "AddressCountry.post",
+    "entity": "AddressCountry",
+    "operation": "post",
+    "method": "POST",
+    "path": "/AddressCountry",
+    "summary": "Create a new AddressCountry"
+  },
+  {
+    "action_id": "AddressCountry.get_by_id",
+    "entity": "AddressCountry",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/AddressCountry/{id}",
+    "summary": "Get AddressCountry by ID"
+  },
+  {
+    "action_id": "AddressCountry.patch",
+    "entity": "AddressCountry",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/AddressCountry/{id}",
+    "summary": "Update AddressCountry by ID"
+  },
+  {
+    "action_id": "AddressCountry.delete",
+    "entity": "AddressCountry",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/AddressCountry/{id}",
+    "summary": "Delete AddressCountry by ID"
+  },
+  {
+    "action_id": "AppLogRecord.get",
+    "entity": "AppLogRecord",
+    "operation": "get",
+    "method": "GET",
+    "path": "/AppLogRecord",
+    "summary": "Get list of AppLogRecord"
+  },
+  {
+    "action_id": "AppLogRecord.post",
+    "entity": "AppLogRecord",
+    "operation": "post",
+    "method": "POST",
+    "path": "/AppLogRecord",
+    "summary": "Create a new AppLogRecord"
+  },
+  {
+    "action_id": "AppLogRecord.get_by_id",
+    "entity": "AppLogRecord",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/AppLogRecord/{id}",
+    "summary": "Get AppLogRecord by ID"
+  },
+  {
+    "action_id": "AppLogRecord.patch",
+    "entity": "AppLogRecord",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/AppLogRecord/{id}",
+    "summary": "Update AppLogRecord by ID"
+  },
+  {
+    "action_id": "AppLogRecord.delete",
+    "entity": "AppLogRecord",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/AppLogRecord/{id}",
+    "summary": "Delete AppLogRecord by ID"
+  },
+  {
+    "action_id": "AppSecret.get",
+    "entity": "AppSecret",
+    "operation": "get",
+    "method": "GET",
+    "path": "/AppSecret",
+    "summary": "Get list of AppSecret"
+  },
+  {
+    "action_id": "AppSecret.post",
+    "entity": "AppSecret",
+    "operation": "post",
+    "method": "POST",
+    "path": "/AppSecret",
+    "summary": "Create a new AppSecret"
+  },
+  {
+    "action_id": "AppSecret.get_by_id",
+    "entity": "AppSecret",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/AppSecret/{id}",
+    "summary": "Get AppSecret by ID"
+  },
+  {
+    "action_id": "AppSecret.patch",
+    "entity": "AppSecret",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/AppSecret/{id}",
+    "summary": "Update AppSecret by ID"
+  },
+  {
+    "action_id": "AppSecret.delete",
+    "entity": "AppSecret",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/AppSecret/{id}",
+    "summary": "Delete AppSecret by ID"
+  },
+  {
+    "action_id": "ArrayValue.get",
+    "entity": "ArrayValue",
+    "operation": "get",
+    "method": "GET",
+    "path": "/ArrayValue",
+    "summary": "Get list of ArrayValue"
+  },
+  {
+    "action_id": "ArrayValue.post",
+    "entity": "ArrayValue",
+    "operation": "post",
+    "method": "POST",
+    "path": "/ArrayValue",
+    "summary": "Create a new ArrayValue"
+  },
+  {
+    "action_id": "ArrayValue.get_by_id",
+    "entity": "ArrayValue",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/ArrayValue/{id}",
+    "summary": "Get ArrayValue by ID"
+  },
+  {
+    "action_id": "ArrayValue.patch",
+    "entity": "ArrayValue",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/ArrayValue/{id}",
+    "summary": "Update ArrayValue by ID"
+  },
+  {
+    "action_id": "ArrayValue.delete",
+    "entity": "ArrayValue",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/ArrayValue/{id}",
+    "summary": "Delete ArrayValue by ID"
+  },
+  {
+    "action_id": "Attachment.get",
+    "entity": "Attachment",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Attachment",
+    "summary": "Get list of Attachment"
+  },
+  {
+    "action_id": "Attachment.post",
+    "entity": "Attachment",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Attachment",
+    "summary": "Create a new Attachment"
+  },
+  {
+    "action_id": "Attachment.get_by_id",
+    "entity": "Attachment",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Attachment/{id}",
+    "summary": "Get Attachment by ID"
+  },
+  {
+    "action_id": "Attachment.patch",
+    "entity": "Attachment",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Attachment/{id}",
+    "summary": "Update Attachment by ID"
+  },
+  {
+    "action_id": "Attachment.delete",
+    "entity": "Attachment",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Attachment/{id}",
+    "summary": "Delete Attachment by ID"
+  },
+  {
+    "action_id": "AuthLogRecord.get",
+    "entity": "AuthLogRecord",
+    "operation": "get",
+    "method": "GET",
+    "path": "/AuthLogRecord",
+    "summary": "Get list of AuthLogRecord"
+  },
+  {
+    "action_id": "AuthLogRecord.post",
+    "entity": "AuthLogRecord",
+    "operation": "post",
+    "method": "POST",
+    "path": "/AuthLogRecord",
+    "summary": "Create a new AuthLogRecord"
+  },
+  {
+    "action_id": "AuthLogRecord.get_by_id",
+    "entity": "AuthLogRecord",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/AuthLogRecord/{id}",
+    "summary": "Get AuthLogRecord by ID"
+  },
+  {
+    "action_id": "AuthLogRecord.patch",
+    "entity": "AuthLogRecord",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/AuthLogRecord/{id}",
+    "summary": "Update AuthLogRecord by ID"
+  },
+  {
+    "action_id": "AuthLogRecord.delete",
+    "entity": "AuthLogRecord",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/AuthLogRecord/{id}",
+    "summary": "Delete AuthLogRecord by ID"
+  },
+  {
+    "action_id": "AuthToken.get",
+    "entity": "AuthToken",
+    "operation": "get",
+    "method": "GET",
+    "path": "/AuthToken",
+    "summary": "Get list of AuthToken"
+  },
+  {
+    "action_id": "AuthToken.post",
+    "entity": "AuthToken",
+    "operation": "post",
+    "method": "POST",
+    "path": "/AuthToken",
+    "summary": "Create a new AuthToken"
+  },
+  {
+    "action_id": "AuthToken.get_by_id",
+    "entity": "AuthToken",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/AuthToken/{id}",
+    "summary": "Get AuthToken by ID"
+  },
+  {
+    "action_id": "AuthToken.patch",
+    "entity": "AuthToken",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/AuthToken/{id}",
+    "summary": "Update AuthToken by ID"
+  },
+  {
+    "action_id": "AuthToken.delete",
+    "entity": "AuthToken",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/AuthToken/{id}",
+    "summary": "Delete AuthToken by ID"
+  },
+  {
+    "action_id": "AuthenticationProvider.get",
+    "entity": "AuthenticationProvider",
+    "operation": "get",
+    "method": "GET",
+    "path": "/AuthenticationProvider",
+    "summary": "Get list of AuthenticationProvider"
+  },
+  {
+    "action_id": "AuthenticationProvider.post",
+    "entity": "AuthenticationProvider",
+    "operation": "post",
+    "method": "POST",
+    "path": "/AuthenticationProvider",
+    "summary": "Create a new AuthenticationProvider"
+  },
+  {
+    "action_id": "AuthenticationProvider.get_by_id",
+    "entity": "AuthenticationProvider",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/AuthenticationProvider/{id}",
+    "summary": "Get AuthenticationProvider by ID"
+  },
+  {
+    "action_id": "AuthenticationProvider.patch",
+    "entity": "AuthenticationProvider",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/AuthenticationProvider/{id}",
+    "summary": "Update AuthenticationProvider by ID"
+  },
+  {
+    "action_id": "AuthenticationProvider.delete",
+    "entity": "AuthenticationProvider",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/AuthenticationProvider/{id}",
+    "summary": "Delete AuthenticationProvider by ID"
+  },
+  {
+    "action_id": "Autofollow.get",
+    "entity": "Autofollow",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Autofollow",
+    "summary": "Get list of Autofollow"
+  },
+  {
+    "action_id": "Autofollow.post",
+    "entity": "Autofollow",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Autofollow",
+    "summary": "Create a new Autofollow"
+  },
+  {
+    "action_id": "Autofollow.get_by_id",
+    "entity": "Autofollow",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Autofollow/{id}",
+    "summary": "Get Autofollow by ID"
+  },
+  {
+    "action_id": "Autofollow.patch",
+    "entity": "Autofollow",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Autofollow/{id}",
+    "summary": "Update Autofollow by ID"
+  },
+  {
+    "action_id": "Autofollow.delete",
+    "entity": "Autofollow",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Autofollow/{id}",
+    "summary": "Delete Autofollow by ID"
+  },
+  {
+    "action_id": "Currency.get",
+    "entity": "Currency",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Currency",
+    "summary": "Get list of Currency"
+  },
+  {
+    "action_id": "Currency.post",
+    "entity": "Currency",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Currency",
+    "summary": "Create a new Currency"
+  },
+  {
+    "action_id": "Currency.get_by_id",
+    "entity": "Currency",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Currency/{id}",
+    "summary": "Get Currency by ID"
+  },
+  {
+    "action_id": "Currency.patch",
+    "entity": "Currency",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Currency/{id}",
+    "summary": "Update Currency by ID"
+  },
+  {
+    "action_id": "Currency.delete",
+    "entity": "Currency",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Currency/{id}",
+    "summary": "Delete Currency by ID"
+  },
+  {
+    "action_id": "DashboardTemplate.get",
+    "entity": "DashboardTemplate",
+    "operation": "get",
+    "method": "GET",
+    "path": "/DashboardTemplate",
+    "summary": "Get list of DashboardTemplate"
+  },
+  {
+    "action_id": "DashboardTemplate.post",
+    "entity": "DashboardTemplate",
+    "operation": "post",
+    "method": "POST",
+    "path": "/DashboardTemplate",
+    "summary": "Create a new DashboardTemplate"
+  },
+  {
+    "action_id": "DashboardTemplate.get_by_id",
+    "entity": "DashboardTemplate",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/DashboardTemplate/{id}",
+    "summary": "Get DashboardTemplate by ID"
+  },
+  {
+    "action_id": "DashboardTemplate.patch",
+    "entity": "DashboardTemplate",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/DashboardTemplate/{id}",
+    "summary": "Update DashboardTemplate by ID"
+  },
+  {
+    "action_id": "DashboardTemplate.delete",
+    "entity": "DashboardTemplate",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/DashboardTemplate/{id}",
+    "summary": "Delete DashboardTemplate by ID"
+  },
+  {
+    "action_id": "Email.get",
+    "entity": "Email",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Email",
+    "summary": "Get list of Email"
+  },
+  {
+    "action_id": "Email.post",
+    "entity": "Email",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Email",
+    "summary": "Create a new Email"
+  },
+  {
+    "action_id": "Email.get_by_id",
+    "entity": "Email",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Email/{id}",
+    "summary": "Get Email by ID"
+  },
+  {
+    "action_id": "Email.patch",
+    "entity": "Email",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Email/{id}",
+    "summary": "Update Email by ID"
+  },
+  {
+    "action_id": "Email.delete",
+    "entity": "Email",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Email/{id}",
+    "summary": "Delete Email by ID"
+  },
+  {
+    "action_id": "EmailAccount.get",
+    "entity": "EmailAccount",
+    "operation": "get",
+    "method": "GET",
+    "path": "/EmailAccount",
+    "summary": "Get list of EmailAccount"
+  },
+  {
+    "action_id": "EmailAccount.post",
+    "entity": "EmailAccount",
+    "operation": "post",
+    "method": "POST",
+    "path": "/EmailAccount",
+    "summary": "Create a new EmailAccount"
+  },
+  {
+    "action_id": "EmailAccount.get_by_id",
+    "entity": "EmailAccount",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/EmailAccount/{id}",
+    "summary": "Get EmailAccount by ID"
+  },
+  {
+    "action_id": "EmailAccount.patch",
+    "entity": "EmailAccount",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/EmailAccount/{id}",
+    "summary": "Update EmailAccount by ID"
+  },
+  {
+    "action_id": "EmailAccount.delete",
+    "entity": "EmailAccount",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/EmailAccount/{id}",
+    "summary": "Delete EmailAccount by ID"
+  },
+  {
+    "action_id": "EmailAddress.get",
+    "entity": "EmailAddress",
+    "operation": "get",
+    "method": "GET",
+    "path": "/EmailAddress",
+    "summary": "Get list of EmailAddress"
+  },
+  {
+    "action_id": "EmailAddress.post",
+    "entity": "EmailAddress",
+    "operation": "post",
+    "method": "POST",
+    "path": "/EmailAddress",
+    "summary": "Create a new EmailAddress"
+  },
+  {
+    "action_id": "EmailAddress.get_by_id",
+    "entity": "EmailAddress",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/EmailAddress/{id}",
+    "summary": "Get EmailAddress by ID"
+  },
+  {
+    "action_id": "EmailAddress.patch",
+    "entity": "EmailAddress",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/EmailAddress/{id}",
+    "summary": "Update EmailAddress by ID"
+  },
+  {
+    "action_id": "EmailAddress.delete",
+    "entity": "EmailAddress",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/EmailAddress/{id}",
+    "summary": "Delete EmailAddress by ID"
+  },
+  {
+    "action_id": "EmailFilter.get",
+    "entity": "EmailFilter",
+    "operation": "get",
+    "method": "GET",
+    "path": "/EmailFilter",
+    "summary": "Get list of EmailFilter"
+  },
+  {
+    "action_id": "EmailFilter.post",
+    "entity": "EmailFilter",
+    "operation": "post",
+    "method": "POST",
+    "path": "/EmailFilter",
+    "summary": "Create a new EmailFilter"
+  },
+  {
+    "action_id": "EmailFilter.get_by_id",
+    "entity": "EmailFilter",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/EmailFilter/{id}",
+    "summary": "Get EmailFilter by ID"
+  },
+  {
+    "action_id": "EmailFilter.patch",
+    "entity": "EmailFilter",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/EmailFilter/{id}",
+    "summary": "Update EmailFilter by ID"
+  },
+  {
+    "action_id": "EmailFilter.delete",
+    "entity": "EmailFilter",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/EmailFilter/{id}",
+    "summary": "Delete EmailFilter by ID"
+  },
+  {
+    "action_id": "EmailFolder.get",
+    "entity": "EmailFolder",
+    "operation": "get",
+    "method": "GET",
+    "path": "/EmailFolder",
+    "summary": "Get list of EmailFolder"
+  },
+  {
+    "action_id": "EmailFolder.post",
+    "entity": "EmailFolder",
+    "operation": "post",
+    "method": "POST",
+    "path": "/EmailFolder",
+    "summary": "Create a new EmailFolder"
+  },
+  {
+    "action_id": "EmailFolder.get_by_id",
+    "entity": "EmailFolder",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/EmailFolder/{id}",
+    "summary": "Get EmailFolder by ID"
+  },
+  {
+    "action_id": "EmailFolder.patch",
+    "entity": "EmailFolder",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/EmailFolder/{id}",
+    "summary": "Update EmailFolder by ID"
+  },
+  {
+    "action_id": "EmailFolder.delete",
+    "entity": "EmailFolder",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/EmailFolder/{id}",
+    "summary": "Delete EmailFolder by ID"
+  },
+  {
+    "action_id": "EmailTemplate.get",
+    "entity": "EmailTemplate",
+    "operation": "get",
+    "method": "GET",
+    "path": "/EmailTemplate",
+    "summary": "Get list of EmailTemplate"
+  },
+  {
+    "action_id": "EmailTemplate.post",
+    "entity": "EmailTemplate",
+    "operation": "post",
+    "method": "POST",
+    "path": "/EmailTemplate",
+    "summary": "Create a new EmailTemplate"
+  },
+  {
+    "action_id": "EmailTemplate.get_by_id",
+    "entity": "EmailTemplate",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/EmailTemplate/{id}",
+    "summary": "Get EmailTemplate by ID"
+  },
+  {
+    "action_id": "EmailTemplate.patch",
+    "entity": "EmailTemplate",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/EmailTemplate/{id}",
+    "summary": "Update EmailTemplate by ID"
+  },
+  {
+    "action_id": "EmailTemplate.delete",
+    "entity": "EmailTemplate",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/EmailTemplate/{id}",
+    "summary": "Delete EmailTemplate by ID"
+  },
+  {
+    "action_id": "EmailTemplateCategory.get",
+    "entity": "EmailTemplateCategory",
+    "operation": "get",
+    "method": "GET",
+    "path": "/EmailTemplateCategory",
+    "summary": "Get list of EmailTemplateCategory"
+  },
+  {
+    "action_id": "EmailTemplateCategory.post",
+    "entity": "EmailTemplateCategory",
+    "operation": "post",
+    "method": "POST",
+    "path": "/EmailTemplateCategory",
+    "summary": "Create a new EmailTemplateCategory"
+  },
+  {
+    "action_id": "EmailTemplateCategory.get_by_id",
+    "entity": "EmailTemplateCategory",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/EmailTemplateCategory/{id}",
+    "summary": "Get EmailTemplateCategory by ID"
+  },
+  {
+    "action_id": "EmailTemplateCategory.patch",
+    "entity": "EmailTemplateCategory",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/EmailTemplateCategory/{id}",
+    "summary": "Update EmailTemplateCategory by ID"
+  },
+  {
+    "action_id": "EmailTemplateCategory.delete",
+    "entity": "EmailTemplateCategory",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/EmailTemplateCategory/{id}",
+    "summary": "Delete EmailTemplateCategory by ID"
+  },
+  {
+    "action_id": "Export.get",
+    "entity": "Export",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Export",
+    "summary": "Get list of Export"
+  },
+  {
+    "action_id": "Export.post",
+    "entity": "Export",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Export",
+    "summary": "Create a new Export"
+  },
+  {
+    "action_id": "Export.get_by_id",
+    "entity": "Export",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Export/{id}",
+    "summary": "Get Export by ID"
+  },
+  {
+    "action_id": "Export.patch",
+    "entity": "Export",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Export/{id}",
+    "summary": "Update Export by ID"
+  },
+  {
+    "action_id": "Export.delete",
+    "entity": "Export",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Export/{id}",
+    "summary": "Delete Export by ID"
+  },
+  {
+    "action_id": "Extension.get",
+    "entity": "Extension",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Extension",
+    "summary": "Get list of Extension"
+  },
+  {
+    "action_id": "Extension.post",
+    "entity": "Extension",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Extension",
+    "summary": "Create a new Extension"
+  },
+  {
+    "action_id": "Extension.get_by_id",
+    "entity": "Extension",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Extension/{id}",
+    "summary": "Get Extension by ID"
+  },
+  {
+    "action_id": "Extension.patch",
+    "entity": "Extension",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Extension/{id}",
+    "summary": "Update Extension by ID"
+  },
+  {
+    "action_id": "Extension.delete",
+    "entity": "Extension",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Extension/{id}",
+    "summary": "Delete Extension by ID"
+  },
+  {
+    "action_id": "ExternalAccount.get",
+    "entity": "ExternalAccount",
+    "operation": "get",
+    "method": "GET",
+    "path": "/ExternalAccount",
+    "summary": "Get list of ExternalAccount"
+  },
+  {
+    "action_id": "ExternalAccount.post",
+    "entity": "ExternalAccount",
+    "operation": "post",
+    "method": "POST",
+    "path": "/ExternalAccount",
+    "summary": "Create a new ExternalAccount"
+  },
+  {
+    "action_id": "ExternalAccount.get_by_id",
+    "entity": "ExternalAccount",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/ExternalAccount/{id}",
+    "summary": "Get ExternalAccount by ID"
+  },
+  {
+    "action_id": "ExternalAccount.patch",
+    "entity": "ExternalAccount",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/ExternalAccount/{id}",
+    "summary": "Update ExternalAccount by ID"
+  },
+  {
+    "action_id": "ExternalAccount.delete",
+    "entity": "ExternalAccount",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/ExternalAccount/{id}",
+    "summary": "Delete ExternalAccount by ID"
+  },
+  {
+    "action_id": "GroupEmailFolder.get",
+    "entity": "GroupEmailFolder",
+    "operation": "get",
+    "method": "GET",
+    "path": "/GroupEmailFolder",
+    "summary": "Get list of GroupEmailFolder"
+  },
+  {
+    "action_id": "GroupEmailFolder.post",
+    "entity": "GroupEmailFolder",
+    "operation": "post",
+    "method": "POST",
+    "path": "/GroupEmailFolder",
+    "summary": "Create a new GroupEmailFolder"
+  },
+  {
+    "action_id": "GroupEmailFolder.get_by_id",
+    "entity": "GroupEmailFolder",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/GroupEmailFolder/{id}",
+    "summary": "Get GroupEmailFolder by ID"
+  },
+  {
+    "action_id": "GroupEmailFolder.patch",
+    "entity": "GroupEmailFolder",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/GroupEmailFolder/{id}",
+    "summary": "Update GroupEmailFolder by ID"
+  },
+  {
+    "action_id": "GroupEmailFolder.delete",
+    "entity": "GroupEmailFolder",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/GroupEmailFolder/{id}",
+    "summary": "Delete GroupEmailFolder by ID"
+  },
+  {
+    "action_id": "Import.get",
+    "entity": "Import",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Import",
+    "summary": "Get list of Import"
+  },
+  {
+    "action_id": "Import.post",
+    "entity": "Import",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Import",
+    "summary": "Create a new Import"
+  },
+  {
+    "action_id": "Import.get_by_id",
+    "entity": "Import",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Import/{id}",
+    "summary": "Get Import by ID"
+  },
+  {
+    "action_id": "Import.patch",
+    "entity": "Import",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Import/{id}",
+    "summary": "Update Import by ID"
+  },
+  {
+    "action_id": "Import.delete",
+    "entity": "Import",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Import/{id}",
+    "summary": "Delete Import by ID"
+  },
+  {
+    "action_id": "ImportEml.get",
+    "entity": "ImportEml",
+    "operation": "get",
+    "method": "GET",
+    "path": "/ImportEml",
+    "summary": "Get list of ImportEml"
+  },
+  {
+    "action_id": "ImportEml.post",
+    "entity": "ImportEml",
+    "operation": "post",
+    "method": "POST",
+    "path": "/ImportEml",
+    "summary": "Create a new ImportEml"
+  },
+  {
+    "action_id": "ImportEml.get_by_id",
+    "entity": "ImportEml",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/ImportEml/{id}",
+    "summary": "Get ImportEml by ID"
+  },
+  {
+    "action_id": "ImportEml.patch",
+    "entity": "ImportEml",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/ImportEml/{id}",
+    "summary": "Update ImportEml by ID"
+  },
+  {
+    "action_id": "ImportEml.delete",
+    "entity": "ImportEml",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/ImportEml/{id}",
+    "summary": "Delete ImportEml by ID"
+  },
+  {
+    "action_id": "ImportEntity.get",
+    "entity": "ImportEntity",
+    "operation": "get",
+    "method": "GET",
+    "path": "/ImportEntity",
+    "summary": "Get list of ImportEntity"
+  },
+  {
+    "action_id": "ImportEntity.post",
+    "entity": "ImportEntity",
+    "operation": "post",
+    "method": "POST",
+    "path": "/ImportEntity",
+    "summary": "Create a new ImportEntity"
+  },
+  {
+    "action_id": "ImportEntity.get_by_id",
+    "entity": "ImportEntity",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/ImportEntity/{id}",
+    "summary": "Get ImportEntity by ID"
+  },
+  {
+    "action_id": "ImportEntity.patch",
+    "entity": "ImportEntity",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/ImportEntity/{id}",
+    "summary": "Update ImportEntity by ID"
+  },
+  {
+    "action_id": "ImportEntity.delete",
+    "entity": "ImportEntity",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/ImportEntity/{id}",
+    "summary": "Delete ImportEntity by ID"
+  },
+  {
+    "action_id": "ImportError.get",
+    "entity": "ImportError",
+    "operation": "get",
+    "method": "GET",
+    "path": "/ImportError",
+    "summary": "Get list of ImportError"
+  },
+  {
+    "action_id": "ImportError.post",
+    "entity": "ImportError",
+    "operation": "post",
+    "method": "POST",
+    "path": "/ImportError",
+    "summary": "Create a new ImportError"
+  },
+  {
+    "action_id": "ImportError.get_by_id",
+    "entity": "ImportError",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/ImportError/{id}",
+    "summary": "Get ImportError by ID"
+  },
+  {
+    "action_id": "ImportError.patch",
+    "entity": "ImportError",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/ImportError/{id}",
+    "summary": "Update ImportError by ID"
+  },
+  {
+    "action_id": "ImportError.delete",
+    "entity": "ImportError",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/ImportError/{id}",
+    "summary": "Delete ImportError by ID"
+  },
+  {
+    "action_id": "InboundEmail.get",
+    "entity": "InboundEmail",
+    "operation": "get",
+    "method": "GET",
+    "path": "/InboundEmail",
+    "summary": "Get list of InboundEmail"
+  },
+  {
+    "action_id": "InboundEmail.post",
+    "entity": "InboundEmail",
+    "operation": "post",
+    "method": "POST",
+    "path": "/InboundEmail",
+    "summary": "Create a new InboundEmail"
+  },
+  {
+    "action_id": "InboundEmail.get_by_id",
+    "entity": "InboundEmail",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/InboundEmail/{id}",
+    "summary": "Get InboundEmail by ID"
+  },
+  {
+    "action_id": "InboundEmail.patch",
+    "entity": "InboundEmail",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/InboundEmail/{id}",
+    "summary": "Update InboundEmail by ID"
+  },
+  {
+    "action_id": "InboundEmail.delete",
+    "entity": "InboundEmail",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/InboundEmail/{id}",
+    "summary": "Delete InboundEmail by ID"
+  },
+  {
+    "action_id": "Integration.get",
+    "entity": "Integration",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Integration",
+    "summary": "Get list of Integration"
+  },
+  {
+    "action_id": "Integration.post",
+    "entity": "Integration",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Integration",
+    "summary": "Create a new Integration"
+  },
+  {
+    "action_id": "Integration.get_by_id",
+    "entity": "Integration",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Integration/{id}",
+    "summary": "Get Integration by ID"
+  },
+  {
+    "action_id": "Integration.patch",
+    "entity": "Integration",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Integration/{id}",
+    "summary": "Update Integration by ID"
+  },
+  {
+    "action_id": "Integration.delete",
+    "entity": "Integration",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Integration/{id}",
+    "summary": "Delete Integration by ID"
+  },
+  {
+    "action_id": "Job.get",
+    "entity": "Job",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Job",
+    "summary": "Get list of Job"
+  },
+  {
+    "action_id": "Job.post",
+    "entity": "Job",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Job",
+    "summary": "Create a new Job"
+  },
+  {
+    "action_id": "Job.get_by_id",
+    "entity": "Job",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Job/{id}",
+    "summary": "Get Job by ID"
+  },
+  {
+    "action_id": "Job.patch",
+    "entity": "Job",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Job/{id}",
+    "summary": "Update Job by ID"
+  },
+  {
+    "action_id": "Job.delete",
+    "entity": "Job",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Job/{id}",
+    "summary": "Delete Job by ID"
+  },
+  {
+    "action_id": "KanbanOrder.get",
+    "entity": "KanbanOrder",
+    "operation": "get",
+    "method": "GET",
+    "path": "/KanbanOrder",
+    "summary": "Get list of KanbanOrder"
+  },
+  {
+    "action_id": "KanbanOrder.post",
+    "entity": "KanbanOrder",
+    "operation": "post",
+    "method": "POST",
+    "path": "/KanbanOrder",
+    "summary": "Create a new KanbanOrder"
+  },
+  {
+    "action_id": "KanbanOrder.get_by_id",
+    "entity": "KanbanOrder",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/KanbanOrder/{id}",
+    "summary": "Get KanbanOrder by ID"
+  },
+  {
+    "action_id": "KanbanOrder.patch",
+    "entity": "KanbanOrder",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/KanbanOrder/{id}",
+    "summary": "Update KanbanOrder by ID"
+  },
+  {
+    "action_id": "KanbanOrder.delete",
+    "entity": "KanbanOrder",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/KanbanOrder/{id}",
+    "summary": "Delete KanbanOrder by ID"
+  },
+  {
+    "action_id": "LayoutRecord.get",
+    "entity": "LayoutRecord",
+    "operation": "get",
+    "method": "GET",
+    "path": "/LayoutRecord",
+    "summary": "Get list of LayoutRecord"
+  },
+  {
+    "action_id": "LayoutRecord.post",
+    "entity": "LayoutRecord",
+    "operation": "post",
+    "method": "POST",
+    "path": "/LayoutRecord",
+    "summary": "Create a new LayoutRecord"
+  },
+  {
+    "action_id": "LayoutRecord.get_by_id",
+    "entity": "LayoutRecord",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/LayoutRecord/{id}",
+    "summary": "Get LayoutRecord by ID"
+  },
+  {
+    "action_id": "LayoutRecord.patch",
+    "entity": "LayoutRecord",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/LayoutRecord/{id}",
+    "summary": "Update LayoutRecord by ID"
+  },
+  {
+    "action_id": "LayoutRecord.delete",
+    "entity": "LayoutRecord",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/LayoutRecord/{id}",
+    "summary": "Delete LayoutRecord by ID"
+  },
+  {
+    "action_id": "LayoutSet.get",
+    "entity": "LayoutSet",
+    "operation": "get",
+    "method": "GET",
+    "path": "/LayoutSet",
+    "summary": "Get list of LayoutSet"
+  },
+  {
+    "action_id": "LayoutSet.post",
+    "entity": "LayoutSet",
+    "operation": "post",
+    "method": "POST",
+    "path": "/LayoutSet",
+    "summary": "Create a new LayoutSet"
+  },
+  {
+    "action_id": "LayoutSet.get_by_id",
+    "entity": "LayoutSet",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/LayoutSet/{id}",
+    "summary": "Get LayoutSet by ID"
+  },
+  {
+    "action_id": "LayoutSet.patch",
+    "entity": "LayoutSet",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/LayoutSet/{id}",
+    "summary": "Update LayoutSet by ID"
+  },
+  {
+    "action_id": "LayoutSet.delete",
+    "entity": "LayoutSet",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/LayoutSet/{id}",
+    "summary": "Delete LayoutSet by ID"
+  },
+  {
+    "action_id": "LeadCapture.get",
+    "entity": "LeadCapture",
+    "operation": "get",
+    "method": "GET",
+    "path": "/LeadCapture",
+    "summary": "Get list of LeadCapture"
+  },
+  {
+    "action_id": "LeadCapture.post",
+    "entity": "LeadCapture",
+    "operation": "post",
+    "method": "POST",
+    "path": "/LeadCapture",
+    "summary": "Create a new LeadCapture"
+  },
+  {
+    "action_id": "LeadCapture.get_by_id",
+    "entity": "LeadCapture",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/LeadCapture/{id}",
+    "summary": "Get LeadCapture by ID"
+  },
+  {
+    "action_id": "LeadCapture.patch",
+    "entity": "LeadCapture",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/LeadCapture/{id}",
+    "summary": "Update LeadCapture by ID"
+  },
+  {
+    "action_id": "LeadCapture.delete",
+    "entity": "LeadCapture",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/LeadCapture/{id}",
+    "summary": "Delete LeadCapture by ID"
+  },
+  {
+    "action_id": "LeadCaptureLogRecord.get",
+    "entity": "LeadCaptureLogRecord",
+    "operation": "get",
+    "method": "GET",
+    "path": "/LeadCaptureLogRecord",
+    "summary": "Get list of LeadCaptureLogRecord"
+  },
+  {
+    "action_id": "LeadCaptureLogRecord.post",
+    "entity": "LeadCaptureLogRecord",
+    "operation": "post",
+    "method": "POST",
+    "path": "/LeadCaptureLogRecord",
+    "summary": "Create a new LeadCaptureLogRecord"
+  },
+  {
+    "action_id": "LeadCaptureLogRecord.get_by_id",
+    "entity": "LeadCaptureLogRecord",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/LeadCaptureLogRecord/{id}",
+    "summary": "Get LeadCaptureLogRecord by ID"
+  },
+  {
+    "action_id": "LeadCaptureLogRecord.patch",
+    "entity": "LeadCaptureLogRecord",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/LeadCaptureLogRecord/{id}",
+    "summary": "Update LeadCaptureLogRecord by ID"
+  },
+  {
+    "action_id": "LeadCaptureLogRecord.delete",
+    "entity": "LeadCaptureLogRecord",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/LeadCaptureLogRecord/{id}",
+    "summary": "Delete LeadCaptureLogRecord by ID"
+  },
+  {
+    "action_id": "MassAction.get",
+    "entity": "MassAction",
+    "operation": "get",
+    "method": "GET",
+    "path": "/MassAction",
+    "summary": "Get list of MassAction"
+  },
+  {
+    "action_id": "MassAction.post",
+    "entity": "MassAction",
+    "operation": "post",
+    "method": "POST",
+    "path": "/MassAction",
+    "summary": "Create a new MassAction"
+  },
+  {
+    "action_id": "MassAction.get_by_id",
+    "entity": "MassAction",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/MassAction/{id}",
+    "summary": "Get MassAction by ID"
+  },
+  {
+    "action_id": "MassAction.patch",
+    "entity": "MassAction",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/MassAction/{id}",
+    "summary": "Update MassAction by ID"
+  },
+  {
+    "action_id": "MassAction.delete",
+    "entity": "MassAction",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/MassAction/{id}",
+    "summary": "Delete MassAction by ID"
+  },
+  {
+    "action_id": "NextNumber.get",
+    "entity": "NextNumber",
+    "operation": "get",
+    "method": "GET",
+    "path": "/NextNumber",
+    "summary": "Get list of NextNumber"
+  },
+  {
+    "action_id": "NextNumber.post",
+    "entity": "NextNumber",
+    "operation": "post",
+    "method": "POST",
+    "path": "/NextNumber",
+    "summary": "Create a new NextNumber"
+  },
+  {
+    "action_id": "NextNumber.get_by_id",
+    "entity": "NextNumber",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/NextNumber/{id}",
+    "summary": "Get NextNumber by ID"
+  },
+  {
+    "action_id": "NextNumber.patch",
+    "entity": "NextNumber",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/NextNumber/{id}",
+    "summary": "Update NextNumber by ID"
+  },
+  {
+    "action_id": "NextNumber.delete",
+    "entity": "NextNumber",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/NextNumber/{id}",
+    "summary": "Delete NextNumber by ID"
+  },
+  {
+    "action_id": "Note.get",
+    "entity": "Note",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Note",
+    "summary": "Get list of Note"
+  },
+  {
+    "action_id": "Note.post",
+    "entity": "Note",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Note",
+    "summary": "Create a new Note"
+  },
+  {
+    "action_id": "Note.get_by_id",
+    "entity": "Note",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Note/{id}",
+    "summary": "Get Note by ID"
+  },
+  {
+    "action_id": "Note.patch",
+    "entity": "Note",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Note/{id}",
+    "summary": "Update Note by ID"
+  },
+  {
+    "action_id": "Note.delete",
+    "entity": "Note",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Note/{id}",
+    "summary": "Delete Note by ID"
+  },
+  {
+    "action_id": "Notification.get",
+    "entity": "Notification",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Notification",
+    "summary": "Get list of Notification"
+  },
+  {
+    "action_id": "Notification.post",
+    "entity": "Notification",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Notification",
+    "summary": "Create a new Notification"
+  },
+  {
+    "action_id": "Notification.get_by_id",
+    "entity": "Notification",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Notification/{id}",
+    "summary": "Get Notification by ID"
+  },
+  {
+    "action_id": "Notification.patch",
+    "entity": "Notification",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Notification/{id}",
+    "summary": "Update Notification by ID"
+  },
+  {
+    "action_id": "Notification.delete",
+    "entity": "Notification",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Notification/{id}",
+    "summary": "Delete Notification by ID"
+  },
+  {
+    "action_id": "OAuthAccount.get",
+    "entity": "OAuthAccount",
+    "operation": "get",
+    "method": "GET",
+    "path": "/OAuthAccount",
+    "summary": "Get list of OAuthAccount"
+  },
+  {
+    "action_id": "OAuthAccount.post",
+    "entity": "OAuthAccount",
+    "operation": "post",
+    "method": "POST",
+    "path": "/OAuthAccount",
+    "summary": "Create a new OAuthAccount"
+  },
+  {
+    "action_id": "OAuthAccount.get_by_id",
+    "entity": "OAuthAccount",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/OAuthAccount/{id}",
+    "summary": "Get OAuthAccount by ID"
+  },
+  {
+    "action_id": "OAuthAccount.patch",
+    "entity": "OAuthAccount",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/OAuthAccount/{id}",
+    "summary": "Update OAuthAccount by ID"
+  },
+  {
+    "action_id": "OAuthAccount.delete",
+    "entity": "OAuthAccount",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/OAuthAccount/{id}",
+    "summary": "Delete OAuthAccount by ID"
+  },
+  {
+    "action_id": "OAuthProvider.get",
+    "entity": "OAuthProvider",
+    "operation": "get",
+    "method": "GET",
+    "path": "/OAuthProvider",
+    "summary": "Get list of OAuthProvider"
+  },
+  {
+    "action_id": "OAuthProvider.post",
+    "entity": "OAuthProvider",
+    "operation": "post",
+    "method": "POST",
+    "path": "/OAuthProvider",
+    "summary": "Create a new OAuthProvider"
+  },
+  {
+    "action_id": "OAuthProvider.get_by_id",
+    "entity": "OAuthProvider",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/OAuthProvider/{id}",
+    "summary": "Get OAuthProvider by ID"
+  },
+  {
+    "action_id": "OAuthProvider.patch",
+    "entity": "OAuthProvider",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/OAuthProvider/{id}",
+    "summary": "Update OAuthProvider by ID"
+  },
+  {
+    "action_id": "OAuthProvider.delete",
+    "entity": "OAuthProvider",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/OAuthProvider/{id}",
+    "summary": "Delete OAuthProvider by ID"
+  },
+  {
+    "action_id": "PasswordChangeRequest.get",
+    "entity": "PasswordChangeRequest",
+    "operation": "get",
+    "method": "GET",
+    "path": "/PasswordChangeRequest",
+    "summary": "Get list of PasswordChangeRequest"
+  },
+  {
+    "action_id": "PasswordChangeRequest.post",
+    "entity": "PasswordChangeRequest",
+    "operation": "post",
+    "method": "POST",
+    "path": "/PasswordChangeRequest",
+    "summary": "Create a new PasswordChangeRequest"
+  },
+  {
+    "action_id": "PasswordChangeRequest.get_by_id",
+    "entity": "PasswordChangeRequest",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/PasswordChangeRequest/{id}",
+    "summary": "Get PasswordChangeRequest by ID"
+  },
+  {
+    "action_id": "PasswordChangeRequest.patch",
+    "entity": "PasswordChangeRequest",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/PasswordChangeRequest/{id}",
+    "summary": "Update PasswordChangeRequest by ID"
+  },
+  {
+    "action_id": "PasswordChangeRequest.delete",
+    "entity": "PasswordChangeRequest",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/PasswordChangeRequest/{id}",
+    "summary": "Delete PasswordChangeRequest by ID"
+  },
+  {
+    "action_id": "PhoneNumber.get",
+    "entity": "PhoneNumber",
+    "operation": "get",
+    "method": "GET",
+    "path": "/PhoneNumber",
+    "summary": "Get list of PhoneNumber"
+  },
+  {
+    "action_id": "PhoneNumber.post",
+    "entity": "PhoneNumber",
+    "operation": "post",
+    "method": "POST",
+    "path": "/PhoneNumber",
+    "summary": "Create a new PhoneNumber"
+  },
+  {
+    "action_id": "PhoneNumber.get_by_id",
+    "entity": "PhoneNumber",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/PhoneNumber/{id}",
+    "summary": "Get PhoneNumber by ID"
+  },
+  {
+    "action_id": "PhoneNumber.patch",
+    "entity": "PhoneNumber",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/PhoneNumber/{id}",
+    "summary": "Update PhoneNumber by ID"
+  },
+  {
+    "action_id": "PhoneNumber.delete",
+    "entity": "PhoneNumber",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/PhoneNumber/{id}",
+    "summary": "Delete PhoneNumber by ID"
+  },
+  {
+    "action_id": "Portal.get",
+    "entity": "Portal",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Portal",
+    "summary": "Get list of Portal"
+  },
+  {
+    "action_id": "Portal.post",
+    "entity": "Portal",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Portal",
+    "summary": "Create a new Portal"
+  },
+  {
+    "action_id": "Portal.get_by_id",
+    "entity": "Portal",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Portal/{id}",
+    "summary": "Get Portal by ID"
+  },
+  {
+    "action_id": "Portal.patch",
+    "entity": "Portal",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Portal/{id}",
+    "summary": "Update Portal by ID"
+  },
+  {
+    "action_id": "Portal.delete",
+    "entity": "Portal",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Portal/{id}",
+    "summary": "Delete Portal by ID"
+  },
+  {
+    "action_id": "PortalRole.get",
+    "entity": "PortalRole",
+    "operation": "get",
+    "method": "GET",
+    "path": "/PortalRole",
+    "summary": "Get list of PortalRole"
+  },
+  {
+    "action_id": "PortalRole.post",
+    "entity": "PortalRole",
+    "operation": "post",
+    "method": "POST",
+    "path": "/PortalRole",
+    "summary": "Create a new PortalRole"
+  },
+  {
+    "action_id": "PortalRole.get_by_id",
+    "entity": "PortalRole",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/PortalRole/{id}",
+    "summary": "Get PortalRole by ID"
+  },
+  {
+    "action_id": "PortalRole.patch",
+    "entity": "PortalRole",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/PortalRole/{id}",
+    "summary": "Update PortalRole by ID"
+  },
+  {
+    "action_id": "PortalRole.delete",
+    "entity": "PortalRole",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/PortalRole/{id}",
+    "summary": "Delete PortalRole by ID"
+  },
+  {
+    "action_id": "Preferences.get",
+    "entity": "Preferences",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Preferences",
+    "summary": "Get list of Preferences"
+  },
+  {
+    "action_id": "Preferences.post",
+    "entity": "Preferences",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Preferences",
+    "summary": "Create a new Preferences"
+  },
+  {
+    "action_id": "Preferences.get_by_id",
+    "entity": "Preferences",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Preferences/{id}",
+    "summary": "Get Preferences by ID"
+  },
+  {
+    "action_id": "Preferences.patch",
+    "entity": "Preferences",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Preferences/{id}",
+    "summary": "Update Preferences by ID"
+  },
+  {
+    "action_id": "Preferences.delete",
+    "entity": "Preferences",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Preferences/{id}",
+    "summary": "Delete Preferences by ID"
+  },
+  {
+    "action_id": "Role.get",
+    "entity": "Role",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Role",
+    "summary": "Get list of Role"
+  },
+  {
+    "action_id": "Role.post",
+    "entity": "Role",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Role",
+    "summary": "Create a new Role"
+  },
+  {
+    "action_id": "Role.get_by_id",
+    "entity": "Role",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Role/{id}",
+    "summary": "Get Role by ID"
+  },
+  {
+    "action_id": "Role.patch",
+    "entity": "Role",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Role/{id}",
+    "summary": "Update Role by ID"
+  },
+  {
+    "action_id": "Role.delete",
+    "entity": "Role",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Role/{id}",
+    "summary": "Delete Role by ID"
+  },
+  {
+    "action_id": "ScheduledJob.get",
+    "entity": "ScheduledJob",
+    "operation": "get",
+    "method": "GET",
+    "path": "/ScheduledJob",
+    "summary": "Get list of ScheduledJob"
+  },
+  {
+    "action_id": "ScheduledJob.post",
+    "entity": "ScheduledJob",
+    "operation": "post",
+    "method": "POST",
+    "path": "/ScheduledJob",
+    "summary": "Create a new ScheduledJob"
+  },
+  {
+    "action_id": "ScheduledJob.get_by_id",
+    "entity": "ScheduledJob",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/ScheduledJob/{id}",
+    "summary": "Get ScheduledJob by ID"
+  },
+  {
+    "action_id": "ScheduledJob.patch",
+    "entity": "ScheduledJob",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/ScheduledJob/{id}",
+    "summary": "Update ScheduledJob by ID"
+  },
+  {
+    "action_id": "ScheduledJob.delete",
+    "entity": "ScheduledJob",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/ScheduledJob/{id}",
+    "summary": "Delete ScheduledJob by ID"
+  },
+  {
+    "action_id": "ScheduledJobLogRecord.get",
+    "entity": "ScheduledJobLogRecord",
+    "operation": "get",
+    "method": "GET",
+    "path": "/ScheduledJobLogRecord",
+    "summary": "Get list of ScheduledJobLogRecord"
+  },
+  {
+    "action_id": "ScheduledJobLogRecord.post",
+    "entity": "ScheduledJobLogRecord",
+    "operation": "post",
+    "method": "POST",
+    "path": "/ScheduledJobLogRecord",
+    "summary": "Create a new ScheduledJobLogRecord"
+  },
+  {
+    "action_id": "ScheduledJobLogRecord.get_by_id",
+    "entity": "ScheduledJobLogRecord",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/ScheduledJobLogRecord/{id}",
+    "summary": "Get ScheduledJobLogRecord by ID"
+  },
+  {
+    "action_id": "ScheduledJobLogRecord.patch",
+    "entity": "ScheduledJobLogRecord",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/ScheduledJobLogRecord/{id}",
+    "summary": "Update ScheduledJobLogRecord by ID"
+  },
+  {
+    "action_id": "ScheduledJobLogRecord.delete",
+    "entity": "ScheduledJobLogRecord",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/ScheduledJobLogRecord/{id}",
+    "summary": "Delete ScheduledJobLogRecord by ID"
+  },
+  {
+    "action_id": "Settings.get",
+    "entity": "Settings",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Settings",
+    "summary": "Get list of Settings"
+  },
+  {
+    "action_id": "Settings.post",
+    "entity": "Settings",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Settings",
+    "summary": "Create a new Settings"
+  },
+  {
+    "action_id": "Settings.get_by_id",
+    "entity": "Settings",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Settings/{id}",
+    "summary": "Get Settings by ID"
+  },
+  {
+    "action_id": "Settings.patch",
+    "entity": "Settings",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Settings/{id}",
+    "summary": "Update Settings by ID"
+  },
+  {
+    "action_id": "Settings.delete",
+    "entity": "Settings",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Settings/{id}",
+    "summary": "Delete Settings by ID"
+  },
+  {
+    "action_id": "Sms.get",
+    "entity": "Sms",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Sms",
+    "summary": "Get list of Sms"
+  },
+  {
+    "action_id": "Sms.post",
+    "entity": "Sms",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Sms",
+    "summary": "Create a new Sms"
+  },
+  {
+    "action_id": "Sms.get_by_id",
+    "entity": "Sms",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Sms/{id}",
+    "summary": "Get Sms by ID"
+  },
+  {
+    "action_id": "Sms.patch",
+    "entity": "Sms",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Sms/{id}",
+    "summary": "Update Sms by ID"
+  },
+  {
+    "action_id": "Sms.delete",
+    "entity": "Sms",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Sms/{id}",
+    "summary": "Delete Sms by ID"
+  },
+  {
+    "action_id": "StarSubscription.get",
+    "entity": "StarSubscription",
+    "operation": "get",
+    "method": "GET",
+    "path": "/StarSubscription",
+    "summary": "Get list of StarSubscription"
+  },
+  {
+    "action_id": "StarSubscription.post",
+    "entity": "StarSubscription",
+    "operation": "post",
+    "method": "POST",
+    "path": "/StarSubscription",
+    "summary": "Create a new StarSubscription"
+  },
+  {
+    "action_id": "StarSubscription.get_by_id",
+    "entity": "StarSubscription",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/StarSubscription/{id}",
+    "summary": "Get StarSubscription by ID"
+  },
+  {
+    "action_id": "StarSubscription.patch",
+    "entity": "StarSubscription",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/StarSubscription/{id}",
+    "summary": "Update StarSubscription by ID"
+  },
+  {
+    "action_id": "StarSubscription.delete",
+    "entity": "StarSubscription",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/StarSubscription/{id}",
+    "summary": "Delete StarSubscription by ID"
+  },
+  {
+    "action_id": "StreamSubscription.get",
+    "entity": "StreamSubscription",
+    "operation": "get",
+    "method": "GET",
+    "path": "/StreamSubscription",
+    "summary": "Get list of StreamSubscription"
+  },
+  {
+    "action_id": "StreamSubscription.post",
+    "entity": "StreamSubscription",
+    "operation": "post",
+    "method": "POST",
+    "path": "/StreamSubscription",
+    "summary": "Create a new StreamSubscription"
+  },
+  {
+    "action_id": "StreamSubscription.get_by_id",
+    "entity": "StreamSubscription",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/StreamSubscription/{id}",
+    "summary": "Get StreamSubscription by ID"
+  },
+  {
+    "action_id": "StreamSubscription.patch",
+    "entity": "StreamSubscription",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/StreamSubscription/{id}",
+    "summary": "Update StreamSubscription by ID"
+  },
+  {
+    "action_id": "StreamSubscription.delete",
+    "entity": "StreamSubscription",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/StreamSubscription/{id}",
+    "summary": "Delete StreamSubscription by ID"
+  },
+  {
+    "action_id": "SystemData.get",
+    "entity": "SystemData",
+    "operation": "get",
+    "method": "GET",
+    "path": "/SystemData",
+    "summary": "Get list of SystemData"
+  },
+  {
+    "action_id": "SystemData.post",
+    "entity": "SystemData",
+    "operation": "post",
+    "method": "POST",
+    "path": "/SystemData",
+    "summary": "Create a new SystemData"
+  },
+  {
+    "action_id": "SystemData.get_by_id",
+    "entity": "SystemData",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/SystemData/{id}",
+    "summary": "Get SystemData by ID"
+  },
+  {
+    "action_id": "SystemData.patch",
+    "entity": "SystemData",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/SystemData/{id}",
+    "summary": "Update SystemData by ID"
+  },
+  {
+    "action_id": "SystemData.delete",
+    "entity": "SystemData",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/SystemData/{id}",
+    "summary": "Delete SystemData by ID"
+  },
+  {
+    "action_id": "Team.get",
+    "entity": "Team",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Team",
+    "summary": "Get list of Team"
+  },
+  {
+    "action_id": "Team.post",
+    "entity": "Team",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Team",
+    "summary": "Create a new Team"
+  },
+  {
+    "action_id": "Team.get_by_id",
+    "entity": "Team",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Team/{id}",
+    "summary": "Get Team by ID"
+  },
+  {
+    "action_id": "Team.patch",
+    "entity": "Team",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Team/{id}",
+    "summary": "Update Team by ID"
+  },
+  {
+    "action_id": "Team.delete",
+    "entity": "Team",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Team/{id}",
+    "summary": "Delete Team by ID"
+  },
+  {
+    "action_id": "Template.get",
+    "entity": "Template",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Template",
+    "summary": "Get list of Template"
+  },
+  {
+    "action_id": "Template.post",
+    "entity": "Template",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Template",
+    "summary": "Create a new Template"
+  },
+  {
+    "action_id": "Template.get_by_id",
+    "entity": "Template",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Template/{id}",
+    "summary": "Get Template by ID"
+  },
+  {
+    "action_id": "Template.patch",
+    "entity": "Template",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Template/{id}",
+    "summary": "Update Template by ID"
+  },
+  {
+    "action_id": "Template.delete",
+    "entity": "Template",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Template/{id}",
+    "summary": "Delete Template by ID"
+  },
+  {
+    "action_id": "TwoFactorCode.get",
+    "entity": "TwoFactorCode",
+    "operation": "get",
+    "method": "GET",
+    "path": "/TwoFactorCode",
+    "summary": "Get list of TwoFactorCode"
+  },
+  {
+    "action_id": "TwoFactorCode.post",
+    "entity": "TwoFactorCode",
+    "operation": "post",
+    "method": "POST",
+    "path": "/TwoFactorCode",
+    "summary": "Create a new TwoFactorCode"
+  },
+  {
+    "action_id": "TwoFactorCode.get_by_id",
+    "entity": "TwoFactorCode",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/TwoFactorCode/{id}",
+    "summary": "Get TwoFactorCode by ID"
+  },
+  {
+    "action_id": "TwoFactorCode.patch",
+    "entity": "TwoFactorCode",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/TwoFactorCode/{id}",
+    "summary": "Update TwoFactorCode by ID"
+  },
+  {
+    "action_id": "TwoFactorCode.delete",
+    "entity": "TwoFactorCode",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/TwoFactorCode/{id}",
+    "summary": "Delete TwoFactorCode by ID"
+  },
+  {
+    "action_id": "UniqueId.get",
+    "entity": "UniqueId",
+    "operation": "get",
+    "method": "GET",
+    "path": "/UniqueId",
+    "summary": "Get list of UniqueId"
+  },
+  {
+    "action_id": "UniqueId.post",
+    "entity": "UniqueId",
+    "operation": "post",
+    "method": "POST",
+    "path": "/UniqueId",
+    "summary": "Create a new UniqueId"
+  },
+  {
+    "action_id": "UniqueId.get_by_id",
+    "entity": "UniqueId",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/UniqueId/{id}",
+    "summary": "Get UniqueId by ID"
+  },
+  {
+    "action_id": "UniqueId.patch",
+    "entity": "UniqueId",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/UniqueId/{id}",
+    "summary": "Update UniqueId by ID"
+  },
+  {
+    "action_id": "UniqueId.delete",
+    "entity": "UniqueId",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/UniqueId/{id}",
+    "summary": "Delete UniqueId by ID"
+  },
+  {
+    "action_id": "User.get",
+    "entity": "User",
+    "operation": "get",
+    "method": "GET",
+    "path": "/User",
+    "summary": "Get list of User"
+  },
+  {
+    "action_id": "User.post",
+    "entity": "User",
+    "operation": "post",
+    "method": "POST",
+    "path": "/User",
+    "summary": "Create a new User"
+  },
+  {
+    "action_id": "User.get_by_id",
+    "entity": "User",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/User/{id}",
+    "summary": "Get User by ID"
+  },
+  {
+    "action_id": "User.patch",
+    "entity": "User",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/User/{id}",
+    "summary": "Update User by ID"
+  },
+  {
+    "action_id": "User.delete",
+    "entity": "User",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/User/{id}",
+    "summary": "Delete User by ID"
+  },
+  {
+    "action_id": "UserData.get",
+    "entity": "UserData",
+    "operation": "get",
+    "method": "GET",
+    "path": "/UserData",
+    "summary": "Get list of UserData"
+  },
+  {
+    "action_id": "UserData.post",
+    "entity": "UserData",
+    "operation": "post",
+    "method": "POST",
+    "path": "/UserData",
+    "summary": "Create a new UserData"
+  },
+  {
+    "action_id": "UserData.get_by_id",
+    "entity": "UserData",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/UserData/{id}",
+    "summary": "Get UserData by ID"
+  },
+  {
+    "action_id": "UserData.patch",
+    "entity": "UserData",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/UserData/{id}",
+    "summary": "Update UserData by ID"
+  },
+  {
+    "action_id": "UserData.delete",
+    "entity": "UserData",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/UserData/{id}",
+    "summary": "Delete UserData by ID"
+  },
+  {
+    "action_id": "UserReaction.get",
+    "entity": "UserReaction",
+    "operation": "get",
+    "method": "GET",
+    "path": "/UserReaction",
+    "summary": "Get list of UserReaction"
+  },
+  {
+    "action_id": "UserReaction.post",
+    "entity": "UserReaction",
+    "operation": "post",
+    "method": "POST",
+    "path": "/UserReaction",
+    "summary": "Create a new UserReaction"
+  },
+  {
+    "action_id": "UserReaction.get_by_id",
+    "entity": "UserReaction",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/UserReaction/{id}",
+    "summary": "Get UserReaction by ID"
+  },
+  {
+    "action_id": "UserReaction.patch",
+    "entity": "UserReaction",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/UserReaction/{id}",
+    "summary": "Update UserReaction by ID"
+  },
+  {
+    "action_id": "UserReaction.delete",
+    "entity": "UserReaction",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/UserReaction/{id}",
+    "summary": "Delete UserReaction by ID"
+  },
+  {
+    "action_id": "Webhook.get",
+    "entity": "Webhook",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Webhook",
+    "summary": "Get list of Webhook"
+  },
+  {
+    "action_id": "Webhook.post",
+    "entity": "Webhook",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Webhook",
+    "summary": "Create a new Webhook"
+  },
+  {
+    "action_id": "Webhook.get_by_id",
+    "entity": "Webhook",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Webhook/{id}",
+    "summary": "Get Webhook by ID"
+  },
+  {
+    "action_id": "Webhook.patch",
+    "entity": "Webhook",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Webhook/{id}",
+    "summary": "Update Webhook by ID"
+  },
+  {
+    "action_id": "Webhook.delete",
+    "entity": "Webhook",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Webhook/{id}",
+    "summary": "Delete Webhook by ID"
+  },
+  {
+    "action_id": "WebhookEventQueueItem.get",
+    "entity": "WebhookEventQueueItem",
+    "operation": "get",
+    "method": "GET",
+    "path": "/WebhookEventQueueItem",
+    "summary": "Get list of WebhookEventQueueItem"
+  },
+  {
+    "action_id": "WebhookEventQueueItem.post",
+    "entity": "WebhookEventQueueItem",
+    "operation": "post",
+    "method": "POST",
+    "path": "/WebhookEventQueueItem",
+    "summary": "Create a new WebhookEventQueueItem"
+  },
+  {
+    "action_id": "WebhookEventQueueItem.get_by_id",
+    "entity": "WebhookEventQueueItem",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/WebhookEventQueueItem/{id}",
+    "summary": "Get WebhookEventQueueItem by ID"
+  },
+  {
+    "action_id": "WebhookEventQueueItem.patch",
+    "entity": "WebhookEventQueueItem",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/WebhookEventQueueItem/{id}",
+    "summary": "Update WebhookEventQueueItem by ID"
+  },
+  {
+    "action_id": "WebhookEventQueueItem.delete",
+    "entity": "WebhookEventQueueItem",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/WebhookEventQueueItem/{id}",
+    "summary": "Delete WebhookEventQueueItem by ID"
+  },
+  {
+    "action_id": "WebhookQueueItem.get",
+    "entity": "WebhookQueueItem",
+    "operation": "get",
+    "method": "GET",
+    "path": "/WebhookQueueItem",
+    "summary": "Get list of WebhookQueueItem"
+  },
+  {
+    "action_id": "WebhookQueueItem.post",
+    "entity": "WebhookQueueItem",
+    "operation": "post",
+    "method": "POST",
+    "path": "/WebhookQueueItem",
+    "summary": "Create a new WebhookQueueItem"
+  },
+  {
+    "action_id": "WebhookQueueItem.get_by_id",
+    "entity": "WebhookQueueItem",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/WebhookQueueItem/{id}",
+    "summary": "Get WebhookQueueItem by ID"
+  },
+  {
+    "action_id": "WebhookQueueItem.patch",
+    "entity": "WebhookQueueItem",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/WebhookQueueItem/{id}",
+    "summary": "Update WebhookQueueItem by ID"
+  },
+  {
+    "action_id": "WebhookQueueItem.delete",
+    "entity": "WebhookQueueItem",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/WebhookQueueItem/{id}",
+    "summary": "Delete WebhookQueueItem by ID"
+  },
+  {
+    "action_id": "WorkingTimeCalendar.get",
+    "entity": "WorkingTimeCalendar",
+    "operation": "get",
+    "method": "GET",
+    "path": "/WorkingTimeCalendar",
+    "summary": "Get list of WorkingTimeCalendar"
+  },
+  {
+    "action_id": "WorkingTimeCalendar.post",
+    "entity": "WorkingTimeCalendar",
+    "operation": "post",
+    "method": "POST",
+    "path": "/WorkingTimeCalendar",
+    "summary": "Create a new WorkingTimeCalendar"
+  },
+  {
+    "action_id": "WorkingTimeCalendar.get_by_id",
+    "entity": "WorkingTimeCalendar",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/WorkingTimeCalendar/{id}",
+    "summary": "Get WorkingTimeCalendar by ID"
+  },
+  {
+    "action_id": "WorkingTimeCalendar.patch",
+    "entity": "WorkingTimeCalendar",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/WorkingTimeCalendar/{id}",
+    "summary": "Update WorkingTimeCalendar by ID"
+  },
+  {
+    "action_id": "WorkingTimeCalendar.delete",
+    "entity": "WorkingTimeCalendar",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/WorkingTimeCalendar/{id}",
+    "summary": "Delete WorkingTimeCalendar by ID"
+  },
+  {
+    "action_id": "WorkingTimeRange.get",
+    "entity": "WorkingTimeRange",
+    "operation": "get",
+    "method": "GET",
+    "path": "/WorkingTimeRange",
+    "summary": "Get list of WorkingTimeRange"
+  },
+  {
+    "action_id": "WorkingTimeRange.post",
+    "entity": "WorkingTimeRange",
+    "operation": "post",
+    "method": "POST",
+    "path": "/WorkingTimeRange",
+    "summary": "Create a new WorkingTimeRange"
+  },
+  {
+    "action_id": "WorkingTimeRange.get_by_id",
+    "entity": "WorkingTimeRange",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/WorkingTimeRange/{id}",
+    "summary": "Get WorkingTimeRange by ID"
+  },
+  {
+    "action_id": "WorkingTimeRange.patch",
+    "entity": "WorkingTimeRange",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/WorkingTimeRange/{id}",
+    "summary": "Update WorkingTimeRange by ID"
+  },
+  {
+    "action_id": "WorkingTimeRange.delete",
+    "entity": "WorkingTimeRange",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/WorkingTimeRange/{id}",
+    "summary": "Delete WorkingTimeRange by ID"
+  },
+  {
+    "action_id": "Account.get",
+    "entity": "Account",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Account",
+    "summary": "Get list of Account"
+  },
+  {
+    "action_id": "Account.post",
+    "entity": "Account",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Account",
+    "summary": "Create a new Account"
+  },
+  {
+    "action_id": "Account.get_by_id",
+    "entity": "Account",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Account/{id}",
+    "summary": "Get Account by ID"
+  },
+  {
+    "action_id": "Account.patch",
+    "entity": "Account",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Account/{id}",
+    "summary": "Update Account by ID"
+  },
+  {
+    "action_id": "Account.delete",
+    "entity": "Account",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Account/{id}",
+    "summary": "Delete Account by ID"
+  },
+  {
+    "action_id": "Call.get",
+    "entity": "Call",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Call",
+    "summary": "Get list of Call"
+  },
+  {
+    "action_id": "Call.post",
+    "entity": "Call",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Call",
+    "summary": "Create a new Call"
+  },
+  {
+    "action_id": "Call.get_by_id",
+    "entity": "Call",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Call/{id}",
+    "summary": "Get Call by ID"
+  },
+  {
+    "action_id": "Call.patch",
+    "entity": "Call",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Call/{id}",
+    "summary": "Update Call by ID"
+  },
+  {
+    "action_id": "Call.delete",
+    "entity": "Call",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Call/{id}",
+    "summary": "Delete Call by ID"
+  },
+  {
+    "action_id": "Campaign.get",
+    "entity": "Campaign",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Campaign",
+    "summary": "Get list of Campaign"
+  },
+  {
+    "action_id": "Campaign.post",
+    "entity": "Campaign",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Campaign",
+    "summary": "Create a new Campaign"
+  },
+  {
+    "action_id": "Campaign.get_by_id",
+    "entity": "Campaign",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Campaign/{id}",
+    "summary": "Get Campaign by ID"
+  },
+  {
+    "action_id": "Campaign.patch",
+    "entity": "Campaign",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Campaign/{id}",
+    "summary": "Update Campaign by ID"
+  },
+  {
+    "action_id": "Campaign.delete",
+    "entity": "Campaign",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Campaign/{id}",
+    "summary": "Delete Campaign by ID"
+  },
+  {
+    "action_id": "CampaignLogRecord.get",
+    "entity": "CampaignLogRecord",
+    "operation": "get",
+    "method": "GET",
+    "path": "/CampaignLogRecord",
+    "summary": "Get list of CampaignLogRecord"
+  },
+  {
+    "action_id": "CampaignLogRecord.post",
+    "entity": "CampaignLogRecord",
+    "operation": "post",
+    "method": "POST",
+    "path": "/CampaignLogRecord",
+    "summary": "Create a new CampaignLogRecord"
+  },
+  {
+    "action_id": "CampaignLogRecord.get_by_id",
+    "entity": "CampaignLogRecord",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/CampaignLogRecord/{id}",
+    "summary": "Get CampaignLogRecord by ID"
+  },
+  {
+    "action_id": "CampaignLogRecord.patch",
+    "entity": "CampaignLogRecord",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/CampaignLogRecord/{id}",
+    "summary": "Update CampaignLogRecord by ID"
+  },
+  {
+    "action_id": "CampaignLogRecord.delete",
+    "entity": "CampaignLogRecord",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/CampaignLogRecord/{id}",
+    "summary": "Delete CampaignLogRecord by ID"
+  },
+  {
+    "action_id": "CampaignTrackingUrl.get",
+    "entity": "CampaignTrackingUrl",
+    "operation": "get",
+    "method": "GET",
+    "path": "/CampaignTrackingUrl",
+    "summary": "Get list of CampaignTrackingUrl"
+  },
+  {
+    "action_id": "CampaignTrackingUrl.post",
+    "entity": "CampaignTrackingUrl",
+    "operation": "post",
+    "method": "POST",
+    "path": "/CampaignTrackingUrl",
+    "summary": "Create a new CampaignTrackingUrl"
+  },
+  {
+    "action_id": "CampaignTrackingUrl.get_by_id",
+    "entity": "CampaignTrackingUrl",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/CampaignTrackingUrl/{id}",
+    "summary": "Get CampaignTrackingUrl by ID"
+  },
+  {
+    "action_id": "CampaignTrackingUrl.patch",
+    "entity": "CampaignTrackingUrl",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/CampaignTrackingUrl/{id}",
+    "summary": "Update CampaignTrackingUrl by ID"
+  },
+  {
+    "action_id": "CampaignTrackingUrl.delete",
+    "entity": "CampaignTrackingUrl",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/CampaignTrackingUrl/{id}",
+    "summary": "Delete CampaignTrackingUrl by ID"
+  },
+  {
+    "action_id": "Case.get",
+    "entity": "Case",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Case",
+    "summary": "Get list of Case"
+  },
+  {
+    "action_id": "Case.post",
+    "entity": "Case",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Case",
+    "summary": "Create a new Case"
+  },
+  {
+    "action_id": "Case.get_by_id",
+    "entity": "Case",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Case/{id}",
+    "summary": "Get Case by ID"
+  },
+  {
+    "action_id": "Case.patch",
+    "entity": "Case",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Case/{id}",
+    "summary": "Update Case by ID"
+  },
+  {
+    "action_id": "Case.delete",
+    "entity": "Case",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Case/{id}",
+    "summary": "Delete Case by ID"
+  },
+  {
+    "action_id": "Contact.get",
+    "entity": "Contact",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Contact",
+    "summary": "Get list of Contact"
+  },
+  {
+    "action_id": "Contact.post",
+    "entity": "Contact",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Contact",
+    "summary": "Create a new Contact"
+  },
+  {
+    "action_id": "Contact.get_by_id",
+    "entity": "Contact",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Contact/{id}",
+    "summary": "Get Contact by ID"
+  },
+  {
+    "action_id": "Contact.patch",
+    "entity": "Contact",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Contact/{id}",
+    "summary": "Update Contact by ID"
+  },
+  {
+    "action_id": "Contact.delete",
+    "entity": "Contact",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Contact/{id}",
+    "summary": "Delete Contact by ID"
+  },
+  {
+    "action_id": "Document.get",
+    "entity": "Document",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Document",
+    "summary": "Get list of Document"
+  },
+  {
+    "action_id": "Document.post",
+    "entity": "Document",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Document",
+    "summary": "Create a new Document"
+  },
+  {
+    "action_id": "Document.get_by_id",
+    "entity": "Document",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Document/{id}",
+    "summary": "Get Document by ID"
+  },
+  {
+    "action_id": "Document.patch",
+    "entity": "Document",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Document/{id}",
+    "summary": "Update Document by ID"
+  },
+  {
+    "action_id": "Document.delete",
+    "entity": "Document",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Document/{id}",
+    "summary": "Delete Document by ID"
+  },
+  {
+    "action_id": "DocumentFolder.get",
+    "entity": "DocumentFolder",
+    "operation": "get",
+    "method": "GET",
+    "path": "/DocumentFolder",
+    "summary": "Get list of DocumentFolder"
+  },
+  {
+    "action_id": "DocumentFolder.post",
+    "entity": "DocumentFolder",
+    "operation": "post",
+    "method": "POST",
+    "path": "/DocumentFolder",
+    "summary": "Create a new DocumentFolder"
+  },
+  {
+    "action_id": "DocumentFolder.get_by_id",
+    "entity": "DocumentFolder",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/DocumentFolder/{id}",
+    "summary": "Get DocumentFolder by ID"
+  },
+  {
+    "action_id": "DocumentFolder.patch",
+    "entity": "DocumentFolder",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/DocumentFolder/{id}",
+    "summary": "Update DocumentFolder by ID"
+  },
+  {
+    "action_id": "DocumentFolder.delete",
+    "entity": "DocumentFolder",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/DocumentFolder/{id}",
+    "summary": "Delete DocumentFolder by ID"
+  },
+  {
+    "action_id": "EmailQueueItem.get",
+    "entity": "EmailQueueItem",
+    "operation": "get",
+    "method": "GET",
+    "path": "/EmailQueueItem",
+    "summary": "Get list of EmailQueueItem"
+  },
+  {
+    "action_id": "EmailQueueItem.post",
+    "entity": "EmailQueueItem",
+    "operation": "post",
+    "method": "POST",
+    "path": "/EmailQueueItem",
+    "summary": "Create a new EmailQueueItem"
+  },
+  {
+    "action_id": "EmailQueueItem.get_by_id",
+    "entity": "EmailQueueItem",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/EmailQueueItem/{id}",
+    "summary": "Get EmailQueueItem by ID"
+  },
+  {
+    "action_id": "EmailQueueItem.patch",
+    "entity": "EmailQueueItem",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/EmailQueueItem/{id}",
+    "summary": "Update EmailQueueItem by ID"
+  },
+  {
+    "action_id": "EmailQueueItem.delete",
+    "entity": "EmailQueueItem",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/EmailQueueItem/{id}",
+    "summary": "Delete EmailQueueItem by ID"
+  },
+  {
+    "action_id": "KnowledgeBaseArticle.get",
+    "entity": "KnowledgeBaseArticle",
+    "operation": "get",
+    "method": "GET",
+    "path": "/KnowledgeBaseArticle",
+    "summary": "Get list of KnowledgeBaseArticle"
+  },
+  {
+    "action_id": "KnowledgeBaseArticle.post",
+    "entity": "KnowledgeBaseArticle",
+    "operation": "post",
+    "method": "POST",
+    "path": "/KnowledgeBaseArticle",
+    "summary": "Create a new KnowledgeBaseArticle"
+  },
+  {
+    "action_id": "KnowledgeBaseArticle.get_by_id",
+    "entity": "KnowledgeBaseArticle",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/KnowledgeBaseArticle/{id}",
+    "summary": "Get KnowledgeBaseArticle by ID"
+  },
+  {
+    "action_id": "KnowledgeBaseArticle.patch",
+    "entity": "KnowledgeBaseArticle",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/KnowledgeBaseArticle/{id}",
+    "summary": "Update KnowledgeBaseArticle by ID"
+  },
+  {
+    "action_id": "KnowledgeBaseArticle.delete",
+    "entity": "KnowledgeBaseArticle",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/KnowledgeBaseArticle/{id}",
+    "summary": "Delete KnowledgeBaseArticle by ID"
+  },
+  {
+    "action_id": "KnowledgeBaseCategory.get",
+    "entity": "KnowledgeBaseCategory",
+    "operation": "get",
+    "method": "GET",
+    "path": "/KnowledgeBaseCategory",
+    "summary": "Get list of KnowledgeBaseCategory"
+  },
+  {
+    "action_id": "KnowledgeBaseCategory.post",
+    "entity": "KnowledgeBaseCategory",
+    "operation": "post",
+    "method": "POST",
+    "path": "/KnowledgeBaseCategory",
+    "summary": "Create a new KnowledgeBaseCategory"
+  },
+  {
+    "action_id": "KnowledgeBaseCategory.get_by_id",
+    "entity": "KnowledgeBaseCategory",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/KnowledgeBaseCategory/{id}",
+    "summary": "Get KnowledgeBaseCategory by ID"
+  },
+  {
+    "action_id": "KnowledgeBaseCategory.patch",
+    "entity": "KnowledgeBaseCategory",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/KnowledgeBaseCategory/{id}",
+    "summary": "Update KnowledgeBaseCategory by ID"
+  },
+  {
+    "action_id": "KnowledgeBaseCategory.delete",
+    "entity": "KnowledgeBaseCategory",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/KnowledgeBaseCategory/{id}",
+    "summary": "Delete KnowledgeBaseCategory by ID"
+  },
+  {
+    "action_id": "Lead.get",
+    "entity": "Lead",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Lead",
+    "summary": "Get list of Lead"
+  },
+  {
+    "action_id": "Lead.post",
+    "entity": "Lead",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Lead",
+    "summary": "Create a new Lead"
+  },
+  {
+    "action_id": "Lead.get_by_id",
+    "entity": "Lead",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Lead/{id}",
+    "summary": "Get Lead by ID"
+  },
+  {
+    "action_id": "Lead.patch",
+    "entity": "Lead",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Lead/{id}",
+    "summary": "Update Lead by ID"
+  },
+  {
+    "action_id": "Lead.delete",
+    "entity": "Lead",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Lead/{id}",
+    "summary": "Delete Lead by ID"
+  },
+  {
+    "action_id": "MassEmail.get",
+    "entity": "MassEmail",
+    "operation": "get",
+    "method": "GET",
+    "path": "/MassEmail",
+    "summary": "Get list of MassEmail"
+  },
+  {
+    "action_id": "MassEmail.post",
+    "entity": "MassEmail",
+    "operation": "post",
+    "method": "POST",
+    "path": "/MassEmail",
+    "summary": "Create a new MassEmail"
+  },
+  {
+    "action_id": "MassEmail.get_by_id",
+    "entity": "MassEmail",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/MassEmail/{id}",
+    "summary": "Get MassEmail by ID"
+  },
+  {
+    "action_id": "MassEmail.patch",
+    "entity": "MassEmail",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/MassEmail/{id}",
+    "summary": "Update MassEmail by ID"
+  },
+  {
+    "action_id": "MassEmail.delete",
+    "entity": "MassEmail",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/MassEmail/{id}",
+    "summary": "Delete MassEmail by ID"
+  },
+  {
+    "action_id": "Meeting.get",
+    "entity": "Meeting",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Meeting",
+    "summary": "Get list of Meeting"
+  },
+  {
+    "action_id": "Meeting.post",
+    "entity": "Meeting",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Meeting",
+    "summary": "Create a new Meeting"
+  },
+  {
+    "action_id": "Meeting.get_by_id",
+    "entity": "Meeting",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Meeting/{id}",
+    "summary": "Get Meeting by ID"
+  },
+  {
+    "action_id": "Meeting.patch",
+    "entity": "Meeting",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Meeting/{id}",
+    "summary": "Update Meeting by ID"
+  },
+  {
+    "action_id": "Meeting.delete",
+    "entity": "Meeting",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Meeting/{id}",
+    "summary": "Delete Meeting by ID"
+  },
+  {
+    "action_id": "Opportunity.get",
+    "entity": "Opportunity",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Opportunity",
+    "summary": "Get list of Opportunity"
+  },
+  {
+    "action_id": "Opportunity.post",
+    "entity": "Opportunity",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Opportunity",
+    "summary": "Create a new Opportunity"
+  },
+  {
+    "action_id": "Opportunity.get_by_id",
+    "entity": "Opportunity",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Opportunity/{id}",
+    "summary": "Get Opportunity by ID"
+  },
+  {
+    "action_id": "Opportunity.patch",
+    "entity": "Opportunity",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Opportunity/{id}",
+    "summary": "Update Opportunity by ID"
+  },
+  {
+    "action_id": "Opportunity.delete",
+    "entity": "Opportunity",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Opportunity/{id}",
+    "summary": "Delete Opportunity by ID"
+  },
+  {
+    "action_id": "Reminder.get",
+    "entity": "Reminder",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Reminder",
+    "summary": "Get list of Reminder"
+  },
+  {
+    "action_id": "Reminder.post",
+    "entity": "Reminder",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Reminder",
+    "summary": "Create a new Reminder"
+  },
+  {
+    "action_id": "Reminder.get_by_id",
+    "entity": "Reminder",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Reminder/{id}",
+    "summary": "Get Reminder by ID"
+  },
+  {
+    "action_id": "Reminder.patch",
+    "entity": "Reminder",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Reminder/{id}",
+    "summary": "Update Reminder by ID"
+  },
+  {
+    "action_id": "Reminder.delete",
+    "entity": "Reminder",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Reminder/{id}",
+    "summary": "Delete Reminder by ID"
+  },
+  {
+    "action_id": "Target.get",
+    "entity": "Target",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Target",
+    "summary": "Get list of Target"
+  },
+  {
+    "action_id": "Target.post",
+    "entity": "Target",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Target",
+    "summary": "Create a new Target"
+  },
+  {
+    "action_id": "Target.get_by_id",
+    "entity": "Target",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Target/{id}",
+    "summary": "Get Target by ID"
+  },
+  {
+    "action_id": "Target.patch",
+    "entity": "Target",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Target/{id}",
+    "summary": "Update Target by ID"
+  },
+  {
+    "action_id": "Target.delete",
+    "entity": "Target",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Target/{id}",
+    "summary": "Delete Target by ID"
+  },
+  {
+    "action_id": "TargetList.get",
+    "entity": "TargetList",
+    "operation": "get",
+    "method": "GET",
+    "path": "/TargetList",
+    "summary": "Get list of TargetList"
+  },
+  {
+    "action_id": "TargetList.post",
+    "entity": "TargetList",
+    "operation": "post",
+    "method": "POST",
+    "path": "/TargetList",
+    "summary": "Create a new TargetList"
+  },
+  {
+    "action_id": "TargetList.get_by_id",
+    "entity": "TargetList",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/TargetList/{id}",
+    "summary": "Get TargetList by ID"
+  },
+  {
+    "action_id": "TargetList.patch",
+    "entity": "TargetList",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/TargetList/{id}",
+    "summary": "Update TargetList by ID"
+  },
+  {
+    "action_id": "TargetList.delete",
+    "entity": "TargetList",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/TargetList/{id}",
+    "summary": "Delete TargetList by ID"
+  },
+  {
+    "action_id": "TargetListCategory.get",
+    "entity": "TargetListCategory",
+    "operation": "get",
+    "method": "GET",
+    "path": "/TargetListCategory",
+    "summary": "Get list of TargetListCategory"
+  },
+  {
+    "action_id": "TargetListCategory.post",
+    "entity": "TargetListCategory",
+    "operation": "post",
+    "method": "POST",
+    "path": "/TargetListCategory",
+    "summary": "Create a new TargetListCategory"
+  },
+  {
+    "action_id": "TargetListCategory.get_by_id",
+    "entity": "TargetListCategory",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/TargetListCategory/{id}",
+    "summary": "Get TargetListCategory by ID"
+  },
+  {
+    "action_id": "TargetListCategory.patch",
+    "entity": "TargetListCategory",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/TargetListCategory/{id}",
+    "summary": "Update TargetListCategory by ID"
+  },
+  {
+    "action_id": "TargetListCategory.delete",
+    "entity": "TargetListCategory",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/TargetListCategory/{id}",
+    "summary": "Delete TargetListCategory by ID"
+  },
+  {
+    "action_id": "Task.get",
+    "entity": "Task",
+    "operation": "get",
+    "method": "GET",
+    "path": "/Task",
+    "summary": "Get list of Task"
+  },
+  {
+    "action_id": "Task.post",
+    "entity": "Task",
+    "operation": "post",
+    "method": "POST",
+    "path": "/Task",
+    "summary": "Create a new Task"
+  },
+  {
+    "action_id": "Task.get_by_id",
+    "entity": "Task",
+    "operation": "get_by_id",
+    "method": "GET",
+    "path": "/Task/{id}",
+    "summary": "Get Task by ID"
+  },
+  {
+    "action_id": "Task.patch",
+    "entity": "Task",
+    "operation": "patch",
+    "method": "PATCH",
+    "path": "/Task/{id}",
+    "summary": "Update Task by ID"
+  },
+  {
+    "action_id": "Task.delete",
+    "entity": "Task",
+    "operation": "delete",
+    "method": "DELETE",
+    "path": "/Task/{id}",
+    "summary": "Delete Task by ID"
+  }
+]
